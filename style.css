@@ -688,12 +688,12 @@ header .bathroom-cards-content p {
     }
 
     header .mobile-toggle {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
         /* Reduced font size */
     }
 
     header .icons i {
-        font-size: 18px;
+        font-size: 20px;
         /* Reduced icon size */
         margin-left: 15px;
     }
@@ -1226,8 +1226,8 @@ header .bathroom-cards-content p {
 /* ====== Footer section start ====== */
 
 footer {
-    background: #000;
-    color: #fff;
+    background: #fff;
+    color: #000;
     padding: 40px 20px 20px;
     font-family: Arial, sans-serif;
     margin-top: 50px;
@@ -1251,7 +1251,7 @@ footer {
 .footer-logo p {
     font-size: 14px;
     line-height: 1.6;
-    color: #ccc;
+    color: #000;
 }
 
 /* Social Icons */
@@ -1314,30 +1314,30 @@ footer {
 }
 
 .footer-links ul li a {
-    color: #ccc;
+    color: #000;
     font-size: 14px;
     text-decoration: none;
     transition: 0.3s;
 }
 
 .footer-links ul li a:hover {
-    color: #fff;
+    color: #594e4e;
 }
 
 /* Contact */
 .footer-contact p {
     font-size: 14px;
     margin: 8px 0;
-    color: #ccc;
+    color: #000;
 }
 
 .footer-contact a {
-    color: #ccc;
+    color: #000;
     text-decoration: none;
 }
 
 .footer-contact a:hover {
-    color: #fff;
+    color: #0b0b0b;
 }
 
 /* Bottom */
@@ -1347,7 +1347,7 @@ footer {
     padding-top: 15px;
     text-align: center;
     font-size: 13px;
-    color: #888;
+    color: #000;
 }
 
 /* Responsive */
