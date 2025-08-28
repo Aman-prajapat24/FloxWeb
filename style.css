@@ -1,0 +1,1283 @@
+body {
+    margin: 0;
+    font-family: 'Inter', 'sans-serif';
+}
+
+
+/* ====== Header section start ======  */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3000;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+header .navbar {
+    background: #fff;
+    padding: 0 8px;
+    /* Reduced padding */
+    border-bottom: 1px solid #e5e5e5;
+    height: 80px;
+    /* Reduced height from 80px */
+    display: flex;
+    align-items: center;
+}
+
+header .navbar-brand img {
+    height: 80px;
+    /* Reduced logo height */
+}
+
+/* Nav links */
+header .nav-link {
+    font-weight: 600;
+    margin: 0 10px;
+    /* Reduced margin */
+    position: relative;
+    padding-bottom: 4px;
+    font-size: 15px;
+    /* Reduced font size */
+}
+
+/* Premium underline animation */
+header .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: all 0.35s ease;
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+
+header .nav-link:hover::after {
+    width: 80%;
+}
+
+/* Right Icons */
+header .icons i {
+    font-size: 18px;
+    /* Reduced icon size */
+    margin-left: 20px;
+    /* Reduced margin */
+    cursor: pointer;
+}
+
+/* ------------------- Dropdown Mega Menu (Desktop) ------------------- */
+header .dropdown-menu {
+    width: 100%;
+    left: 0;
+    right: 0;
+    border: none;
+    border-radius: 8px;
+    padding: 0;
+    display: none;
+    margin-top: 8px;
+    /* Reduced margin */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+    background: #fff;
+}
+
+header .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+header .dropdown-arrow {
+    margin-left: 4px;
+    transition: transform 0.3s ease;
+    font-size: 11px;
+    /* Reduced arrow size */
+}
+
+header .nav-item.dropdown:hover>.nav-link .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Bathroom Mega menu layout */
+header .bathroom-mega {
+    display: flex;
+    min-height: 320px;
+    /* Reduced height */
+}
+
+header .bathroom-categories {
+    width: 25%;
+    border-right: 1px solid #eee;
+    background: #fff;
+    padding: 12px;
+    /* Reduced padding */
+}
+
+header .bathroom-categories a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px;
+    /* Reduced padding */
+    color: #000;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    font-size: 14px;
+    /* Reduced font size */
+}
+
+header .bathroom-categories a .dropdown-arrow {
+    transition: transform 0.3s ease;
+}
+
+/* Desktop bathroom categories hover functionality */
+@media (min-width: 1024px) {
+
+    /* Adjusted to 1024px */
+    header .bathroom-categories a:hover {
+        background: #f5f5f5;
+    }
+
+    header .bathroom-categories a:hover .dropdown-arrow {
+        transform: rotate(180deg);
+    }
+
+    header .bathroom-content {
+        display: none;
+    }
+
+    header .bathroom-categories a[data-target="basin"]:hover~#basin,
+    header .bathroom-content#basin:hover {
+        display: block !important;
+    }
+
+    header .bathroom-categories a[data-target="shower"]:hover~#shower,
+    header .bathroom-content#shower:hover {
+        display: block !important;
+    }
+
+    header .bathroom-categories a[data-target="toilet"]:hover~#toilet,
+    header .bathroom-content#toilet:hover {
+        display: block !important;
+    }
+
+    header .bathroom-categories a[data-target="accessories"]:hover~#accessories,
+    header .bathroom-content#accessories:hover {
+        display: block !important;
+    }
+
+    header .bathroom-categories a[data-target="others"]:hover~#others,
+    header .bathroom-content#others:hover {
+        display: block !important;
+    }
+}
+
+header .bathroom-categories a:hover,
+header .bathroom-categories a.active {
+    background: #f5f5f5;
+}
+
+header .bathroom-content {
+    width: 75%;
+    padding: 12px;
+    /* Reduced padding */
+}
+
+header .bathroom-content.active {
+    display: block;
+}
+
+header .bathroom-content .card {
+    border: none;
+    text-align: center;
+}
+
+header .bathroom-content img {
+    max-height: 120px;
+    /* Reduced image height */
+    border-radius: 8px;
+    transition: transform 0.3s;
+    width: 100%;
+    object-fit: cover;
+}
+
+header .bathroom-content img:hover {
+    transform: scale(1.05);
+}
+
+header .bathroom-content p {
+    margin-top: 8px;
+    /* Reduced margin */
+    font-weight: 600;
+    font-size: 13px;
+    /* Reduced font size */
+    color: #111;
+    transition: color 0.3s ease;
+}
+
+header .bathroom-content p:hover {
+    color: #000;
+}
+
+header .custom_dropdown {
+    padding: 12px;
+    /* Reduced padding */
+}
+
+header .dropdown-menu .card {
+    transition: transform 0.3s ease;
+    border: none;
+}
+
+header .dropdown-menu .card:hover {
+    transform: translateY(-5px);
+}
+
+header .dropdown-menu p {
+    margin-top: 8px;
+    /* Reduced margin */
+    font-weight: 600;
+    font-size: 13px;
+    /* Reduced font size */
+    color: #111;
+    transition: color 0.3s ease;
+}
+
+/* ------------------- Search Bar ------------------- */
+header #searchBar {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 35vh;
+    /* Reduced height */
+    background: #fff;
+    padding: 30px 12px;
+    /* Reduced padding */
+    text-align: center;
+    transition: top 0.4s ease;
+    z-index: 4000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+header #searchBar.active {
+    top: 0;
+}
+
+header #searchBar h2 {
+    font-size: 22px;
+    /* Reduced font size */
+    font-weight: 600;
+    margin-bottom: 20px;
+    /* Reduced margin */
+}
+
+header #searchBar input {
+    width: 80%;
+    max-width: 450px;
+    /* Reduced max-width */
+    padding: 8px 12px;
+    /* Reduced padding */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 13px;
+    /* Reduced font size */
+}
+
+header #searchBar .quick-search {
+    margin-top: 12px;
+    /* Reduced margin */
+    color: #555;
+}
+
+header #searchBar .quick-search span {
+    font-weight: 600;
+    font-size: 13px;
+    /* Reduced font size */
+}
+
+header #searchBar .quick-search a {
+    margin: 0 5px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 13px;
+    /* Reduced font size */
+}
+
+header #searchBar .close-btn {
+    position: absolute;
+    top: 12px;
+    /* Adjusted position */
+    right: 15px;
+    font-size: 18px;
+    /* Reduced font size */
+    cursor: pointer;
+}
+
+/* ------------------- Mobile Sidebar ------------------- */
+header #sidebar,
+header #kitchenSidebar,
+header #bathroomSidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 3200;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    overflow-y: auto;
+}
+
+header #sidebar.active,
+header #kitchenSidebar.active,
+header #bathroomSidebar.active {
+    left: 0;
+}
+
+header #sidebar .sidebar-header,
+header #kitchenSidebar .sidebar-header,
+header #bathroomSidebar .sidebar-header {
+    background: #fff;
+    padding: 12px;
+    /* Reduced padding */
+    border-bottom: 1px solid #e5e5e5;
+}
+
+header #sidebar h4,
+header #kitchenSidebar h4,
+header #bathroomSidebar h4 {
+    font-weight: 700;
+    margin-bottom: 0;
+    color: #000;
+    font-size: 20px;
+    /* Reduced font size */
+}
+
+header #sidebar .close-sidebar,
+header #kitchenSidebar .close-sidebar,
+header #bathroomSidebar .close-sidebar {
+    color: #000;
+    font-size: 20px;
+    /* Reduced font size */
+    cursor: pointer;
+}
+
+header #sidebar a {
+    display: block;
+    padding: 10px 12px;
+    /* Reduced padding */
+    font-weight: 500;
+    text-decoration: none;
+    color: #000;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-right: 25px;
+    font-size: 20px;
+    /* Reduced font size */
+}
+
+header #sidebar a:hover {
+    background: #f5f5f5;
+    color: #000;
+}
+
+header #sidebar .mobile-dropdown>a .fa-chevron-right {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+header #sidebar hr {
+    border-color: #e5e5e5;
+    margin: 6px 0;
+    /* Reduced margin */
+}
+
+/* ------------------- Bathroom Sidebar Categories ------------------- */
+header .bathroom-sidebar-category {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+header .bathroom-sidebar-category>a {
+    display: block;
+    padding: 10px 12px;
+    /* Reduced padding */
+    color: #000;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding-right: 25px;
+    transition: all 0.3s ease;
+    font-size: 13px;
+    /* Reduced font size */
+}
+
+header .bathroom-sidebar-category>a:hover {
+    background: #f9f9f9;
+}
+
+header .bathroom-sidebar-category .dropdown-arrow {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+header .bathroom-sidebar-category.active>a .dropdown-arrow {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+header .bathroom-cards-content {
+    display: none;
+    background: #f9f9f9;
+    padding: 12px;
+    /* Reduced padding */
+}
+
+header .bathroom-cards-content.active {
+    display: block;
+}
+
+header .bathroom-cards-content .card {
+    background: transparent;
+    border: none;
+    margin-bottom: 10px;
+    /* Reduced margin */
+}
+
+header .bathroom-cards-content img {
+    width: 100%;
+    max-height: 100px;
+    /* Reduced image height */
+    border-radius: 8px;
+    margin-bottom: 6px;
+    /* Reduced margin */
+    object-fit: cover;
+}
+
+header .bathroom-cards-content p {
+    color: #000;
+    font-weight: 600;
+    font-size: 12px;
+    /* Reduced font size */
+    text-align: center;
+    margin: 0;
+}
+
+/* ------------------- Responsive Breakpoints ------------------- */
+
+/* Below 1024px (Mobile/Tablet Layout) */
+@media (max-width: 1023px) {
+    header .navbar .container-fluid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        position: relative;
+    }
+
+    header .navbar {
+        padding: 0 6px;
+        height: 80px;
+        /* Further reduced for mobile */
+    }
+
+    header .navbar-brand {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    header .navbar-brand img {
+        height: 70px;
+    }
+
+    header .mobile-toggle {
+        position: relative;
+        z-index: 3500;
+        font-size: 1.2rem;
+        /* Reduced font size */
+        padding: 0;
+    }
+
+    header .icons {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 3500;
+    }
+
+    header .desktop-menu {
+        display: none !important;
+    }
+
+    header .icons .fa-heart,
+    header .icons .fa-user {
+        display: none !important;
+    }
+
+    /* Sidebar remains full-width */
+    header #sidebar,
+    header #kitchenSidebar,
+    header #bathroomSidebar {
+        width: 100%;
+    }
+
+    header #sidebar .sidebar-header,
+    header #kitchenSidebar .sidebar-header,
+    header #bathroomSidebar .sidebar-header {
+        padding: 10px;
+        /* Reduced padding */
+    }
+
+    header #sidebar h4,
+    header #kitchenSidebar h4,
+    header #bathroomSidebar h4 {
+        font-size: 14px;
+        /* Reduced font size */
+    }
+
+    header #sidebar .close-sidebar,
+    header #kitchenSidebar .close-sidebar,
+    header #bathroomSidebar .close-sidebar {
+        font-size: 14px;
+        /* Reduced font size */
+    }
+
+    header #sidebar a,
+    header .bathroom-sidebar-category>a {
+        padding: 8px 10px;
+        /* Reduced padding */
+        font-size: 12px;
+        /* Reduced font size */
+    }
+
+    header .bathroom-cards-content {
+        padding: 10px;
+        /* Reduced padding */
+    }
+
+    header .bathroom-cards-content img {
+        max-height: 90px;
+        /* Reduced image height */
+    }
+
+    header .bathroom-cards-content p {
+        font-size: 11px;
+        /* Reduced font size */
+    }
+
+    header #searchBar {
+        height: 30vh;
+        /* Reduced height */
+        padding: 20px 8px;
+        /* Reduced padding */
+    }
+
+    header #searchBar h2 {
+        font-size: 18px;
+        /* Reduced font size */
+        margin-bottom: 12px;
+    }
+
+    header #searchBar input {
+        width: 90%;
+        padding: 7px 8px;
+        /* Reduced padding */
+        font-size: 11px;
+        /* Reduced font size */
+    }
+
+    header #searchBar .quick-search {
+        margin-top: 10px;
+    }
+
+    header #searchBar .quick-search span,
+    header #searchBar .quick-search a {
+        font-size: 11px;
+        /* Reduced font size */
+    }
+
+    header #searchBar .close-btn {
+        top: 10px;
+        right: 12px;
+        font-size: 16px;
+        /* Reduced font size */
+    }
+}
+
+/* 425px (Mobile) */
+@media (max-width: 425px) {
+    header .navbar {
+        height: 70px;
+        /* Further reduced */
+        padding: 0 5px;
+    }
+
+    header .navbar-brand img {
+        height: 70px;
+    }
+
+    header .mobile-toggle {
+        font-size: 1.1rem;
+        /* Reduced font size */
+    }
+
+    header .icons i {
+        font-size: 14px;
+        /* Reduced icon size */
+        margin-left: 15px;
+    }
+
+    /* Sidebar remains full-width */
+    header #sidebar,
+    header #kitchenSidebar,
+    header #bathroomSidebar {
+        width: 100%;
+    }
+
+    header #sidebar .sidebar-header,
+    header #kitchenSidebar .sidebar-header,
+    header #bathroomSidebar .sidebar-header {
+        padding: 8px;
+        /* Reduced padding */
+    }
+
+    header #sidebar h4,
+    header #kitchenSidebar h4,
+    header #bathroomSidebar h4 {
+        font-size: 20px;
+        /* Reduced font size */
+    }
+
+    header #sidebar .close-sidebar,
+    header #kitchenSidebar .close-sidebar,
+    header #bathroomSidebar .close-sidebar {
+        font-size: 18px;
+        /* Reduced font size */
+    }
+
+    header #sidebar a,
+    header .bathroom-sidebar-category>a {
+        padding: 7px 8px;
+        /* Reduced padding */
+        font-size: 16px;
+        /* Reduced font size */
+    }
+
+    header .bathroom-cards-content {
+        padding: 8px;
+        /* Reduced padding */
+    }
+
+    header .bathroom-cards-content img {
+        max-height: 80px;
+        /* Reduced image height */
+    }
+
+    header .bathroom-cards-content p {
+        font-size: 10px;
+        /* Reduced font size */
+    }
+
+    header #searchBar {
+        height: 25vh;
+        padding: 15px 6px;
+        /* Reduced padding */
+    }
+
+    header #searchBar h2 {
+        font-size: 16px;
+        /* Reduced font size */
+        margin-bottom: 10px;
+    }
+
+    header #searchBar input {
+        width: 95%;
+        padding: 6px 7px;
+        /* Reduced padding */
+        font-size: 10px;
+        /* Reduced font size */
+    }
+
+    header #searchBar .quick-search {
+        margin-top: 8px;
+    }
+
+    header #searchBar .quick-search span,
+    header #searchBar .quick-search a {
+        font-size: 10px;
+        /* Reduced font size */
+    }
+
+    header #searchBar .close-btn {
+        top: 8px;
+        right: 10px;
+        font-size: 14px;
+        /* Reduced font size */
+    }
+}
+
+/* Ensure desktop-specific styles apply at 1024px and above */
+@media (min-width: 1024px) {
+    header .mobile-toggle {
+        display: none;
+    }
+
+    header #sidebar,
+    header #kitchenSidebar,
+    header #bathroomSidebar {
+        display: none;
+    }
+}
+
+/* ====== Header section end ======  */
+
+
+/* ====== Banner section start ====== */
+
+.image-swiper {
+    width: 100%;
+    height: 100vh;
+    /* Desktop / large screen ke liye */
+}
+
+.image-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Mobile screens ke liye */
+@media (max-width: 768px) {
+    .image-swiper {
+        height: 60vh;
+        /* Mobile par kam height */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-swiper {
+        height: 50vh;
+        /* Chhote mobile screens par aur kam height */
+    }
+}
+
+
+/* ====== Banner section end ====== */
+
+
+/* ====== Shop by category section start ======  */
+
+.shop_by_section {
+    margin-top: 50px;
+    padding: 20px 20px 0 20px;
+}
+
+.shop_by_section .section-title {
+
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: left;
+    /* चाहो तो center भी कर सकते हो */
+}
+
+/* Cards container */
+.shop_by_section .shop-by-space {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Desktop = 4 cards in one row */
+    gap: 16px;
+}
+
+/* Card design */
+.shop_by_section .card {
+    position: relative;
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.shop_by_section .card:hover {
+    transform: translateY(-5px);
+}
+
+.shop_by_section .card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Overlay heading on image */
+.shop_by_section .card h3 {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Responsive (mobile) */
+@media (max-width: 768px) {
+    .shop_by_section .shop-by-space {
+        grid-template-columns: repeat(2, 1fr);
+        /* Mobile = 2 cards per row */
+    }
+
+    .shop_by_section .card img {
+        height: 180px;
+    }
+
+    .shop_by_section .card h3 {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 425px) {
+    .shop_by_section {
+        margin-top: 30px;
+    }
+}
+
+/* ====== Shop by category section end ======  */
+
+
+/* ====== Parallax effect section start ======= */
+
+.parallax {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+
+    /* Background parallax magic */
+    background-image: url("./Assets/parallax_img.avif");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* 👈 yahi parallax effect hai */
+}
+
+/* Overlay */
+.parallax::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+/* Text */
+.parallax-content {
+    position: relative;
+    color: #fff;
+    z-index: 1;
+}
+
+.parallax-content h1 {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.parallax-content p {
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .parallax-content h1 {
+        font-size: 3.5rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .parallax {
+        height: 50vh;
+        background-attachment: scroll;
+        /* mobile optimization */
+    }
+
+    .parallax-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .parallax-content p {
+        font-size: 1rem;
+    }
+}
+
+/* ====== Parallax effect section end ======= */
+
+
+/* ======= products Section start ====== */
+.featured-products {
+    margin-top: 50px;
+}
+
+.featured-products .product-card {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    transition: transform 0.3s ease;
+    padding-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.featured-products .product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Image hover effect */
+.featured-products .product-image {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+}
+
+.featured-products .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.featured-products .product-image img.hover-img {
+    opacity: 0;
+}
+
+.featured-products .product-card:hover .product-image img.hover-img {
+    opacity: 1;
+}
+
+.featured-products .product-card:hover .product-image img.main-img {
+    opacity: 0;
+}
+
+/* Discount Badge */
+.featured-products .discount-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #d9534f;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 6px;
+    z-index: 10;
+}
+
+/* Hover Icons */
+.featured-products .hover-icons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(30px);
+    display: flex;
+    gap: 15px;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+    opacity: 0;
+    z-index: 11;
+    background-color: #fff;
+}
+
+.featured-products .product-card:hover .hover-icons {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.featured-products .hover-icons button {
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    color: #000;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.featured-products .hover-icons button:hover {
+    color: #d9534f;
+}
+
+/* Tooltip */
+.featured-products .hover-icons button::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #000;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.featured-products .hover-icons button:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Product Info */
+.featured-products .product-info {
+    padding: 12px;
+    text-align: center;
+}
+
+.featured-products .product-info h6 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.featured-products .product-info .price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+}
+
+.featured-products .product-info .old-price {
+    font-size: 14px;
+    color: #888;
+    text-decoration: line-through;
+    margin-left: 6px;
+}
+
+/* Mobile Fix */
+@media (max-width: 576px) {
+    .featured-products .swiper-wrapper {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .featured-products .swiper-slide {
+        width: 100% !important;
+    }
+
+    .featured-products .product-image {
+        height: 200px;   /* smaller height for mobile */
+    }
+
+    .featured-products .product-info h6 {
+        font-size: 12px;
+    }
+
+    .featured-products .product-info .price {
+        font-size: 14px;
+    }
+
+    .featured-products .product-info .old-price {
+        font-size: 12px;
+    }
+}
+
+/* ======= products Section end ====== */
+
+
+
+/* ====== Footer section start ====== */
+
+footer {
+    background: #000;
+    color: #fff;
+    padding: 40px 20px 20px;
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* Logo section */
+.footer-logo img {
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+.footer-logo p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* Social Icons */
+/* Social Icons */
+.social-icons {
+    margin-top: 15px;
+    display: flex;
+    gap: 12px;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #111;
+    /* black circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #fff;
+    /* white logo */
+    text-decoration: none;
+    /* underline hatane ke liye */
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.social-icons a:hover {
+    background: #fff;
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Links Section */
+.footer-links,
+.footer-contact {
+    min-height: 220px;
+    /* sab same height */
+}
+
+.footer-links h3,
+.footer-contact h3 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #ccc;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #fff;
+}
+
+/* Contact */
+.footer-contact p {
+    font-size: 14px;
+    margin: 8px 0;
+    color: #ccc;
+}
+
+.footer-contact a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    color: #fff;
+}
+
+/* Bottom */
+.footer-bottom {
+    border-top: 1px solid #333;
+    margin-top: 30px;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-logo img {
+        margin: auto;
+    }
+
+    .social-icons {
+        justify-content: center;
+        display: flex;
+    }
+
+    .footer-links,
+    .footer-contact {
+        min-height: auto;
+        /* mobile pe height fix na ho */
+    }
+}
+
+
+/* ====== Footer section end ====== */
