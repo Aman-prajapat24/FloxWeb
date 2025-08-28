@@ -63,7 +63,7 @@ header .nav-link:hover::after {
 
 /* Right Icons */
 header .icons i {
-    font-size: 18px;
+    font-size: 22px;
     /* Reduced icon size */
     margin-left: 20px;
     /* Reduced margin */
@@ -198,7 +198,7 @@ header .bathroom-content .card {
 }
 
 header .bathroom-content img {
-    max-height: 120px;
+    max-height: 170px;
     /* Reduced image height */
     border-radius: 8px;
     transition: transform 0.3s;
@@ -639,7 +639,7 @@ header .bathroom-cards-content p {
     }
 
     header .icons i {
-        font-size: 14px;
+        font-size: 18px;
         /* Reduced icon size */
         margin-left: 15px;
     }
@@ -674,7 +674,7 @@ header .bathroom-cards-content p {
 
     header #sidebar a,
     header .bathroom-sidebar-category>a {
-        padding: 7px 8px;
+        padding: 14px 8px;
         /* Reduced padding */
         font-size: 16px;
         /* Reduced font size */
@@ -686,12 +686,12 @@ header .bathroom-cards-content p {
     }
 
     header .bathroom-cards-content img {
-        max-height: 80px;
+        max-height: 130px;
         /* Reduced image height */
     }
 
     header .bathroom-cards-content p {
-        font-size: 10px;
+        font-size: 14px;
         /* Reduced font size */
     }
 
@@ -945,6 +945,7 @@ header .bathroom-cards-content p {
 
 
 /* ======= products Section start ====== */
+
 .featured-products {
     margin-top: 50px;
 }
@@ -1097,11 +1098,12 @@ header .bathroom-cards-content p {
 }
 
 /* Mobile Fix */
+/* Mobile Fix (576px and below) */
 @media (max-width: 576px) {
     .featured-products .swiper-wrapper {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+        gap: 8px;   /* thoda chhota gap taaki space bache */
     }
 
     .featured-products .swiper-slide {
@@ -1109,21 +1111,32 @@ header .bathroom-cards-content p {
     }
 
     .featured-products .product-image {
-        height: 200px;   /* smaller height for mobile */
+        height: 150px;   /* chhoti height taaki 320px par fit ho */
+    }
+
+    .featured-products .product-info {
+        padding: 6px;
     }
 
     .featured-products .product-info h6 {
-        font-size: 12px;
+        font-size: 10px;   /* chhota text taaki cut na ho */
     }
 
     .featured-products .product-info .price {
-        font-size: 14px;
+        font-size: 11px;
     }
 
     .featured-products .product-info .old-price {
-        font-size: 12px;
+        font-size: 10px;
+    }
+
+    /* ✅ Heading center on mobile */
+    .featured-products h2 {
+        text-align: center !important;
+        font-size: 18px; /* thoda chhota takki neat lage */
     }
 }
+
 
 /* ======= products Section end ====== */
 
