@@ -1,7 +1,6 @@
 
 //  ====== Header section start ====== 
 
-// ----------------- SIDEBAR TOGGLE -----------------
 function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");
   sidebar.classList.toggle("active");
@@ -213,13 +212,18 @@ window.onbeforeunload = () => {
 
 var imageSwiper = new Swiper(".image-swiper", {
   loop: true,
-  effect: "fade", // "slide", "cube", "coverflow", "flip" bhi try kar sakte ho
+  effect: "fade",
   speed: 1200,
   autoplay: {
     delay: 3500,
     disableOnInteraction: false,
   },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true, // dots click karne par slide change hoga
+  },
 });
+
 
 //   ====== Banner section end ====== 
 
