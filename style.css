@@ -1386,7 +1386,18 @@ header .bathroom-cards-content p {
     
   .tab-buttons .tab-btn {
     padding: 5px 12px; /* smaller buttons */
-    font-size: 12px;
+    font-size: 10px;
+  }
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+     gap: 10px;
+  }
+}
+@media (max-width: 320px) {
+    
+  .tab-buttons .tab-btn {
+    padding: 5px 12px; /* smaller buttons */
+    font-size: 8px;
   }
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1519,6 +1530,7 @@ footer {
 .footer-bottom {
     border-top: 1px solid #333;
     margin-top: 30px;
+    margin-bottom: 60px;
     padding-top: 15px;
     text-align: center;
     font-size: 13px;
