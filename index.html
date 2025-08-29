@@ -35,7 +35,7 @@
 
                 <!-- Center Menu (Desktop) -->
                 <div class="collapse navbar-collapse desktop-menu">
-                    <ul class="navbar-nav mx-auto">
+                    <ul class="navbar-nav ms-auto">
                         <!-- Bathroom Dropdown -->
                         <li class="nav-item dropdown position-static">
                             <a class="nav-link" href="#">Bathroom <i
@@ -349,13 +349,26 @@
 
                 <!-- Right Icons -->
                 <div class="icons d-flex align-items-center">
-                    <i class="fas fa-search" onclick="toggleSearch()"></i>
-                    <i class="fas fa-shopping-bag bag_icon"></i>
-                    <i class="far fa-heart"></i>
-                    <i class="fas fa-user"></i>
-                    <i class="fa-solid fa-headset bag_icon"></i>
-                    <i class="fa-regular fa-circle-down bag_icon"></i>
+                    <div class="icon" data-tooltip="Search">
+                        <i class="fas fa-search" onclick="toggleSearch()"></i>
+                    </div>
+                    <div class="icon" data-tooltip="Bag">
+                        <i class="fas fa-shopping-bag bag_icon"></i>
+                    </div>
+                    <div class="icon" data-tooltip="Wishlist">
+                        <i class="far fa-heart"></i>
+                    </div>
+                    <div class="icon" data-tooltip="Profile">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="icon" data-tooltip="Support">
+                        <i class="fa-solid fa-headset bag_icon"></i>
+                    </div>
+                    <div class="icon" data-tooltip="Download">
+                        <i class="fa-regular fa-circle-down bag_icon"></i>
+                    </div>
                 </div>
+
             </div>
         </nav>
 
@@ -1457,358 +1470,358 @@
 
 
 
-  <!-- ======  Shop by color section start ====== -->
+    <!-- ======  Shop by color section start ====== -->
 
-<section class="shop-by-color">
-  <div class="container-fluid">
-    <h2>Shop by Color</h2>
+    <section class="shop-by-color">
+        <div class="container-fluid">
+            <h2>Shop by Color</h2>
 
-  <!-- Tab Buttons -->
-  <div class="tab-buttons">
-    <button class="tab-btn active" data-tab="black">BLACK</button>
-    <button class="tab-btn" data-tab="gold">GOLD</button>
-    <button class="tab-btn" data-tab="rosegold">ROSE GOLD</button>
-    <button class="tab-btn" data-tab="chrome">CHROME</button>
-  </div>
+            <!-- Tab Buttons -->
+            <div class="tab-buttons">
+                <button class="tab-btn active" data-tab="black">BLACK</button>
+                <button class="tab-btn" data-tab="gold">GOLD</button>
+                <button class="tab-btn" data-tab="rosegold">ROSE GOLD</button>
+                <button class="tab-btn" data-tab="chrome">CHROME</button>
+            </div>
 
-  <!-- Tab Content -->
-  <div class="tab-content active" id="black">
-    <div class="products-grid">
-      <!-- Product Card -->
-      <div class="product-card">
-        <div class="product-image">
-          <span class="discount-badge">-38%</span>
-          <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-          <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-          <div class="hover-icons">
-            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h6>Wall-Mounted Foldable Shower Seat</h6>
-          <span class="price">Rs. 6,560.00</span>
-          <span class="old-price">Rs. 10,570.00</span>
-        </div>
-      </div>
+            <!-- Tab Content -->
+            <div class="tab-content active" id="black">
+                <div class="products-grid">
+                    <!-- Product Card -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="discount-badge">-38%</span>
+                            <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                            <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+                            <div class="hover-icons">
+                                <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                                <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6>Wall-Mounted Foldable Shower Seat</h6>
+                            <span class="price">Rs. 6,560.00</span>
+                            <span class="old-price">Rs. 10,570.00</span>
+                        </div>
+                    </div>
 
-      <div class="product-card">
-        <div class="product-image">
-          <span class="discount-badge">-38%</span>
-          <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-          <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-          <div class="hover-icons">
-            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h6>Wall-Mounted Foldable Shower Seat</h6>
-          <span class="price">Rs. 6,560.00</span>
-          <span class="old-price">Rs. 10,570.00</span>
-        </div>
-      </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="discount-badge">-38%</span>
+                            <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                            <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+                            <div class="hover-icons">
+                                <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                                <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6>Wall-Mounted Foldable Shower Seat</h6>
+                            <span class="price">Rs. 6,560.00</span>
+                            <span class="old-price">Rs. 10,570.00</span>
+                        </div>
+                    </div>
 
-      <div class="product-card">
-        <div class="product-image">
-          <span class="discount-badge">-38%</span>
-          <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-          <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-          <div class="hover-icons">
-            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h6>Wall-Mounted Foldable Shower Seat</h6>
-          <span class="price">Rs. 6,560.00</span>
-          <span class="old-price">Rs. 10,570.00</span>
-        </div>
-      </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="discount-badge">-38%</span>
+                            <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                            <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+                            <div class="hover-icons">
+                                <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                                <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6>Wall-Mounted Foldable Shower Seat</h6>
+                            <span class="price">Rs. 6,560.00</span>
+                            <span class="old-price">Rs. 10,570.00</span>
+                        </div>
+                    </div>
 
-       <div class="product-card">
-        <div class="product-image">
-          <span class="discount-badge">-38%</span>
-          <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-          <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-          <div class="hover-icons">
-            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h6>Wall-Mounted Foldable Shower Seat</h6>
-          <span class="price">Rs. 6,560.00</span>
-          <span class="old-price">Rs. 10,570.00</span>
-        </div>
-      </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="discount-badge">-38%</span>
+                            <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                            <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+                            <div class="hover-icons">
+                                <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                                <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6>Wall-Mounted Foldable Shower Seat</h6>
+                            <span class="price">Rs. 6,560.00</span>
+                            <span class="old-price">Rs. 10,570.00</span>
+                        </div>
+                    </div>
 
-       <div class="product-card">
-        <div class="product-image">
-          <span class="discount-badge">-38%</span>
-          <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-          <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-          <div class="hover-icons">
-            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h6>Wall-Mounted Foldable Shower Seat</h6>
-          <span class="price">Rs. 6,560.00</span>
-          <span class="old-price">Rs. 10,570.00</span>
-        </div>
-      </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="discount-badge">-38%</span>
+                            <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                            <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+                            <div class="hover-icons">
+                                <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                                <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6>Wall-Mounted Foldable Shower Seat</h6>
+                            <span class="price">Rs. 6,560.00</span>
+                            <span class="old-price">Rs. 10,570.00</span>
+                        </div>
+                    </div>
 
-    </div>
-  </div>
+                </div>
+            </div>
 
-  <!-- GOLD Tab -->
-  <div class="tab-content" id="gold">
-    <div class="products-grid">
+            <!-- GOLD Tab -->
+            <div class="tab-content" id="gold">
+                <div class="products-grid">
 
-       <div class="product-card">
-        <div class="product-image">
-          <span class="discount-badge">-38%</span>
-          <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-          <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-          <div class="hover-icons">
-            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h6>Wall-Mounted Foldable Shower Seat</h6>
-          <span class="price">Rs. 6,560.00</span>
-          <span class="old-price">Rs. 10,570.00</span>
-        </div>
-      </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="discount-badge">-38%</span>
+                            <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                            <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+                            <div class="hover-icons">
+                                <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                                <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6>Wall-Mounted Foldable Shower Seat</h6>
+                            <span class="price">Rs. 6,560.00</span>
+                            <span class="old-price">Rs. 10,570.00</span>
+                        </div>
+                    </div>
 
-       <div class="product-card">
-        <div class="product-image">
-          <span class="discount-badge">-38%</span>
-          <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-          <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-          <div class="hover-icons">
-            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h6>Wall-Mounted Foldable Shower Seat</h6>
-          <span class="price">Rs. 6,560.00</span>
-          <span class="old-price">Rs. 10,570.00</span>
-        </div>
-      </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="discount-badge">-38%</span>
+                            <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                            <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+                            <div class="hover-icons">
+                                <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                                <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6>Wall-Mounted Foldable Shower Seat</h6>
+                            <span class="price">Rs. 6,560.00</span>
+                            <span class="old-price">Rs. 10,570.00</span>
+                        </div>
+                    </div>
 
-       <div class="product-card">
-        <div class="product-image">
-          <span class="discount-badge">-38%</span>
-          <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-          <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-          <div class="hover-icons">
-            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h6>Wall-Mounted Foldable Shower Seat</h6>
-          <span class="price">Rs. 6,560.00</span>
-          <span class="old-price">Rs. 10,570.00</span>
-        </div>
-      </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="discount-badge">-38%</span>
+                            <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                            <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+                            <div class="hover-icons">
+                                <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                                <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6>Wall-Mounted Foldable Shower Seat</h6>
+                            <span class="price">Rs. 6,560.00</span>
+                            <span class="old-price">Rs. 10,570.00</span>
+                        </div>
+                    </div>
 
-       <div class="product-card">
-        <div class="product-image">
-          <span class="discount-badge">-38%</span>
-          <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-          <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-          <div class="hover-icons">
-            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h6>Wall-Mounted Foldable Shower Seat</h6>
-          <span class="price">Rs. 6,560.00</span>
-          <span class="old-price">Rs. 10,570.00</span>
-        </div>
-      </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="discount-badge">-38%</span>
+                            <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                            <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+                            <div class="hover-icons">
+                                <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                                <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6>Wall-Mounted Foldable Shower Seat</h6>
+                            <span class="price">Rs. 6,560.00</span>
+                            <span class="old-price">Rs. 10,570.00</span>
+                        </div>
+                    </div>
 
-    </div>
-  </div>
+                </div>
+            </div>
 
-  <!-- ROSE GOLD Tab -->
-  <div class="tab-content" id="rosegold">
-    <div class="products-grid">
+            <!-- ROSE GOLD Tab -->
+            <div class="tab-content" id="rosegold">
+                <div class="products-grid">
 
-      <div class="product-card">
-        <div class="product-image">
-          <span class="discount-badge">-38%</span>
-          <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-          <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-          <div class="hover-icons">
-            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h6>Wall-Mounted Foldable Shower Seat</h6>
-          <span class="price">Rs. 6,560.00</span>
-          <span class="old-price">Rs. 10,570.00</span>
-        </div>
-      </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="discount-badge">-38%</span>
+                            <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                            <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+                            <div class="hover-icons">
+                                <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                                <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6>Wall-Mounted Foldable Shower Seat</h6>
+                            <span class="price">Rs. 6,560.00</span>
+                            <span class="old-price">Rs. 10,570.00</span>
+                        </div>
+                    </div>
 
-       <div class="product-card">
-        <div class="product-image">
-          <span class="discount-badge">-38%</span>
-          <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-          <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-          <div class="hover-icons">
-            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h6>Wall-Mounted Foldable Shower Seat</h6>
-          <span class="price">Rs. 6,560.00</span>
-          <span class="old-price">Rs. 10,570.00</span>
-        </div>
-      </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="discount-badge">-38%</span>
+                            <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                            <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+                            <div class="hover-icons">
+                                <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                                <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6>Wall-Mounted Foldable Shower Seat</h6>
+                            <span class="price">Rs. 6,560.00</span>
+                            <span class="old-price">Rs. 10,570.00</span>
+                        </div>
+                    </div>
 
-       <div class="product-card">
-        <div class="product-image">
-          <span class="discount-badge">-38%</span>
-          <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-          <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-          <div class="hover-icons">
-            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h6>Wall-Mounted Foldable Shower Seat</h6>
-          <span class="price">Rs. 6,560.00</span>
-          <span class="old-price">Rs. 10,570.00</span>
-        </div>
-      </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="discount-badge">-38%</span>
+                            <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                            <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+                            <div class="hover-icons">
+                                <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                                <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6>Wall-Mounted Foldable Shower Seat</h6>
+                            <span class="price">Rs. 6,560.00</span>
+                            <span class="old-price">Rs. 10,570.00</span>
+                        </div>
+                    </div>
 
-       <div class="product-card">
-        <div class="product-image">
-          <span class="discount-badge">-38%</span>
-          <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-          <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-          <div class="hover-icons">
-            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h6>Wall-Mounted Foldable Shower Seat</h6>
-          <span class="price">Rs. 6,560.00</span>
-          <span class="old-price">Rs. 10,570.00</span>
-        </div>
-      </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="discount-badge">-38%</span>
+                            <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                            <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+                            <div class="hover-icons">
+                                <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                                <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6>Wall-Mounted Foldable Shower Seat</h6>
+                            <span class="price">Rs. 6,560.00</span>
+                            <span class="old-price">Rs. 10,570.00</span>
+                        </div>
+                    </div>
 
-       <div class="product-card">
-        <div class="product-image">
-          <span class="discount-badge">-38%</span>
-          <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-          <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-          <div class="hover-icons">
-            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h6>Wall-Mounted Foldable Shower Seat</h6>
-          <span class="price">Rs. 6,560.00</span>
-          <span class="old-price">Rs. 10,570.00</span>
-        </div>
-      </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="discount-badge">-38%</span>
+                            <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                            <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+                            <div class="hover-icons">
+                                <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                                <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6>Wall-Mounted Foldable Shower Seat</h6>
+                            <span class="price">Rs. 6,560.00</span>
+                            <span class="old-price">Rs. 10,570.00</span>
+                        </div>
+                    </div>
 
-    </div>
-  </div>
+                </div>
+            </div>
 
-  <!-- CHROME Tab -->
-  <div class="tab-content" id="chrome">
-    <div class="products-grid">
-      
-         <div class="product-card">
-        <div class="product-image">
-          <span class="discount-badge">-38%</span>
-          <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-          <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-          <div class="hover-icons">
-            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h6>Wall-Mounted Foldable Shower Seat</h6>
-          <span class="price">Rs. 6,560.00</span>
-          <span class="old-price">Rs. 10,570.00</span>
-        </div>
-      </div>
+            <!-- CHROME Tab -->
+            <div class="tab-content" id="chrome">
+                <div class="products-grid">
 
-      <div class="product-card">
-        <div class="product-image">
-          <span class="discount-badge">-38%</span>
-          <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-          <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-          <div class="hover-icons">
-            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h6>Wall-Mounted Foldable Shower Seat</h6>
-          <span class="price">Rs. 6,560.00</span>
-          <span class="old-price">Rs. 10,570.00</span>
-        </div>
-      </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="discount-badge">-38%</span>
+                            <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                            <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+                            <div class="hover-icons">
+                                <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                                <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6>Wall-Mounted Foldable Shower Seat</h6>
+                            <span class="price">Rs. 6,560.00</span>
+                            <span class="old-price">Rs. 10,570.00</span>
+                        </div>
+                    </div>
 
-       <div class="product-card">
-        <div class="product-image">
-          <span class="discount-badge">-38%</span>
-          <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-          <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-          <div class="hover-icons">
-            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-          </div>
-        </div>
-        <div class="product-info">
-          <h6>Wall-Mounted Foldable Shower Seat</h6>
-          <span class="price">Rs. 6,560.00</span>
-          <span class="old-price">Rs. 10,570.00</span>
-        </div>
-      </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="discount-badge">-38%</span>
+                            <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                            <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+                            <div class="hover-icons">
+                                <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                                <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6>Wall-Mounted Foldable Shower Seat</h6>
+                            <span class="price">Rs. 6,560.00</span>
+                            <span class="old-price">Rs. 10,570.00</span>
+                        </div>
+                    </div>
 
-       <div class="product-card">
-        <div class="product-image">
-          <span class="discount-badge">-38%</span>
-          <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-          <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-          <div class="hover-icons">
-            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-          </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="discount-badge">-38%</span>
+                            <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                            <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+                            <div class="hover-icons">
+                                <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                                <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6>Wall-Mounted Foldable Shower Seat</h6>
+                            <span class="price">Rs. 6,560.00</span>
+                            <span class="old-price">Rs. 10,570.00</span>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="discount-badge">-38%</span>
+                            <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                            <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+                            <div class="hover-icons">
+                                <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                                <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h6>Wall-Mounted Foldable Shower Seat</h6>
+                            <span class="price">Rs. 6,560.00</span>
+                            <span class="old-price">Rs. 10,570.00</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
-        <div class="product-info">
-          <h6>Wall-Mounted Foldable Shower Seat</h6>
-          <span class="price">Rs. 6,560.00</span>
-          <span class="old-price">Rs. 10,570.00</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-  </div>
-</section>
+    </section>
 
 
-  <!-- ======  Shop by color section end ====== -->
+    <!-- ======  Shop by color section end ====== -->
 
 
 
