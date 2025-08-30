@@ -1,141 +1,167 @@
 body {
     margin: 0;
-    font-family: 'Inter', 'sans-serif';
+    font-family: 'Poppins', sans-serif;
 }
 
 :root {
     --primary-color: #7aa0ba;
-    --secondary-color: #fff;
+    --secondary-color: #253036;
+    --accent-color: #49687c;
     --white-color: #333;
     --black-color: 13px;
 }
 
+a {
+    color: inherit;
+    /* parent ka color lega */
+    text-decoration: none;
+    /* underline hat jayegi */
+    cursor: pointer;
+    /* pointer cursor rahega */
+}
+
+a:visited {
+    color: inherit;
+    /* visited par bhi same color */
+}
+
+a:hover {
+    color: inherit;
+    /* hover par bhi same */
+}
+
+a:active {
+    color: inherit;
+    /* click hone par bhi same */
+}
+
+
 /* ====== Header section start ======  */
 
-    header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 3000;
-        background: #fff;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    }
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3000;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
 
-    header .navbar {
-        background: #fff;
-        padding: 0 8px;
-        /* Reduced padding */
-        border-bottom: 1px solid #e5e5e5;
-        height: 80px;
-        /* Reduced height from 80px */
-        display: flex;
-        align-items: center;
-    }
+header .navbar {
+    background: #fff;
+    padding: 0 8px;
+    /* Reduced padding */
+    border-bottom: 1px solid #e5e5e5;
+    height: 80px;
+    /* Reduced height from 80px */
+    display: flex;
+    align-items: center;
+}
 
-    header .navbar-brand img {
-        height: 80px;
-        /* Reduced logo height */
-    }
+header .navbar-brand img {
+    height: 80px;
+    /* Reduced logo height */
+}
 
-    /* Nav links */
-    header .nav-link {
-        font-weight: 600;
-        margin: 0 9px;
-        /* Reduced margin */
-        position: relative;
-        padding-bottom: 4px;
-        font-size: 14px;
-        text-transform: uppercase;
-        height: 80px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* Reduced font size */
-    }
+/* Nav links */
+header .nav-link {
+    font-weight: 600;
+    margin: 0 9px;
+    /* Reduced margin */
+    position: relative;
+    padding-bottom: 4px;
+    font-size: 14px;
+    text-transform: uppercase;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Reduced font size */
+}
 
-    /* Premium underline animation */
-    header .nav-link::after {
-        content: "";
-        position: absolute;
-        bottom: 25px;
-        left: 50%;
-        width: 0;
-        height: 2px;
-        background: #000;
-        transition: all 0.35s ease;
-        transform: translateX(-50%);
-        border-radius: 3px;
-    }
+/* Premium underline animation */
+header .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: all 0.35s ease;
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
 
-    header .nav-link:hover::after {
-        width: 80%;
-    }
+header .nav-link:hover::after {
+    width: 80%;
+}
 
 
 
-    /* Right Icons */
-    .icon {
-        position: relative;
-        display: inline-block;
-    }
+/* Right Icons */
+.icon {
+    position: relative;
+    display: inline-block;
+}
 
-    /* Right Icons */
-    header .icons .icon i {
-        font-size: 22px;
-        margin-left: 20px;
-        cursor: pointer;
-        color: #000;
-    }
+/* Right Icons */
+header .icons .icon i {
+    font-size: 22px;
+    margin-left: 20px;
+    cursor: pointer;
+    color: #000;
+}
 
-    /* Tooltip */
-    .icon::after {
-        content: attr(data-tooltip);
-        position: absolute;
-        top: 40px;
-        /* icon ke niche tooltip */
-        left: 50%;
-        transform: translateX(-50%) translateY(10px);
-        background: #000;
-        color: #fff;
-        font-size: 10px;
-        padding: 5px 12px;
-        border-radius: 6px;
-        white-space: nowrap;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        z-index: 10;
-    }
+/* Tooltip */
+.icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 40px;
+    /* icon ke niche tooltip */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #000;
+    color: #fff;
+    font-size: 10px;
+    padding: 5px 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+}
 
-    /* Ulta arrow (upar ki taraf point karega) */
-    .icon::before {
-        content: "";
-        position: absolute;
-        top: 34px;
-        /* tooltip ke just upar */
-        left: 50%;
-        transform: translateX(-50%) translateY(10px);
-        width: 0;
-        height: 0;
-        border-left: 6px solid transparent;
-        border-right: 6px solid transparent;
-        border-bottom: 6px solid #000;
-        /* Ulta arrow */
-        opacity: 0;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
+/* Ulta arrow (upar ki taraf point karega) */
+.icon::before {
+    content: "";
+    position: absolute;
+    top: 34px;
+    /* tooltip ke just upar */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #000;
+    /* Ulta arrow */
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
 
-    /* Hover effect */
-    .icon:hover::after {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
+/* Hover effect */
+.icon:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
 
-    .icon:hover::before {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
+.icon:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
 
 
 
@@ -427,8 +453,8 @@ header #searchBar .quick-search span {
 }
 
 header #searchBar .recent-item {
-    background: #f1f1f1;
-    padding: 4px 8px;
+    background: transparent;
+
     border-radius: 6px;
     display: flex;
     align-items: center;
@@ -1004,7 +1030,8 @@ header .bathroom-cards-content p {
     font-weight: 600;
     margin-bottom: 30px;
     text-align: left;
-    /* चाहो तो center भी कर सकते हो */
+    font-family: 'Lora', serif;
+    color: var(--accent-color);
 }
 
 /* Cards container */
@@ -1115,6 +1142,7 @@ header .bathroom-cards-content p {
     position: relative;
     color: #fff;
     z-index: 1;
+    font-family: 'Lora', serif;
 }
 
 .parallax-content h1 {
@@ -1164,6 +1192,8 @@ header .bathroom-cards-content p {
     text-transform: uppercase;
     font-weight: 600;
     margin-bottom: 30px;
+    font-family: 'Lora', serif;
+    color: var(--accent-color);
 }
 
 .product-card {
@@ -1406,6 +1436,8 @@ header .bathroom-cards-content p {
     font-weight: 600;
     text-align: start;
     margin-bottom: 20px;
+    font-family: 'Lora', serif;
+    color: var(--accent-color);
 }
 
 .tab-buttons {
@@ -1418,8 +1450,9 @@ header .bathroom-cards-content p {
 
 .tab-buttons .tab-btn {
     padding: 8px 20px;
-    border: 1px solid #000;
-    background: #fff;
+    border: 1px solid var(--accent-color);
+    background: var(--primary-color);
+    color: var(--secondary-color);
     cursor: pointer;
     font-weight: 600;
     border-radius: 6px;
@@ -1476,6 +1509,307 @@ header .bathroom-cards-content p {
 }
 
 /* ====== Shop by color section end ====== */
+
+
+/* ====== About page start ====== */
+
+.about-banner {
+    position: relative;
+    /* overlay ke liye zaroori */
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    /* white text for contrast */
+    text-align: center;
+    margin-top: 80px;
+    overflow: hidden;
+}
+
+.about-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.about-banner h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 3rem;
+}
+
+
+
+
+/* ====== About page end ====== */
+
+
+/* ====== Products details page start ====== */
+
+.product-section {
+    padding: 50px 20px;
+    background: #fff;
+}
+
+.product-section .product-container {
+    display: flex;
+    gap: 20px;
+    /* left & right ke bich ka gap kam kiya */
+    flex-wrap: wrap;
+    margin-top: 50px;
+    align-items: flex-start;
+}
+
+/* Left Gallery */
+.product-section .product-gallery {
+    display: flex;
+    gap: 12px;
+    /* thumbnails & main image ka gap */
+    flex: 1;
+    min-width: 300px;
+    position: sticky;
+    top: 100px;
+    /* sticky offset (navbar height ke hisab se adjust karna) */
+    align-self: flex-start;
+}
+
+.product-section .main-image {
+    flex: 1;
+    max-width: 550px;
+    /* chhota kiya */
+}
+
+.product-section .main-image img {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.product-section .thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.product-section .thumbnails img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.product-section .thumbnails img.active {
+    border-color: #d32f2f;
+}
+
+.product-section .thumbnails img:hover {
+    transform: scale(1.05);
+    border-color: #aaa;
+}
+
+/* Right Details */
+
+.product-section .product-details {
+    flex: 1;
+    min-width: 320px;
+}
+
+.product-section .product-details h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.product-section .price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #d32f2f;
+}
+
+.product-section .old-price {
+    text-decoration: line-through;
+    margin-left: 10px;
+    font-size: 15px;
+    color: #777;
+}
+
+.product-section .viewing {
+    color: #444;
+    margin: 6px 0;
+}
+
+.product-section .pincode-check {
+    margin: 10px 0;
+}
+
+.product-section .pincode-check input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.product-section .pincode-check button {
+    padding: 8px 15px;
+    border: none;
+    background: #000;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.product-section .stock {
+    color: red;
+    font-weight: bold;
+}
+
+.product-section .stock span {
+    color: #d32f2f;
+}
+
+.product-section .quantity {
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+    gap: 5px;
+}
+
+.product-section .quantity button {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.product-section .quantity input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ddd;
+    height: 35px;
+}
+
+.product-section .buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.product-section .btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.product-section .btn-cart {
+    background: #000;
+    color: #fff;
+}
+
+.product-section .btn-buy {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+}
+
+.product-section .extra-info {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    font-size: 14px;
+    color: #555;
+}
+
+.product-section .extra-info p {
+    margin: 6px 0;
+}
+
+.product-section .extra-info strong {
+    color: #000;
+}
+
+@media (max-width: 425px) {
+    .product-section .product-gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: static;
+        /* mobile me sticky hata diya */
+        top: auto;
+    }
+
+    .product-section .main-image {
+        order: 1;
+        /* pehle main image */
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 15px;
+    }
+
+    .product-section .main-image img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: contain;
+    }
+
+    .product-section .thumbnails {
+        order: 2;
+        /* fir thumbnails niche */
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .product-section .thumbnails img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .product-section .product-details h2 {
+        font-size: 20px;
+    }
+}
+
+
+
+.related_products {
+    padding: 0 20px;
+}
+.related_products .section-title {
+      text-align: center;
+      padding: 20px 10px;
+    }
+
+   .related_products .section-title h2 {
+      font-size: 28px;
+      margin: 0;
+    }
+
+   .related_products .section-title p {
+      color: #666;
+      font-size: 14px;
+    }
+
+
+
+    
+/* ====== Products details page end ====== */
+
+
+
 
 
 
@@ -1627,10 +1961,45 @@ footer {
         min-height: auto;
         /* mobile pe height fix na ho */
     }
+
     .footer-bottom {
- margin-bottom: 60px;   
+        margin-bottom: 60px;
     }
 }
 
-
 /* ====== Footer section end ====== */
+
+
+/* WhatsApp Floating Button  */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    /* desktop ke liye */
+    right: 20px;
+    background-color: #25d366;
+    color: #FFF !important;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 32px;
+    box-shadow: 2px 2px 5px #999;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+    background-color: #20b954;
+    transform: scale(1.1);
+}
+
+/* Mobile ke liye (max-width: 768px) */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 80px;
+        /* mobile par thoda upar ho jayega */
+    }
+}

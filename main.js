@@ -400,3 +400,32 @@ tabBtns.forEach(btn => {
 });
 
 //  ====== Shop by color section end ======
+
+
+// ====== Products details section start ======
+
+function changeImage(imgElement) {
+      // Change main image
+      document.getElementById("currentImage").src = imgElement.src;
+
+      // Remove active class from all thumbnails
+      let thumbnails = document.querySelectorAll(".thumbnails img");
+      thumbnails.forEach(img => img.classList.remove("active"));
+
+      // Add active class to clicked thumbnail
+      imgElement.classList.add("active");
+    }
+
+     function increaseQty() {
+    let qty = document.getElementById("quantityInput");
+    qty.value = parseInt(qty.value) + 1;
+  }
+
+  function decreaseQty() {
+    let qty = document.getElementById("quantityInput");
+    if (parseInt(qty.value) > 1) {
+      qty.value = parseInt(qty.value) - 1;
+    }
+  }
+
+  // ====== Products details section end ======

@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flox-Product_details</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom css link  -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ====== Header section start ====== -->
+
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <!-- Sidebar Toggle -->
+                <button class="btn mobile-toggle" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+
+                <!-- Logo -->
+                <a class="navbar-brand mx-auto mx-lg-0 py-0" href="index.html">
+                    <img src="Assets/logo.png" alt="Aquieen Logo">
+                </a>
+
+                <!-- Center Menu (Desktop) -->
+                <div class="collapse navbar-collapse desktop-menu">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Bathroom Dropdown -->
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link" href="#">Bathroom <i
+                                    class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                            <div class="dropdown-menu">
+                                <div class="bathroom-mega">
+                                    <!-- Left Categories -->
+                                    <div class="bathroom-categories">
+                                        <a data-target="basin">Basin Area <i
+                                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                                        <a data-target="shower">Shower & Bathing Area <i
+                                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                                        <a data-target="toilet">Toilet Area <i
+                                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                                        <a data-target="accessories">Accessories <i
+                                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                                        <a data-target="others">Other Plumbing Items <i
+                                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                                        <a data-target="others">Other Plumbing Items <i
+                                                class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                                    </div>
+
+                                    <!-- Right Content -->
+                                    <div class="bathroom-content" id="basin">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Wash Basins</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Faucets</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Wash Basins</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Faucets</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Wash Basins</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Faucets</p>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="bathroom-content" id="shower">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Overhead Showers</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Shower Panels</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Overhead Showers</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Shower Panels</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Overhead Showers</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Shower Panels</p>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                    <div class="bathroom-content" id="toilet">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Toilet Seats</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Toilet Seats</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Toilet Seats</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Toilet Seats</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Toilet Seats</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Toilet Seats</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="bathroom-content" id="accessories">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Soap Holders</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Soap Holders</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Soap Holders</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Soap Holders</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Soap Holders</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Soap Holders</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="bathroom-content" id="others">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Plumbing Items</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Plumbing Items</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Plumbing Items</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Plumbing Items</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Plumbing Items</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Plumbing Items</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="card"><img src="Assets/kitchen1.avif">
+                                                    <p>Plumbing Items</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Kitchen Dropdown -->
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link" href="#">Kitchen <i
+                                    class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                            <div class="dropdown-menu custom_dropdown">
+                                <div class="container-fluid">
+                                    <div class="row text-center">
+                                        <div class="col-md-3">
+                                            <div class="card border-0"><img src="Assets/kitchen1.avif">
+                                                <p>Kitchen Sinks</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="card border-0"><img src="Assets/kitchen1.avif">
+                                                <p>Sink Faucets</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="card border-0"><img src="Assets/kitchen1.avif">
+                                                <p>Kitchen Sinks</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="card border-0"><img src="Assets/kitchen1.avif">
+                                                <p>Sink Faucets</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <div class="card border-0"><img src="Assets/kitchen1.avif">
+                                                <p>Kitchen Sinks</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="card border-0"><img src="Assets/kitchen1.avif">
+                                                <p>Sink Faucets</p>
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Other Menus -->
+                        <li class="nav-item dropdown position-static">
+                            <a class="nav-link" href="#">All Collections <i
+                                    class="fa-solid fa-chevron-down dropdown-arrow"></i></a>
+                            <div class="dropdown-menu custom_dropdown">
+                                <div class="container-fluid">
+                                    <div class="row text-center">
+                                        <div class="col-md-3">
+                                            <div class="card border-0"><img src="Assets/kitchen1.avif">
+                                                <p>Kitchen Sinks</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="card border-0"><img src="Assets/kitchen1.avif">
+                                                <p>Sink Faucets</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <div class="card border-0"><img src="Assets/kitchen1.avif">
+                                                <p>Kitchen Sinks</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="card border-0"><img src="Assets/kitchen1.avif">
+                                                <p>Sink Faucets</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="card border-0"><img src="Assets/kitchen1.avif">
+                                                <p>Kitchen Sinks</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="card border-0"><img src="Assets/kitchen1.avif">
+                                                <p>Sink Faucets</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="nav-item"><a class="nav-link" href="#">New Arrivals</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Bestsellers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Sale</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Right Icons -->
+                <div class="icons d-flex align-items-center">
+                    <div class="icon" data-tooltip="Search">
+                        <i class="fas fa-search" onclick="toggleSearch()"></i>
+                    </div>
+                    <div class="icon" data-tooltip="Bag">
+                        <i class="fas fa-shopping-bag bag_icon"></i>
+                    </div>
+                    <div class="icon" data-tooltip="Wishlist">
+                        <i class="far fa-heart"></i>
+                    </div>
+                    <div class="icon" data-tooltip="Profile">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="icon" data-tooltip="Support">
+                        <i class="fa-solid fa-headset bag_icon"></i>
+                    </div>
+                    <div class="icon" data-tooltip="Download">
+                        <i class="fa-regular fa-circle-down bag_icon"></i>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- Mobile Sidebar -->
+        <div id="sidebar">
+            <div class="sidebar-header d-flex justify-content-between align-items-center">
+                <h4>MENU</h4>
+                <i class="fas fa-times close-sidebar" onclick="toggleSidebar()"></i>
+            </div>
+
+            <div class="sidebar-content">
+                <!-- Bathroom Menu -->
+                <div class="mobile-dropdown">
+                    <a href="#" onclick="openBathroomSidebar()">
+                        Bathroom <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+
+                <!-- Kitchen -->
+                <div class="mobile-dropdown">
+                    <a href="#" onclick="openKitchenSidebar()">Kitchen <i class="fa-solid fa-chevron-right"></i></a>
+                </div>
+
+                <div class="mobile-dropdown">
+                    <a href="#" onclick="openKitchenSidebar()">All Collections <i
+                            class="fa-solid fa-chevron-right"></i></a>
+                </div>
+                <!-- Other Menus -->
+                <a href="#">New Arrivals</a>
+                <a href="#">Bestsellers</a>
+                <a href="#">Sale</a>
+                <a href="about.html">About Us</a>
+                <a href="#"><i class="fa-solid fa-headset me-3"></i> Contact Support</a>
+                <a href="#"><i class="fa-regular fa-circle-down me-3"></i> Download Catalog</a>
+            </div>
+        </div>
+
+        <!-- Kitchen Sidebar -->
+        <div id="kitchenSidebar">
+            <div class="sidebar-header d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-arrow-left" onclick="closeKitchenSidebar()"
+                        style="margin-right: 15px; cursor: pointer; color: #fff; font-size: 18px;"></i>
+                    <h4>KITCHEN</h4>
+                </div>
+                <i class="fas fa-times close-sidebar" onclick="closeKitchenSidebar()"></i>
+            </div>
+
+            <div class="sidebar-content" style="padding: 20px;">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="card border-0" style="background: transparent;">
+                            <img src="Assets/kitchen1.avif" style="width: 100%; margin-bottom: 10px;">
+                            <p style="color: #000; font-weight: 600; font-size: 14px; text-align: center;">Kitchen Sinks
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card border-0" style="background: transparent;">
+                            <img src="Assets/kitchen1.avif" style="width: 100%; margin-bottom: 10px;">
+                            <p style="color: #000; font-weight: 600; font-size: 14px; text-align: center;">Sink Faucets
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="card border-0" style="background: transparent;">
+                            <img src="Assets/kitchen1.avif" style="width: 100%; margin-bottom: 10px;">
+                            <p style="color: #000; font-weight: 600; font-size: 14px; text-align: center;">Kitchen Sinks
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card border-0" style="background: transparent;">
+                            <img src="Assets/kitchen1.avif" style="width: 100%; margin-bottom: 10px;">
+                            <p style="color: #000; font-weight: 600; font-size: 14px; text-align: center;">Sink Faucets
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card border-0" style="background: transparent;">
+                            <img src="Assets/kitchen1.avif" style="width: 100%; margin-bottom: 10px;">
+                            <p style="color: #000; font-weight: 600; font-size: 14px; text-align: center;">Kitchen Sinks
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card border-0" style="background: transparent;">
+                            <img src="Assets/kitchen1.avif" style="width: 100%; margin-bottom: 10px;">
+                            <p style="color: #000; font-weight: 600; font-size: 14px; text-align: center;">Sink Faucets
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card border-0" style="background: transparent;">
+                            <img src="Assets/kitchen1.avif" style="width: 100%; margin-bottom: 10px;">
+                            <p style="color: #000; font-weight: 600; font-size: 14px; text-align: center;">Sink Faucets
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card border-0" style="background: transparent;">
+                            <img src="Assets/kitchen1.avif" style="width: 100%; margin-bottom: 10px;">
+                            <p style="color: #000; font-weight: 600; font-size: 14px; text-align: center;">Sink Faucets
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Bathroom Sidebar -->
+        <div id="bathroomSidebar">
+            <div class="sidebar-header d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <i class="fas fa-arrow-left" onclick="closeBathroomSidebar()"
+                        style="margin-right: 15px; cursor: pointer; color: #fff; font-size: 18px;"></i>
+                    <h4>BATHROOM</h4>
+                </div>
+                <i class="fas fa-times close-sidebar" onclick="closeBathroomSidebar()"></i>
+            </div>
+
+            <div class="sidebar-content">
+                <!-- Basin Area -->
+                <div class="bathroom-sidebar-category">
+                    <a href="#" onclick="toggleBathroomCategory(event, 'basin-cards')">
+                        Basin Area <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+                    </a>
+                    <div id="basin-cards" class="bathroom-cards-content">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="Assets/kitchen1.avif">
+                                    <p>Bathroom Combos</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="Assets/kitchen1.avif">
+                                    <p>Bathroom Combos</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="Assets/kitchen1.avif">
+                                    <p>Bathroom Combos</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="Assets/kitchen1.avif">
+                                    <p>Bathroom Combos</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="Assets/kitchen1.avif">
+                                    <p>Bathroom Combos</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="Assets/kitchen1.avif">
+                                    <p>Bathroom Combos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Plumbing Items -->
+                <div class="bathroom-sidebar-category">
+                    <a href="#" onclick="toggleBathroomCategory(event, 'others-cards')">
+                        Other Plumbing Items <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+                    </a>
+                    <div id="others-cards" class="bathroom-cards-content">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="Assets/kitchen1.avif">
+                                    <p>Plumbing Items</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="Assets/kitchen1.avif">
+                                    <p>Plumbing Items</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="Assets/kitchen1.avif">
+                                    <p>Plumbing Items</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="Assets/kitchen1.avif">
+                                    <p>Plumbing Items</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="Assets/kitchen1.avif">
+                                    <p>Plumbing Items</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="Assets/kitchen1.avif">
+                                    <p>Plumbing Items</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="Assets/kitchen1.avif">
+                                    <p>Plumbing Items</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="Assets/kitchen1.avif">
+                                    <p>Plumbing Items</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="Assets/kitchen1.avif">
+                                    <p>Plumbing Items</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card">
+                                    <img src="Assets/kitchen1.avif">
+                                    <p>Plumbing Items</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Mobile Bottom Navigation -->
+        <div class="mobile-bottom-nav">
+            <a href="#">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-store"></i>
+                <span>Shop</span>
+            </a>
+            <a href="#">
+                <i class="fa fa-heart"></i>
+                <span>Wishlist</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-shopping-bag"></i>
+                <span>Cart</span>
+            </a>
+            <a href="#">
+                <i class="fas fa-user"></i>
+                <span>Account</span>
+            </a>
+        </div>
+
+
+
+        <!-- Search Bar -->
+        <div id="searchBar">
+            <span class="close-btn" onclick="toggleSearch()">&times;</span>
+            <h2>Search Our Site</h2>
+            <input id="searchInput" type="text" placeholder="Search..." onkeyup="showSuggestions(this.value)">
+
+            <!-- ✅ Recent Searches -->
+            <div class="quick-search">
+                <span>Recent Searches:</span>
+                <div id="recentSearches"></div>
+            </div>
+
+            <!-- 🔥 Suggestions will appear here -->
+            <div id="searchSuggestions" class="suggestion-results"></div>
+        </div>
+
+
+    </header>
+
+    <!-- ====== Header section end ====== -->
+
+
+    <!-- ====== Products details page start ======  -->
+
+    <section class="product-section">
+        <div class="product-container">
+
+            <!-- Left Gallery -->
+            <div class="product-gallery">
+                <div class="thumbnails">
+                    <img src="Assets/kitchen2.webp" class="active" onclick="changeImage(this)">
+                    <img src="Assets/kitchen1.avif" onclick="changeImage(this)">
+                    <img src="Assets/kitchen2.webp" onclick="changeImage(this)">
+                    <img src="Assets/kitchen1.avif" onclick="changeImage(this)">
+                    <img src="Assets/kitchen1.avif" onclick="changeImage(this)">
+                </div>
+
+                <div class="main-image">
+                    <img id="currentImage" src="Assets/kitchen2.webp">
+                </div>
+            </div>
+
+            <!-- Right Product Details -->
+            <div class="product-details">
+
+                <h2>24x16" LED Ceiling Shower in Gold Finish - SS304 Concealed Showerhead with Remote & 3 Spray Modes
+                    (Rain, Mist, Waterfall)</h2>
+                <p>Item code: <strong>CS-3010-G</strong></p>
+
+                <p class="price">Rs. 39,310.00 <span class="old-price">Rs. 63,400.00</span></p>
+                <p class="viewing">👀 18 people are viewing this right now</p>
+
+                <div class="pincode-check">
+                    <input type="text" placeholder="Enter Pincode">
+                    <button>Check</button>
+                </div>
+
+                <p class="stock">Hurry Up! <span>Only 5 left in stock!</span></p>
+
+                <div class="quantity">
+                    <button onclick="decreaseQty()">-</button>
+                    <input type="text" id="quantityInput" value="1" readonly>
+                    <button onclick="increaseQty()">+</button>
+                </div>
+
+                <div class="buttons">
+                    <button class="btn btn-cart">ADD TO CART</button>
+                    <button class="btn btn-buy">BUY IT NOW</button>
+                </div>
+
+                <div class="extra-info">
+                    <p><strong>Available:</strong> Instock</p>
+                    <p><strong>Type:</strong> Concealed LED Ceiling Showerhead</p>
+                    <p><strong>Collections:</strong> Featured Products, Gold, Showers</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+     <section class="related_products">
+        <div class="section-title">
+            <h2>Related Products</h2>
+            <p>Experience the ultimate in sanitary excellence with our best-selling product, delivering unmatched
+                quality, style, and reliability for your needs.</p>
+        </div>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <a href="product_details.html">
+                    <div class="product-image">
+                        <span class="discount-badge">-38%</span>
+                        <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                        <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+
+                        <!-- Hover Icons -->
+                        <div class="hover-icons">
+                            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h6>Shower Column Set In Oil</h6>
+                        <span class="price">Rs. 20,600.00</span>
+                        <span class="old-price">Rs. 33,210.00</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="product-card">
+                <a href="product_details.html">
+                    <div class="product-image">
+                        <span class="discount-badge">-38%</span>
+                        <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                        <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+
+                        <!-- Hover Icons -->
+                        <div class="hover-icons">
+                            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h6>Shower Column Set In Oil</h6>
+                        <span class="price">Rs. 20,600.00</span>
+                        <span class="old-price">Rs. 33,210.00</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="product-card">
+                <a href="product_details.html">
+                    <div class="product-image">
+                        <span class="discount-badge">-38%</span>
+                        <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                        <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+
+                        <!-- Hover Icons -->
+                        <div class="hover-icons">
+                            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h6>Shower Column Set In Oil</h6>
+                        <span class="price">Rs. 20,600.00</span>
+                        <span class="old-price">Rs. 33,210.00</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="product-card">
+                <a href="product_details.html">
+                    <div class="product-image">
+                        <span class="discount-badge">-38%</span>
+                        <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                        <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+
+                        <!-- Hover Icons -->
+                        <div class="hover-icons">
+                            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
+                            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h6>Shower Column Set In Oil</h6>
+                        <span class="price">Rs. 20,600.00</span>
+                        <span class="old-price">Rs. 33,210.00</span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ====== Products details page end ======  -->
+
+
+   
+
+
+
+
+
+
+
+
+
+    <!-- ====== About page end ======  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ====== Footer section start ====== -->
+
+    <footer>
+        <div class="footer-container">
+
+            <!-- Logo + About -->
+            <div class="footer-logo">
+                <img src="Assets/logo.png" alt="Aquieen Logo">
+                <p>
+                    For over six decades aquieen the bathroom brand has been the benchmark
+                    for the organised bath industry in India. Aquieen has demonstrated
+                    the value of true quality and trusted service for generations.
+                </p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Important Links -->
+            <div class="footer-links">
+                <h3>Important Links</h3>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Refund And Cancellation</a></li>
+                </ul>
+            </div>
+
+            <!-- Get In Touch -->
+            <div class="footer-contact">
+                <h3>Get In Touch</h3>
+                <p>Phone: <a href="tel:+919829365779">+91-9829365779</a></p>
+                <p>Address: Metro Pillar 122, New Sanganer Road, Sodala Jaipur, Rajasthan- 302019</p>
+                <p>Email: <a href="mailto:info.aquieen@gmail.com">info.aquieen@gmail.com</a></p>
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            Copyright © 2025 FLOX, All Rights Reserved
+        </div>
+    </footer>
+
+    <!-- ====== Footer section end ====== -->
+
+
+
+
+    <!-- WhatsApp Floating Button -->
+
+    <a href="https://wa.me/917734981050" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+
+
+    <!-- Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
