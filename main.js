@@ -429,3 +429,25 @@ function changeImage(imgElement) {
   }
 
   // ====== Products details section end ======
+
+
+/* ====== Cart page start ====== */
+
+   // Quantity update
+    function changeQuantity(el, change) {
+      let qtyEl = el.parentElement.querySelector(".qty");
+      let qty = parseInt(qtyEl.innerText) + change;
+      if (qty < 1) qty = 1;
+      qtyEl.innerText = qty;
+
+      // Update total price (sample calculation)
+      let price = 20950; // per item (dummy)
+      el.closest("tr").querySelector(".item-total").innerText = "₹ " + (price * qty).toLocaleString();
+    }
+
+    // Remove item
+    function removeItem(el) {
+      el.closest("tr").remove();
+    }
+
+/* ====== Cart page end ====== */

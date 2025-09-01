@@ -1544,10 +1544,347 @@ header .bathroom-cards-content p {
     font-size: 3rem;
 }
 
-
+@media (max-width: 768px) {
+    .about-banner {
+        margin-top: 70px;
+    }
+}
 
 
 /* ====== About page end ====== */
+
+
+/* ====== contact page start ====== */
+
+.contact-section {
+    padding: 20px 0 0;
+}
+
+.contact-section .contact-form {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 30px 30px 20px;
+    border-radius: 10px;
+}
+
+.contact-section .contact-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.contact-section .form-control {
+    border-radius: 8px;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.contact-section .form-control:hover {
+    border-color: #999;
+}
+
+/* Focus effect */
+.contact-section .form-control:focus {
+    border-color: #000;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.contact-section .btn-custom {
+    background: #000;
+    color: #fff;
+    font-weight: 500;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.contact-section .btn-custom:hover {
+    background: #333;
+    color: #fff;
+}
+
+/* ====== contact page end ====== */
+
+
+/* ====== Cart page start ====== */
+
+.cart_section {
+    margin-top: 50px;
+}
+
+/* Product image */
+.cart_section .cart-table img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Table cleanup */
+.cart_section .cart-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.cart_section .cart-table th,
+.cart_section .cart-table td {
+    border: none !important; /* no vertical borders */
+    vertical-align: middle;
+    padding: 12px 10px;
+}
+
+.cart_section .cart-table tr {
+    border-bottom: 1px solid #ddd; /* only row-wise border */
+}
+.table-light th{
+    font-weight: 500;
+}
+
+
+/* ✅ Product column (wrap allow) */
+.cart_section .cart-table td:first-child {
+    max-width: 500px;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+/* ✅ Quantity column fixed */
+.cart_section .cart-table td:nth-child(2) {
+    width: 120px;
+    min-width: 120px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* ✅ Total column fixed */
+.cart_section .cart-table td:nth-child(3) {
+    width: 100px;
+    min-width: 100px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* ✅ Remove column fixed */
+.cart_section .cart-table td:nth-child(4) {
+    width: 70px;
+    min-width: 70px;
+    text-align: center;
+}
+
+/* Quantity buttons */
+.cart_section .quantity-btn {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    margin: 0 3px;
+    border-radius: 5px;
+    background: #f8f8f8;
+    transition: background 0.2s ease;
+}
+
+.cart_section .quantity-btn:hover {
+    background: #eaeaea;
+}
+
+.cart_section .delete-btn {
+    cursor: pointer;
+    color: red;
+    font-size: 20px;
+}
+
+/* Summary box (Right side) */
+.cart_section .summary-box {
+    margin: 0 30px;
+    padding: 30px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.cart_section .summary-box .Estimate {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* LEFT sticky fix */
+.cart_section .sticky-left {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
+    align-self: flex-start;
+    background: #fff;
+    padding-left: 20px;
+    z-index: 2;
+}
+
+/* Price + Secure */
+.cart_section .Price_total span {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 30px;
+}
+
+.cart_section .secure_payment p {
+    font-weight: 600;
+}
+
+.cart_section .secure_payment img {
+    max-width: 300px;
+}
+
+/* 1024px and below */
+@media (max-width: 1024px) {
+    .cart_section .quantity-btn {
+        padding: 3px 6px;
+        font-size: 14px;
+        margin: 0 2px;
+    }
+
+    .cart_section .qty {
+        font-size: 14px;
+        margin: 0 4px;
+        min-width: 20px;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .cart_section .cart-table img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .cart_section .cart-table td,
+    .cart_section .cart-table th {
+        font-size: 14px;
+    }
+}
+
+/* 768px and below */
+@media (max-width: 768px) {
+    .cart_section .sticky-left {
+        position: static;
+        top: auto;
+        padding-left: 0;
+    }
+
+    .cart_section .row {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .cart_section .summary-box {
+        margin: 20px auto 0 auto;
+        padding: 20px;
+        max-width: 500px;
+    }
+
+    .cart_section .cart-table img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .cart_section .quantity-btn {
+        padding: 3px 6px;
+        font-size: 14px;
+    }
+
+    .cart_section .qty {
+        font-size: 14px;
+        min-width: 20px;
+    }
+}
+
+/* ✅ 425px and below → Card Style */
+@media (max-width: 425px) {
+    .cart_section {
+        margin-top: 30px;
+    }
+
+    .cart_section .cart-table,
+    .cart_section .cart-table thead,
+    .cart_section .cart-table tbody,
+    .cart_section .cart-table th,
+    .cart_section .cart-table td,
+    .cart_section .cart-table tr {
+        display: block;
+        width: 100%;
+    }
+
+    .cart_section .cart-table thead {
+        display: none;
+    }
+
+    .cart_section .cart-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        background: #fff;
+        position: relative;
+    }
+
+    .cart_section .cart-table td {
+        border: none !important;
+        padding: 6px 0;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+    }
+
+    .cart_section .cart-table td:first-child {
+        display: flex;
+        align-items: flex-start;
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    .cart_section .cart-table img {
+        width: 70px;
+        height: 70px;
+        margin-right: 10px;
+        border-radius: 6px;
+    }
+
+    .cart_section .quantity-btn {
+        padding: 2px 6px;
+        font-size: 12px;
+        border-radius: 4px;
+        min-width: 24px;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .cart_section .qty {
+        font-size: 13px;
+        min-width: 20px;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .cart_section .item-total {
+        font-weight: 600;
+        margin-top: 5px;
+        display: block;
+    }
+
+    .cart_section .delete-btn {
+        position: absolute;
+        right: 12px;
+        top: 4px;
+        font-size: 16px;
+    }
+}
+
+
+
+/* ====== Cart page end ====== */
+
 
 
 /* ====== Products details page start ====== */
@@ -1784,28 +2121,81 @@ header .bathroom-cards-content p {
 }
 
 
+/* Discription section  */
+
+.discription_section {
+    margin: auto;
+    padding: 20px 60px;
+}
+
+.discription_section h2 {
+    font-size: 28px;
+    font-family: 'Lora', serif;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 8px;
+    text-align: center;
+    /* center heading */
+}
+
+.discription_section p {
+    margin-bottom: 15px;
+}
+
+.discription_section ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.discription_section ul li {
+    margin-bottom: 10px;
+
+}
+
+/* Related products  */
 
 .related_products {
     padding: 0 20px;
 }
+
 .related_products .section-title {
-      text-align: center;
-      padding: 20px 10px;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.related_products .section-title h2 {
+    font-size: 28px;
+    text-transform: uppercase;
+    font-family: 'Lora', serif;
+    margin-bottom: 10px;
+}
+
+.related_products .section-title p {
+    color: #666;
+    font-size: 14px;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .discription_section h2 {
+        font-size: 22px;
     }
 
-   .related_products .section-title h2 {
-      font-size: 28px;
-      margin: 0;
+    .discription_section {
+        padding: 15px;
     }
+}
 
-   .related_products .section-title p {
-      color: #666;
-      font-size: 14px;
+@media (max-width: 480px) {
+    .discription_section h2 {
+        font-size: 20px;
     }
+}
 
 
-
-    
 /* ====== Products details page end ====== */
 
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flox-Product_details</title>
+    <title>Flox-ContactUs</title>
 
     <!-- Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -665,230 +665,44 @@
     <!-- ====== Header section end ====== -->
 
 
-    <!-- ====== Products details page start ======  -->
+    <!-- ====== contact page start ======  -->
 
-    <!-- products details  -->
-    <section class="product-section">
-        <div class="product-container">
-
-            <!-- Left Gallery -->
-            <div class="product-gallery">
-                <div class="thumbnails">
-                    <img src="Assets/kitchen2.webp" class="active" onclick="changeImage(this)">
-                    <img src="Assets/kitchen1.avif" onclick="changeImage(this)">
-                    <img src="Assets/kitchen2.webp" onclick="changeImage(this)">
-                    <img src="Assets/kitchen1.avif" onclick="changeImage(this)">
-                    <img src="Assets/kitchen1.avif" onclick="changeImage(this)">
-                </div>
-
-                <div class="main-image">
-                    <img id="currentImage" src="Assets/kitchen2.webp">
-                </div>
-            </div>
-
-            <!-- Right Product Details -->
-            <div class="product-details">
-
-                <h2>24x16" LED Ceiling Shower in Gold Finish - SS304 Concealed Showerhead with Remote & 3 Spray Modes
-                    (Rain, Mist, Waterfall)</h2>
-                <p>Item code: <strong>CS-3010-G</strong></p>
-
-                <p class="price">Rs. 39,310.00 <span class="old-price">Rs. 63,400.00</span></p>
-                <p class="viewing">👀 18 people are viewing this right now</p>
-
-                <div class="pincode-check">
-                    <input type="text" placeholder="Enter Pincode">
-                    <button>Check</button>
-                </div>
-
-                <p class="stock">Hurry Up! <span>Only 5 left in stock!</span></p>
-
-                <div class="quantity">
-                    <button onclick="decreaseQty()">-</button>
-                    <input type="text" id="quantityInput" value="1" readonly>
-                    <button onclick="increaseQty()">+</button>
-                </div>
-
-                <div class="buttons">
-                    <button class="btn btn-cart">ADD TO CART</button>
-                    <button class="btn btn-buy">BUY IT NOW</button>
-                </div>
-
-                <div class="extra-info">
-                    <p><strong>Available:</strong> Instock</p>
-                    <p><strong>Type:</strong> Concealed LED Ceiling Showerhead</p>
-                    <p><strong>Collections:</strong> Featured Products, Gold, Showers</p>
-                </div>
-            </div>
-
-        </div>
+    <section class="about-banner"
+        style=" background: url('Assets/about_us_banner.avif') no-repeat center center/cover;">
+        <h1>Contact us</h1>
     </section>
 
-     <!-- Description section  -->
-    <section class="discription_section">
-        <h2>Description</h2>
-        <p>
-            Experience luxury and relaxation like never before with the Aquieen 24x16” Ceiling Shower,
-            a premium ceiling-mounted concealed showerhead that combines elegance, advanced technology,
-            and superior functionality. This innovative shower features remote-controlled LED lights
-            to create a soothing ambiance while the built-in music system allows you to enjoy your
-            favorite tunes during your shower, elevating your bathing experience.
-        </p>
-        <p>
-            Crafted from heavy-duty SS304 stainless steel with a gold finish, this showerhead ensures
-            exceptional durability, corrosion resistance, and a sleek, luxurious appearance that blends
-            perfectly with modern bathroom designs. The 3 spray modes—Rainfall, Mist, and Waterfall—offer
-            a versatile and spa-like experience, allowing you to choose the perfect flow for ultimate
-            relaxation. The concealed installation design ensures a clean, seamless look while the remote
-            control functionality gives you complete control over the LED lights and music settings,
-            providing a personalized and indulgent shower experience.
-        </p>
-        <p>
-            Ideal for luxury homes, high-end hotels, and spa environments, this ceiling-mounted concealed
-            showerhead combines cutting-edge technology and sophisticated aesthetics, making it a perfect
-            addition to any modern bathroom.
-        </p>
 
-        <ul>
-            <li>REMOTE-CONTROLLED LED LIGHTS & MUSIC SYSTEM ➜ Enjoy a luxurious ambiance with customizable LED lights
-                and a built-in music system, offering a spa-like experience in your shower.</li>
-            <li>3 SPRAY MODES FOR VERSATILE SHOWERING ➜ Choose between Rainfall, Mist, and Waterfall modes to create a
-                relaxing, rejuvenating shower experience tailored to your preference.</li>
-            <li>GOLD FINISH HEAVY-DUTY SS304 BODY ➜ Constructed from high-grade SS304 stainless steel with an
-                electro-coated gold finish, ensuring durability, corrosion resistance, and a sleek, modern appearance.
-            </li>
-            <li>CONCEALED CEILING-MOUNTED DESIGN ➜ The concealed ceiling installation offers a clean and sophisticated
-                look, seamlessly blending with contemporary bathroom interiors.</li>
-            <li>USER-FRIENDLY REMOTE CONTROL FUNCTION ➜ Effortlessly control LED lights, music, and spray modes using an
-                intuitive remote control for a personalized shower experience.</li>
-            <li>LUXURIOUS DIMENSIONS FOR FULL COVERAGE ➜ The large 24x16-inch size provides wide water coverage,
-                offering a truly immersive and spa-like shower experience.</li>
-            <li>IDEAL FOR HOMES, HOTELS & SPA SETUPS ➜ Perfect for high-end homes, luxury hotels, and spa environments,
-                ensuring a combination of style, functionality, and comfort.</li>
-        </ul>
-    </section>
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-form">
+        <h2>Get In Touch</h2>
+        <form>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Name" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" class="form-control" placeholder="Email" required>
+            </div>
+            <div class="col-12">
+              <input type="text" class="form-control" placeholder="Subject" required>
+            </div>
+            <div class="col-12">
+              <textarea class="form-control" rows="5" placeholder="Write Your Comment..." required></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-custom">Send Message</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
     
-    <!-- Related products  -->
-    <section class="related_products">
-        <div class="section-title">
-            <h2>Related Products</h2>
-            <p>Experience the ultimate in sanitary excellence with our best-selling product, delivering unmatched
-                quality, style, and reliability for your needs.</p>
-        </div>
-
-        <div class="products-grid">
-            <div class="product-card">
-                <a href="product_details.html">
-                    <div class="product-image">
-                        <span class="discount-badge">-38%</span>
-                        <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-                        <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-
-                        <!-- Hover Icons -->
-                        <div class="hover-icons">
-                            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-                            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h6>Shower Column Set In Oil</h6>
-                        <span class="price">Rs. 20,600.00</span>
-                        <span class="old-price">Rs. 33,210.00</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="product-card">
-                <a href="product_details.html">
-                    <div class="product-image">
-                        <span class="discount-badge">-38%</span>
-                        <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-                        <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-
-                        <!-- Hover Icons -->
-                        <div class="hover-icons">
-                            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-                            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h6>Shower Column Set In Oil</h6>
-                        <span class="price">Rs. 20,600.00</span>
-                        <span class="old-price">Rs. 33,210.00</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="product-card">
-                <a href="product_details.html">
-                    <div class="product-image">
-                        <span class="discount-badge">-38%</span>
-                        <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-                        <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-
-                        <!-- Hover Icons -->
-                        <div class="hover-icons">
-                            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-                            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h6>Shower Column Set In Oil</h6>
-                        <span class="price">Rs. 20,600.00</span>
-                        <span class="old-price">Rs. 33,210.00</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="product-card">
-                <a href="product_details.html">
-                    <div class="product-image">
-                        <span class="discount-badge">-38%</span>
-                        <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-                        <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-
-                        <!-- Hover Icons -->
-                        <div class="hover-icons">
-                            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-                            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h6>Shower Column Set In Oil</h6>
-                        <span class="price">Rs. 20,600.00</span>
-                        <span class="old-price">Rs. 33,210.00</span>
-                    </div>
-                </a>
-            </div>
-
-        </div>
-    </section>
-
-   
-
-    <!-- ====== Products details page end ======  -->
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- ====== About page end ======  -->
-
-
-
-
-
-
-
-
-
+    <!-- ====== Contact page end ======  -->
 
 
 
