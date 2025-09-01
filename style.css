@@ -1092,7 +1092,7 @@ header .bathroom-cards-content p {
     margin-bottom: 30px;
     text-align: left;
     font-family: 'Lora', serif;
-    color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
 /* Cards container */
@@ -1201,7 +1201,7 @@ header .bathroom-cards-content p {
 /* Text */
 .parallax-content {
     position: relative;
-    color: #fff;
+    color: #000;
     z-index: 1;
     font-family: 'Lora', serif;
 }
@@ -1254,7 +1254,7 @@ header .bathroom-cards-content p {
     font-weight: 600;
     margin-bottom: 30px;
     font-family: 'Lora', serif;
-    color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
 .product-card {
@@ -1674,6 +1674,7 @@ header .bathroom-cards-content p {
 
 /* ====== Cart page start ====== */
 
+/* Existing CSS remains unchanged, only modifying the 425px media query for the delete button's <td> */
 .cart_section {
     margin-top: 50px;
 }
@@ -1695,29 +1696,26 @@ header .bathroom-cards-content p {
 .cart_section .cart-table th,
 .cart_section .cart-table td {
     border: none !important;
-    /* no vertical borders */
     vertical-align: middle;
     padding: 12px 10px;
 }
 
 .cart_section .cart-table tr {
     border-bottom: 1px solid #ddd;
-    /* only row-wise border */
 }
 
 .table-light th {
     font-weight: 500;
 }
 
-
-/* ✅ Product column (wrap allow) */
+/* Product column (wrap allow) */
 .cart_section .cart-table td:first-child {
     max-width: 500px;
     white-space: normal;
     word-wrap: break-word;
 }
 
-/* ✅ Quantity column fixed */
+/* Quantity column fixed */
 .cart_section .cart-table td:nth-child(2) {
     width: 120px;
     min-width: 120px;
@@ -1725,7 +1723,7 @@ header .bathroom-cards-content p {
     white-space: nowrap;
 }
 
-/* ✅ Total column fixed */
+/* Total column fixed */
 .cart_section .cart-table td:nth-child(3) {
     width: 100px;
     min-width: 100px;
@@ -1733,7 +1731,7 @@ header .bathroom-cards-content p {
     white-space: nowrap;
 }
 
-/* ✅ Remove column fixed */
+/* Remove column fixed */
 .cart_section .cart-table td:nth-child(4) {
     width: 70px;
     min-width: 70px;
@@ -1769,11 +1767,6 @@ header .bathroom-cards-content p {
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
-}
-
-.cart_section .summary-box .Estimate {
-    font-weight: 600;
-    margin-top: 10px;
 }
 
 /* LEFT sticky fix */
@@ -1864,93 +1857,136 @@ header .bathroom-cards-content p {
     }
 }
 
-/* ✅ 425px and below → Card Style */
+/* 425px and below (Mobile-specific design) */
 @media (max-width: 425px) {
-    .cart_section {
-        margin-top: 30px;
-    }
-
-    .cart_section .cart-table,
-    .cart_section .cart-table thead,
-    .cart_section .cart-table tbody,
-    .cart_section .cart-table th,
-    .cart_section .cart-table td,
-    .cart_section .cart-table tr {
+    .cart_section .cart-table {
         display: block;
-        width: 100%;
     }
 
     .cart_section .cart-table thead {
         display: none;
     }
 
+    .cart_section .cart-table tbody {
+        display: block;
+    }
+
     .cart_section .cart-table tr {
-        margin-bottom: 15px;
+        display: block;
+        margin-bottom: 20px;
+        padding: 15px;
+        background: #fff;
         border: 1px solid #ddd;
         border-radius: 8px;
-        padding: 10px;
-        background: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         position: relative;
     }
 
     .cart_section .cart-table td {
-        border: none !important;
-        padding: 6px 0;
-        white-space: normal;
-        overflow: visible;
-        text-overflow: unset;
+        display: block;
+        text-align: left !important;
+        padding: 8px 0 !important;
+        width: 100% !important;
+        min-width: unset !important;
     }
 
+    /* Product details */
     .cart_section .cart-table td:first-child {
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         max-width: 100%;
-        white-space: normal;
     }
 
     .cart_section .cart-table img {
-        width: 70px;
-        height: 70px;
-        margin-right: 10px;
-        border-radius: 6px;
+        width: 80px;
+        height: 80px;
+        margin-right: 15px;
+    }
+
+    .cart_section .cart-table td:first-child div {
+        flex: 1;
+    }
+
+    .cart_section .cart-table td:first-child p {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .cart_section .cart-table td:first-child small {
+        font-size: 12px;
+        color: #666;
+    }
+
+    /* Quantity controls - Centered */
+    .cart_section .cart-table td:nth-child(2) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        text-align: center !important;
     }
 
     .cart_section .quantity-btn {
-        padding: 2px 6px;
-        font-size: 12px;
+        padding: 5px 10px;
+        font-size: 16px;
         border-radius: 4px;
-        min-width: 24px;
-        display: inline-block;
-        text-align: center;
     }
 
     .cart_section .qty {
-        font-size: 13px;
-        min-width: 20px;
-        display: inline-block;
+        font-size: 16px;
+        min-width: 30px;
         text-align: center;
     }
 
-    .cart_section .item-total {
-        font-weight: 600;
-        margin-top: 5px;
-        display: block;
-        text-align: center;
-        /* ✅ Price center */
+    /* Total price - Centered */
+    .cart_section .cart-table td:nth-child(3) {
+        text-align: center !important;
+        font-size: 16px;
+        font-weight: 700;
+        color: #333;
     }
 
-    /* ✅ Quantity ko center align */
-    .cart_section .cart-table td:nth-child(2) {
-        text-align: center;
+    /* Remove button - Sized to button content */
+    .cart_section .cart-table td:nth-child(4) {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: auto !important; /* Only as wide as the button */
+        min-width: unset !important;
+        text-align: right !important;
+        padding: 0 !important;
     }
 
     .cart_section .delete-btn {
-        position: absolute;
-        right: 12px;
-        top: 4px;
-        font-size: 16px;
+        font-size: 18px;
+        color: red;
+        display: inline-block;
+        padding: 5px;
+    }
+
+    /* Adjust summary box */
+    .cart_section .summary-box {
+        margin: 20px 5px;
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    .cart_section .row {
+        padding: 0 10px;
+    }
+
+    .cart_section .Price_total span {
+        font-size: 14px;
+    }
+
+    .cart_section .secure_payment img {
+        max-width: 200px;
     }
 }
+
+
+
+
 
 /* ====== Cart page end ====== */
 
@@ -2396,9 +2432,9 @@ header .bathroom-cards-content p {
 /* ====== Footer section start ====== */
 
 footer {
-    background: #fff;
+    background: var(--primary-color);
     color: #000;
-    padding: 0 20px 20px;
+    padding: 50px 20px 20px;
     font-family: Arial, sans-serif;
     margin-top: 50px;
 }
