@@ -98,6 +98,67 @@ header .nav-link:hover::after {
     width: 80%;
 }
 
+/* --------- Desktop Badges (Wishlist + Cart in Header) --------- */
+.icon.cart,
+.icon.wishlist {
+  position: relative;
+}
+
+/* Badge design */
+.icon.cart .badge,
+.icon.wishlist .badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #000;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 4px 6px;
+  text-align: center;
+  display: inline-block;
+}
+
+/* --------- Mobile Badges (Bottom Nav) --------- */
+.mobile-bottom-nav a.cart,
+.mobile-bottom-nav a.wishlist {
+  position: relative;
+}
+
+.mobile-bottom-nav a.cart .badge,
+.mobile-bottom-nav a.wishlist .badge {
+  position: absolute;
+  top: -4px;
+  right: 20px;
+  background: #000;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 3px 6px;
+  min-width: 18px;
+  text-align: center;
+  display: inline-block;
+}
+
+/* --------- Responsive Visibility --------- */
+
+/* ✅ Hide desktop badges on mobile */
+@media (max-width: 991px) {
+  .icon.cart .badge,
+  .icon.wishlist .badge {
+    display: none !important;
+  }
+}
+
+/* ✅ Hide mobile badges on desktop */
+@media (min-width: 992px) {
+  .mobile-bottom-nav a.cart .badge,
+  .mobile-bottom-nav a.wishlist .badge {
+    display: none !important;
+  }
+}
 
 
 /* Right Icons */
@@ -1633,15 +1694,18 @@ header .bathroom-cards-content p {
 
 .cart_section .cart-table th,
 .cart_section .cart-table td {
-    border: none !important; /* no vertical borders */
+    border: none !important;
+    /* no vertical borders */
     vertical-align: middle;
     padding: 12px 10px;
 }
 
 .cart_section .cart-table tr {
-    border-bottom: 1px solid #ddd; /* only row-wise border */
+    border-bottom: 1px solid #ddd;
+    /* only row-wise border */
 }
-.table-light th{
+
+.table-light th {
     font-weight: 500;
 }
 
@@ -1871,6 +1935,13 @@ header .bathroom-cards-content p {
         font-weight: 600;
         margin-top: 5px;
         display: block;
+        text-align: center;
+        /* ✅ Price center */
+    }
+
+    /* ✅ Quantity ko center align */
+    .cart_section .cart-table td:nth-child(2) {
+        text-align: center;
     }
 
     .cart_section .delete-btn {
@@ -1881,9 +1952,151 @@ header .bathroom-cards-content p {
     }
 }
 
-
-
 /* ====== Cart page end ====== */
+
+
+/* ====== Products page start ====== */
+
+.product_filter .offcanvas {
+    z-index: 9990;
+}
+
+.product_filter .filter-section {
+    border-radius: 14px;
+    padding: 20px;
+    background: #fff;
+    margin-bottom: 0;
+    position: sticky;
+    top: 70px;
+    z-index: 100;
+    height: fit-content;
+}
+
+/* Accordion Buttons */
+.product_filter .accordion-button {
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 16px 14px;
+    border: none;
+    box-shadow: none !important;
+}
+
+.product_filter .accordion-button:not(.collapsed) {
+    background: #fff !important;
+    color: #222 !important;
+    box-shadow: none !important;
+}
+
+.product_filter .accordion-item {
+    border: none !important;
+    border-bottom: 1px solid #eee !important;
+    margin: 0 !important;
+}
+
+.product_filter .accordion-collapse {
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.product_filter .accordion-body {
+    padding: 10px 14px;
+}
+
+/* Checkboxes / Radio */
+.product_filter .form-check-input {
+    cursor: pointer;
+}
+
+.product_filter .form-check-label {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* PRICE RANGE SLIDER */
+.product_filter .form-range {
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    outline: none;
+    appearance: none;
+    margin-top: 10px;
+}
+
+.product_filter .form-range::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #ff7e5f;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.product_filter .form-range::-webkit-slider-thumb:hover {
+    background: #e85c41;
+}
+
+.product_filter .form-range::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #ff7e5f;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.product_filter #price p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 8px;
+}
+
+/* COLOR FILTER */
+.product_filter .color-filter {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+    gap: 10px;
+    justify-items: start;
+}
+
+.product_filter .color-option {
+    cursor: pointer;
+}
+
+.product_filter .color-option input {
+    display: none;
+}
+
+.product_filter .color-circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+}
+
+.product_filter .color-option input:checked+.color-circle {
+    box-shadow: 0 0 0 2px #333, 0 0 6px rgba(0, 0, 0, 0.25);
+    transform: scale(1.1);
+}
+
+/* --- RESPONSIVE CHANGES --- */
+@media (max-width: 768px) {
+    .product_filter .filter-section {
+        display: none;
+        /* hide static sidebar */
+    }
+
+}
+
+/* ====== Products page end ====== */
+
+
 
 
 
@@ -1979,29 +2192,6 @@ header .bathroom-cards-content p {
     color: #777;
 }
 
-.product-section .viewing {
-    color: #444;
-    margin: 6px 0;
-}
-
-.product-section .pincode-check {
-    margin: 10px 0;
-}
-
-.product-section .pincode-check input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.product-section .pincode-check button {
-    padding: 8px 15px;
-    border: none;
-    background: #000;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-}
 
 .product-section .stock {
     color: red;
@@ -2235,7 +2425,7 @@ footer {
 }
 
 /* Social Icons */
-/* Social Icons */
+
 .social-icons {
     margin-top: 15px;
     display: flex;

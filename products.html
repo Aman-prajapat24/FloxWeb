@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flox-Product_details</title>
+    <title>Flox-Products</title>
 
     <!-- Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@
 
     <!-- ====== Header section start ====== -->
 
-      <header>
+     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <!-- Sidebar Toggle -->
@@ -668,223 +668,324 @@
     <!-- ====== Header section end ====== -->
 
 
-    <!-- ====== Products details page start ======  -->
+    <!-- ====== About page start ======  -->
 
-    <!-- products details  -->
-    <section class="product-section">
-        <div class="product-container">
-
-            <!-- Left Gallery -->
-            <div class="product-gallery">
-                <div class="thumbnails">
-                    <img src="Assets/kitchen2.webp" class="active" onclick="changeImage(this)">
-                    <img src="Assets/kitchen1.avif" onclick="changeImage(this)">
-                    <img src="Assets/kitchen2.webp" onclick="changeImage(this)">
-                    <img src="Assets/kitchen1.avif" onclick="changeImage(this)">
-                    <img src="Assets/kitchen1.avif" onclick="changeImage(this)">
-                </div>
-
-                <div class="main-image">
-                    <img id="currentImage" src="Assets/kitchen2.webp">
-                </div>
-            </div>
-
-            <!-- Right Product Details -->
-            <div class="product-details">
-
-                <h2>24x16" LED Ceiling Shower in Gold Finish - SS304 Concealed Showerhead with Remote & 3 Spray Modes
-                    (Rain, Mist, Waterfall)</h2>
-                <p>Item code: <strong>CS-3010-G</strong></p>
-
-                <p class="price">Rs. 39,310.00 <span class="old-price">Rs. 63,400.00</span></p>
-            
-
-                <p class="stock">Hurry Up! <span>Only 5 left in stock!</span></p>
-
-                <div class="quantity">
-                    <button onclick="decreaseQty()">-</button>
-                    <input type="text" id="quantityInput" value="1" readonly>
-                    <button onclick="increaseQty()">+</button>
-                </div>
-
-                <div class="buttons">
-                    <button class="btn btn-cart">ADD TO CART</button>
-                    <button class="btn btn-buy">BUY IT NOW</button>
-                </div>
-
-                <div class="extra-info">
-                    <p><strong>Available:</strong> Instock</p>
-                    <p><strong>Type:</strong> Concealed LED Ceiling Showerhead</p>
-                    <p><strong>Collections:</strong> Featured Products, Gold, Showers</p>
-                </div>
-            </div>
-
-        </div>
+    <section class="about-banner"
+        style=" background: url('Assets/about_us_banner.avif') no-repeat center center/cover;">
+        <h1>Kitchen Sinks</h1>
     </section>
 
-     <!-- Description section  -->
-    <section class="discription_section">
-        <h2>Description</h2>
-        <p>
-            Experience luxury and relaxation like never before with the Aquieen 24x16” Ceiling Shower,
-            a premium ceiling-mounted concealed showerhead that combines elegance, advanced technology,
-            and superior functionality. This innovative shower features remote-controlled LED lights
-            to create a soothing ambiance while the built-in music system allows you to enjoy your
-            favorite tunes during your shower, elevating your bathing experience.
-        </p>
-        <p>
-            Crafted from heavy-duty SS304 stainless steel with a gold finish, this showerhead ensures
-            exceptional durability, corrosion resistance, and a sleek, luxurious appearance that blends
-            perfectly with modern bathroom designs. The 3 spray modes—Rainfall, Mist, and Waterfall—offer
-            a versatile and spa-like experience, allowing you to choose the perfect flow for ultimate
-            relaxation. The concealed installation design ensures a clean, seamless look while the remote
-            control functionality gives you complete control over the LED lights and music settings,
-            providing a personalized and indulgent shower experience.
-        </p>
-        <p>
-            Ideal for luxury homes, high-end hotels, and spa environments, this ceiling-mounted concealed
-            showerhead combines cutting-edge technology and sophisticated aesthetics, making it a perfect
-            addition to any modern bathroom.
-        </p>
 
-        <ul>
-            <li>REMOTE-CONTROLLED LED LIGHTS & MUSIC SYSTEM ➜ Enjoy a luxurious ambiance with customizable LED lights
-                and a built-in music system, offering a spa-like experience in your shower.</li>
-            <li>3 SPRAY MODES FOR VERSATILE SHOWERING ➜ Choose between Rainfall, Mist, and Waterfall modes to create a
-                relaxing, rejuvenating shower experience tailored to your preference.</li>
-            <li>GOLD FINISH HEAVY-DUTY SS304 BODY ➜ Constructed from high-grade SS304 stainless steel with an
-                electro-coated gold finish, ensuring durability, corrosion resistance, and a sleek, modern appearance.
-            </li>
-            <li>CONCEALED CEILING-MOUNTED DESIGN ➜ The concealed ceiling installation offers a clean and sophisticated
-                look, seamlessly blending with contemporary bathroom interiors.</li>
-            <li>USER-FRIENDLY REMOTE CONTROL FUNCTION ➜ Effortlessly control LED lights, music, and spray modes using an
-                intuitive remote control for a personalized shower experience.</li>
-            <li>LUXURIOUS DIMENSIONS FOR FULL COVERAGE ➜ The large 24x16-inch size provides wide water coverage,
-                offering a truly immersive and spa-like shower experience.</li>
-            <li>IDEAL FOR HOMES, HOTELS & SPA SETUPS ➜ Perfect for high-end homes, luxury hotels, and spa environments,
-                ensuring a combination of style, functionality, and comfort.</li>
-        </ul>
-    </section>
-    
-    <!-- Related products  -->
-    <section class="related_products">
-        <div class="section-title">
-            <h2>Related Products</h2>
-            <p>Experience the ultimate in sanitary excellence with our best-selling product, delivering unmatched
-                quality, style, and reliability for your needs.</p>
+
+
+
+    <section class="product_filter">
+        <div class="container-fluid mt-4">
+            <div class="row">
+
+                <!-- FILTER BUTTON (visible only on mobile/tablet) -->
+                <div class="d-lg-none text-end mb-3">
+                    <button class="btn btn-dark" data-bs-toggle="offcanvas" data-bs-target="#filterSidebar">
+                        <i class="fa fa-filter"></i> Filters
+                    </button>
+                </div>
+
+
+                <!-- LEFT SIDE FILTERS (desktop only) -->
+                <div class="col-lg-3 d-none d-md-block">
+                    <div class="filter-section">
+                        <div class="accordion" id="filterAccordion">
+                            <!-- Availability -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#availability">Availability</button>
+                                </h2>
+                                <div id="availability" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="availability"
+                                                id="inStock">
+                                            <label class="form-check-label" for="inStock">In Stock</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="availability"
+                                                id="outStock">
+                                            <label class="form-check-label" for="outStock">Out of Stock</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Price -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#price">Price</button>
+                                </h2>
+                                <div id="price" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        <input type="range" class="form-range" min="0" max="15000" step="500">
+                                        <p>Rs. 0 - Rs. 12,920</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Color -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#color">Color</button>
+                                </h2>
+                                <div id="color" class="accordion-collapse collapse">
+                                    <div class="accordion-body color-filter">
+                                        <label class="color-option"><input type="checkbox"><span class="color-circle"
+                                                style="background:#000;"></span></label>
+                                        <label class="color-option"><input type="checkbox"><span class="color-circle"
+                                                style="background:#fff; border:1px solid #ccc;"></span></label>
+                                        <label class="color-option"><input type="checkbox"><span class="color-circle"
+                                                style="background:#e63946;"></span></label>
+                                        <label class="color-option"><input type="checkbox"><span class="color-circle"
+                                                style="background:#1d4ed8;"></span></label>
+                                        <label class="color-option"><input type="checkbox"><span class="color-circle"
+                                                style="background:#16a34a;"></span></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Material -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#material">Material</button>
+                                </h2>
+                                <div id="material" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="steel">
+                                            <label class="form-check-label" for="steel">Stainless Steel</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Product Type -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#productType">Product Type</button>
+                                </h2>
+                                <div id="productType" class="accordion-collapse collapse">
+                                    <div class="accordion-body">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="kitchenSink">
+                                            <label class="form-check-label" for="kitchenSink">Kitchen Sink</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- accordion end -->
+                    </div>
+                </div>
+
+
+                <!-- PRODUCTS -->
+                <div class="col-lg-9">
+                    <div class="row">
+                        <!-- Product 1 -->
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                            <div class="product-card">
+                                <a href="product_details.html">
+                                    <div class="product-image">
+                                        <span class="discount-badge">-38%</span>
+                                        <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                                        <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+
+                                        <!-- Hover Icons -->
+                                        <div class="hover-icons">
+                                            <button data-tooltip="Add to Cart"><i
+                                                    class="fa fa-shopping-bag"></i></button>
+                                            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h6>Shower Column Set In Oil</h6>
+                                        <span class="price">Rs. 20,600.00</span>
+                                        <span class="old-price">Rs. 33,210.00</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Repeat same col for other products -->
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                            <div class="product-card">
+                                <a href="product_details.html">
+                                    <div class="product-image">
+                                        <span class="discount-badge">-38%</span>
+                                        <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                                        <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+
+                                        <!-- Hover Icons -->
+                                        <div class="hover-icons">
+                                            <button data-tooltip="Add to Cart"><i
+                                                    class="fa fa-shopping-bag"></i></button>
+                                            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h6>Shower Column Set In Oil</h6>
+                                        <span class="price">Rs. 20,600.00</span>
+                                        <span class="old-price">Rs. 33,210.00</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                            <div class="product-card">
+                                <a href="product_details.html">
+                                    <div class="product-image">
+                                        <span class="discount-badge">-38%</span>
+                                        <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                                        <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+
+                                        <!-- Hover Icons -->
+                                        <div class="hover-icons">
+                                            <button data-tooltip="Add to Cart"><i
+                                                    class="fa fa-shopping-bag"></i></button>
+                                            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h6>Shower Column Set In Oil</h6>
+                                        <span class="price">Rs. 20,600.00</span>
+                                        <span class="old-price">Rs. 33,210.00</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-6">
+                            <div class="product-card">
+                                <a href="product_details.html">
+                                    <div class="product-image">
+                                        <span class="discount-badge">-38%</span>
+                                        <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
+                                        <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
+
+                                        <!-- Hover Icons -->
+                                        <div class="hover-icons">
+                                            <button data-tooltip="Add to Cart"><i
+                                                    class="fa fa-shopping-bag"></i></button>
+                                            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h6>Shower Column Set In Oil</h6>
+                                        <span class="price">Rs. 20,600.00</span>
+                                        <span class="old-price">Rs. 33,210.00</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
         </div>
 
-        <div class="products-grid">
-            <div class="product-card">
-                <a href="product_details.html">
-                    <div class="product-image">
-                        <span class="discount-badge">-38%</span>
-                        <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-                        <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-
-                        <!-- Hover Icons -->
-                        <div class="hover-icons">
-                            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-                            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+        <!-- OFFCANVAS FILTER (for mobile/tablet) -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="filterSidebar">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title">Filter</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <!-- SAME FILTER ACCORDION CODE HERE (copy from desktop sidebar) -->
+                <div class="accordion" id="filterAccordionMobile">
+                    <!-- Availability -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#availability">Availability</button>
+                        </h2>
+                        <div id="availability" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="availability" id="inStock">
+                                    <label class="form-check-label" for="inStock">In Stock</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="availability" id="outStock">
+                                    <label class="form-check-label" for="outStock">Out of Stock</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="product-info">
-                        <h6>Shower Column Set In Oil</h6>
-                        <span class="price">Rs. 20,600.00</span>
-                        <span class="old-price">Rs. 33,210.00</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="product-card">
-                <a href="product_details.html">
-                    <div class="product-image">
-                        <span class="discount-badge">-38%</span>
-                        <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-                        <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-
-                        <!-- Hover Icons -->
-                        <div class="hover-icons">
-                            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-                            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                    <!-- Price -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#price">Price</button>
+                        </h2>
+                        <div id="price" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <input type="range" class="form-range" min="0" max="15000" step="500">
+                                <p>Rs. 0 - Rs. 12,920</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="product-info">
-                        <h6>Shower Column Set In Oil</h6>
-                        <span class="price">Rs. 20,600.00</span>
-                        <span class="old-price">Rs. 33,210.00</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="product-card">
-                <a href="product_details.html">
-                    <div class="product-image">
-                        <span class="discount-badge">-38%</span>
-                        <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-                        <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-
-                        <!-- Hover Icons -->
-                        <div class="hover-icons">
-                            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-                            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                    <!-- Color -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#color">Color</button>
+                        </h2>
+                        <div id="color" class="accordion-collapse collapse">
+                            <div class="accordion-body color-filter">
+                                <label class="color-option"><input type="checkbox"><span class="color-circle"
+                                        style="background:#000;"></span></label>
+                                <label class="color-option"><input type="checkbox"><span class="color-circle"
+                                        style="background:#fff; border:1px solid #ccc;"></span></label>
+                                <label class="color-option"><input type="checkbox"><span class="color-circle"
+                                        style="background:#e63946;"></span></label>
+                                <label class="color-option"><input type="checkbox"><span class="color-circle"
+                                        style="background:#1d4ed8;"></span></label>
+                                <label class="color-option"><input type="checkbox"><span class="color-circle"
+                                        style="background:#16a34a;"></span></label>
+                            </div>
                         </div>
                     </div>
-                    <div class="product-info">
-                        <h6>Shower Column Set In Oil</h6>
-                        <span class="price">Rs. 20,600.00</span>
-                        <span class="old-price">Rs. 33,210.00</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="product-card">
-                <a href="product_details.html">
-                    <div class="product-image">
-                        <span class="discount-badge">-38%</span>
-                        <img src="Assets/kitchen1.avif" alt="Product" class="main-img">
-                        <img src="Assets/kitchen2.webp" alt="Product Hover" class="hover-img">
-
-                        <!-- Hover Icons -->
-                        <div class="hover-icons">
-                            <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-                            <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
+                    <!-- Material -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#material">Material</button>
+                        </h2>
+                        <div id="material" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="steel">
+                                    <label class="form-check-label" for="steel">Stainless Steel</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="product-info">
-                        <h6>Shower Column Set In Oil</h6>
-                        <span class="price">Rs. 20,600.00</span>
-                        <span class="old-price">Rs. 33,210.00</span>
+                    <!-- Product Type -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#productType">Product Type</button>
+                        </h2>
+                        <div id="productType" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="kitchenSink">
+                                    <label class="form-check-label" for="kitchenSink">Kitchen Sink</label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </a>
+                </div>
             </div>
-
         </div>
     </section>
-
-   
-
-    <!-- ====== Products details page end ======  -->
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- ====== About page end ======  -->
-
-
-
-
-
-
-
 
 
 
