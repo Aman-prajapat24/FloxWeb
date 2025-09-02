@@ -315,6 +315,21 @@ function toggleSearch() {
 }
 
 
+// Mobile bottom navigation active state handler
+document.querySelectorAll('.mobile-bottom-nav a[data-nav]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        if (this.getAttribute('href') === '#') {
+            e.preventDefault();
+        }
+        
+        // Remove active from all mobile bottom nav links
+        document.querySelectorAll('.mobile-bottom-nav a').forEach(l => l.classList.remove('active'));
+        
+        // Add active to clicked link
+        this.classList.add('active');
+    });
+});
+
 //  ====== Header section end ====== 
 
 
