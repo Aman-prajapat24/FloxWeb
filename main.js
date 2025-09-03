@@ -317,21 +317,21 @@ function toggleSearch() {
 
 // Mobile bottom navigation active state handler
 document.querySelectorAll('.mobile-bottom-nav a[data-nav]').forEach(link => {
-    link.addEventListener('click', function(e) {
-        // Only prevent default for links with href="#"
-        if (this.getAttribute('href') === '#') {
-            e.preventDefault();
-        }
-        
-        // Remove active from all mobile bottom nav links
-        document.querySelectorAll('.mobile-bottom-nav a').forEach(l => l.classList.remove('active'));
-        
-        // Add active to clicked link
-        this.classList.add('active');
-        
-        // If the link has a real URL, let it navigate after setting active state
-        // The active state will be maintained by the server-side or through page-specific JavaScript
-    });
+  link.addEventListener('click', function (e) {
+    // Only prevent default for links with href="#"
+    if (this.getAttribute('href') === '#') {
+      e.preventDefault();
+    }
+
+    // Remove active from all mobile bottom nav links
+    document.querySelectorAll('.mobile-bottom-nav a').forEach(l => l.classList.remove('active'));
+
+    // Add active to clicked link
+    this.classList.add('active');
+
+    // If the link has a real URL, let it navigate after setting active state
+    // The active state will be maintained by the server-side or through page-specific JavaScript
+  });
 });
 
 
@@ -477,38 +477,106 @@ function removeItem(el) {
 
 // ====== Login page start ======
 
- function sendOTP() {
-    let mobile = document.getElementById("mobile").value;
-    if (mobile.length < 10) {
-      alert("Please enter valid mobile number");
-      return;
-    }
-    document.getElementById("message").style.display = "block";
-    document.getElementById("mobileForm").style.display = "none";
-    document.getElementById("otpForm").style.display = "block";
+function sendOTP() {
+  let mobile = document.getElementById("mobile").value;
+  if (mobile.length < 10) {
+    alert("Please enter valid mobile number");
+    return;
   }
+  document.getElementById("message").style.display = "block";
+  document.getElementById("mobileForm").style.display = "none";
+  document.getElementById("otpForm").style.display = "block";
+}
 
-  function verifyOTP() {
-    let otp = 
-      document.getElementById("otp1").value +
-      document.getElementById("otp2").value +
-      document.getElementById("otp3").value +
-      document.getElementById("otp4").value;
+function verifyOTP() {
+  let otp =
+    document.getElementById("otp1").value +
+    document.getElementById("otp2").value +
+    document.getElementById("otp3").value +
+    document.getElementById("otp4").value;
 
-    if (otp.length < 4) {
-      alert("Please enter complete OTP");
-      return;
-    }
-    // Hide OTP sent message when verifying
-    document.getElementById("message").style.display = "none";
-    document.getElementById("successMsg").style.display = "block";
-    document.getElementById("otpForm").style.display = "none";
+  if (otp.length < 4) {
+    alert("Please enter complete OTP");
+    return;
   }
+  // Hide OTP sent message when verifying
+  document.getElementById("message").style.display = "none";
+  document.getElementById("successMsg").style.display = "block";
+  document.getElementById("otpForm").style.display = "none";
+}
 
-  function moveNext(current, nextId) {
-    if (current.value.length === 1 && nextId) {
-      document.getElementById(nextId).focus();
-    }
+function moveNext(current, nextId) {
+  if (current.value.length === 1 && nextId) {
+    document.getElementById(nextId).focus();
   }
+}
 
 // ====== Login page end ======
+
+// ====== Checkout page start ======
+
+function selectPayment(element, method) {
+  // Remove active class from all payment options
+  document.querySelectorAll('.payment-option').forEach(option => {
+    option.classList.remove('active');
+  });
+
+  // Add active class to selected option
+  element.classList.add('active');
+
+  // Check the radio button
+  const radio = element.querySelector('input[type="radio"]');
+  radio.checked = true;
+}
+
+function selectBilling(element, option) {
+  // Remove active class from all billing options
+  document.querySelectorAll('.billing-option').forEach(opt => {
+    opt.classList.remove('active');
+  });
+
+  // Add active class to selected option
+  element.classList.add('active');
+
+  // Check the radio button
+  const radio = element.querySelector('input[type="radio"]');
+  radio.checked = true;
+
+  // Show/hide billing form
+  const billingForm = document.getElementById('differentBillingForm');
+  if (option === 'different') {
+    billingForm.classList.add('show');
+  } else {
+    billingForm.classList.remove('show');
+  }
+}
+
+function processPayment() {
+  const form = document.getElementById('checkoutForm');
+
+  if (form.checkValidity()) {
+    alert('Order placed successfully! 🎉\n\nThank you for your purchase. You will receive a confirmation email shortly.');
+  } else {
+    alert('Please fill in all required fields.');
+    form.reportValidity();
+  }
+}
+
+// Add smooth animations on load
+window.addEventListener('load', function () {
+  const cards = document.querySelectorAll('.product-card');
+  cards.forEach((card, index) => {
+    setTimeout(() => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'all 0.5s ease';
+
+      setTimeout(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, 100);
+    }, index * 100);
+  });
+});
+
+// ====== Checkout page end ======

@@ -2745,20 +2745,254 @@ header .bathroom-cards-content p {
 /* ====== Login Page end ====== */
 
 
-/* Container jo saare cards hold karega */
+/* ====== Wishlist page start ====== */
+
 .products-container {
     padding: 20px 20px 0;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Desktop pe 4 cards ek line me */
-  gap: 20px; /* Cards ke beech ka gap */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Desktop pe 4 cards ek line me */
+    gap: 20px;
+    /* Cards ke beech ka gap */
 }
 
 /* Mobile ke liye (max-width: 768px tak) */
 @media (max-width: 768px) {
-  .products-container {
-    grid-template-columns: repeat(2, 1fr); /* Mobile pe 2 cards ek line me */
-  }
+    .products-container {
+        grid-template-columns: repeat(2, 1fr);
+        /* Mobile pe 2 cards ek line me */
+    }
 }
+
+/* ====== wishlist page end ====== */
+
+
+/* ====== Checkout page start ====== */
+
+.checkout_section .checkout-container {
+    margin: 90px auto 0;
+    max-width: 1200px;
+}
+
+.checkout_section .left-panel,
+.checkout_section .right-panel {
+    background: #fff;
+    padding: 10px;
+    border-radius: 12px;
+    height: fit-content;
+}
+
+.checkout_section .right-panel {
+    position: sticky;
+    top: 20px;
+}
+
+.checkout_section .form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+    margin-left: 4px;
+}
+
+.checkout_section .form-control,
+.checkout_section .form-select {
+    border-radius: 8px;
+    border: 1.5px solid #e0e0e0;
+    padding: 12px 15px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.checkout_section .form-control:focus,
+.checkout_section .form-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.15);
+}
+
+.checkout_section .form-check-input {
+    margin-top: 0.2em;
+}
+
+
+.checkout_section .form-check {
+    display: flex;
+    align-items: center;
+}
+
+
+.checkout_section .form-check-label {
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+/* Centered Radio Options Styling */
+.checkout_section .payment-methods,
+.checkout_section .billing-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.checkout_section .payment-option,
+.checkout_section .billing-option {
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    padding: 10px;
+    width: 100%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.checkout_section .payment-option.active,
+.checkout_section .billing-option.active {
+    border-color: #28a745;
+    background-color: #f8fff9;
+    transform: scale(1.02);
+}
+
+.checkout_section .payment-option:hover,
+.checkout_section .billing-option:hover {
+    border-color: #28a745;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.checkout_section .billing-form {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    display: none;
+}
+
+.checkout_section .billing-form.show {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.checkout_section .btn-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    padding: 15px 30px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.checkout_section .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+}
+
+.checkout_section .section-title {
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e9ecef;
+    text-align: left;
+}
+
+/* Product Card Styling */
+.checkout_section .product-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.checkout_section .product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.checkout_section .product-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.checkout_section .product-details {
+    flex: 1;
+}
+
+.checkout_section .product-name {
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.checkout_section .product-description {
+    color: #6c757d;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.checkout_section .product-quantity {
+    color: #495057;
+    font-size: 13px;
+}
+
+.checkout_section .product-price {
+    font-weight: 700;
+    color: #28a745;
+    font-size: 18px;
+}
+
+.checkout_section .summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.checkout_section .summary-item:last-child {
+    border-bottom: none;
+    font-size: 18px;
+    font-weight: 700;
+    color: #2c3e50;
+
+}
+
+@media (max-width: 768px) {
+    .checkout_section .checkout-container {
+        margin: 70px 10px;
+    }
+
+
+    .checkout_section .payment-methods,
+    .checkout_section .billing-options {
+        max-width: 100%;
+    }
+}
+
+/* ====== Checkout page end ====== */
 
 
 

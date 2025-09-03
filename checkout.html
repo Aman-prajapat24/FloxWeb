@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flox-Cart</title>
+    <title>Flox-Checkout</title>
 
     <!-- Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -225,11 +225,11 @@
                                 class="badge">2</span></a>
                     </div>
                     <div class="icon wishlist" data-tooltip="Wishlist">
-                       <a href="wishlist.html"> <i class="far fa-heart"></i>
-                        <span class="badge">2</span></a>
+                        <a href="wishlist.html"> <i class="far fa-heart"></i>
+                            <span class="badge">2</span></a>
                     </div>
                     <div class="icon" data-tooltip="Login">
-                       <a href="login.html"> <i class="fas fa-user"></i></a>
+                        <a href="login.html"> <i class="fas fa-user"></i></a>
                     </div>
                     <div class="icon" data-tooltip="Contact Support">
                         <a href="contact.html"><i class="fa-solid fa-headset bag_icon"></i></a>
@@ -428,199 +428,279 @@
     <!-- ====== Header section end ====== -->
 
 
-    <!-- ====== cart page start ======  -->
-
-    <section class="about-banner"
-        style=" background: url('Assets/about_us_banner.avif') no-repeat center center/cover;">
-        <h1>Your Cart</h1>
-    </section>
 
 
-    <section class="cart_section">
-        <div class="row g-0">
 
-            <!-- LEFT SIDE: Cart Table -->
-            <div class="col-lg-8 sticky-left">
-                <div class="table-responsive">
-                    <table class="table cart-table align-middle">
-                        <thead class="table-light">
-                            <tr>
-                                <th>Product</th>
-                                <th class="text-center">Quantity</th>
-                                <th class="text-center">Total</th>
-                                <th class="text-center">Remove</th>
-                            </tr>
-                        </thead>
-                        <tbody id="cart-body">
-                            <tr>
-                                <td class="d-flex align-items-center">
-                                    <img src="Assets/kitchen1.avif" class="me-3" alt="product">
-                                    <div>
-                                        <p class="mb-1 fw-semibold">24x24” LED Ceiling Shower in Gold Finish 24x24” LED Ceiling Shower in Gold Finish </p>
-                                        <small>Concealed Showerhead with 2 spray modes</small>
+    <section class="checkout_section">
+        <div class="container-fluid">
+            <div class="checkout-container">
+                <div class="row">
+                    <!-- Left Side - 50% -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="left-panel">
+                            <!-- Delivery Section -->
+                            <h4 class="section-title">Delivery Information</h4>
+                            <form id="checkoutForm">
+                                <div class="row">
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">First name *</label>
+                                        <input type="text" class="form-control" placeholder="Enter first name" required>
                                     </div>
-                                </td>
-                                <td class="text-center">
-                                    <span class="quantity-btn" onclick="changeQuantity(this, -1)">-</span>
-                                    <span class="mx-2 qty">1</span>
-                                    <span class="quantity-btn" onclick="changeQuantity(this, 1)">+</span>
-                                </td>
-                                <td class="item-total text-center">₹ 20,950</td>
-                                <td class="text-center"><span class="delete-btn"
-                                        onclick="removeItem(this)">&#10006;</span></td>
-                            </tr>
-                            <tr>
-                                <td class="d-flex align-items-center">
-                                    <img src="Assets/kitchen2.webp" class="me-3" alt="product">
-                                    <div>
-                                        <p class="mb-1 fw-semibold">Luxury Shower Panel</p>
-                                        <small>Rain, Mist, Waterfall modes</small>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Last name *</label>
+                                        <input type="text" class="form-control" placeholder="Enter last name" required>
                                     </div>
-                                </td>
-                                <td class="text-center">
-                                    <span class="quantity-btn" onclick="changeQuantity(this, -1)">-</span>
-                                    <span class="mx-2 qty">2</span>
-                                    <span class="quantity-btn" onclick="changeQuantity(this, 1)">+</span>
-                                </td>
-                                <td class="item-total text-center">₹ 41,900</td>
-                                <td class="text-center"><span class="delete-btn"
-                                        onclick="removeItem(this)">&#10006;</span></td>
-                            </tr>
-                             <tr>
-                                <td class="d-flex align-items-center">
-                                    <img src="Assets/kitchen1.avif" class="me-3" alt="product">
-                                    <div>
-                                        <p class="mb-1 fw-semibold">24x24” LED Ceiling Shower in Gold Finish</p>
-                                        <small>Concealed Showerhead with 2 spray modes</small>
+                                </div>
+
+                                <div class="mb-2">
+                                    <label class="form-label">Address *</label>
+                                    <input type="text" class="form-control" placeholder="House number, Street name"
+                                        required>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">City *</label>
+                                        <input type="text" class="form-control" placeholder="Enter city" required>
                                     </div>
-                                </td>
-                                <td class="text-center">
-                                    <span class="quantity-btn" onclick="changeQuantity(this, -1)">-</span>
-                                    <span class="mx-2 qty">1</span>
-                                    <span class="quantity-btn" onclick="changeQuantity(this, 1)">+</span>
-                                </td>
-                                <td class="item-total text-center">₹ 20,950</td>
-                                <td class="text-center"><span class="delete-btn"
-                                        onclick="removeItem(this)">&#10006;</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">State *</label>
+                                        <select class="form-select" required>
+                                            <option value="">Select State</option>
+                                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                            <option value="Assam">Assam</option>
+                                            <option value="Bihar">Bihar</option>
+                                            <option value="Chhattisgarh">Chhattisgarh</option>
+                                            <option value="Goa">Goa</option>
+                                            <option value="Gujarat">Gujarat</option>
+                                            <option value="Haryana">Haryana</option>
+                                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                            <option value="Jharkhand">Jharkhand</option>
+                                            <option value="Karnataka">Karnataka</option>
+                                            <option value="Kerala">Kerala</option>
+                                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                            <option value="Maharashtra">Maharashtra</option>
+                                            <option value="Manipur">Manipur</option>
+                                            <option value="Meghalaya">Meghalaya</option>
+                                            <option value="Mizoram">Mizoram</option>
+                                            <option value="Nagaland">Nagaland</option>
+                                            <option value="Odisha">Odisha</option>
+                                            <option value="Punjab">Punjab</option>
+                                            <option value="Rajasthan">Rajasthan</option>
+                                            <option value="Sikkim">Sikkim</option>
+                                            <option value="Tamil Nadu">Tamil Nadu</option>
+                                            <option value="Telangana">Telangana</option>
+                                            <option value="Tripura">Tripura</option>
+                                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                            <option value="Uttarakhand">Uttarakhand</option>
+                                            <option value="West Bengal">West Bengal</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">PIN code *</label>
+                                        <input type="text" class="form-control" placeholder="Enter PIN code"
+                                            pattern="[0-9]{6}" required>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <label class="form-label">Phone</label>
+                                        <input type="tel" class="form-control" placeholder="+91 XXXXX XXXXX"
+                                            pattern="[0-9]{10}">
+                                    </div>
+                                </div>
+                            </form>
+
+                            <!-- Payment Section -->
+                            <h4 class="section-title mt-3">Payment Method</h4>
+                            <div class="payment-methods">
+                                <div class="payment-option" onclick="selectPayment(this, 'card')">
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" name="paymentMethod" value="card"
+                                            checked>
+                                        <label class="form-check-label">
+                                            <strong>Credit/Debit Card</strong>
+                                            <small class="d-block text-muted mt-1">Visa, Mastercard, RuPay
+                                                accepted</small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="payment-option" onclick="selectPayment(this, 'upi')">
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" name="paymentMethod" value="upi">
+                                        <label class="form-check-label">
+                                            <strong>UPI</strong>
+                                            <small class="d-block text-muted mt-1">PhonePe, Google Pay, Paytm</small>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="payment-option" onclick="selectPayment(this, 'cod')">
+                                    <div class="form-check">
+                                        <input type="radio" class="form-check-input" name="paymentMethod" value="cod">
+                                        <label class="form-check-label">
+                                            <strong>Cash on Delivery</strong>
+                                            <small class="d-block text-muted mt-1">Pay when you receive</small>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Billing Section -->
+                            <h4 class="section-title mt-3">Billing Address</h4>
+                            <div class="billing-options">
+                                <!-- Same as Shipping -->
+                                <div class="billing-option" onclick="selectBilling(this, 'same')">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="billingOption" value="same"
+                                            checked>
+                                        <label class="form-check-label">
+                                            <strong>Same as shipping address</strong>
+                                            <small class="d-block text-muted mt-1">Use the delivery address for
+                                                billing</small>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Different Billing -->
+                                <div class="billing-option" onclick="selectBilling(this, 'different')">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="billingOption"
+                                            value="different">
+                                        <label class="form-check-label">
+                                            <strong>Use a different billing address</strong>
+                                            <small class="d-block text-muted mt-1">Enter a separate billing
+                                                address</small>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Different Billing Form -->
+                            <div id="differentBillingForm" class="billing-form">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">First name</label>
+                                        <input type="text" class="form-control" placeholder="Enter first name">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Last name</label>
+                                        <input type="text" class="form-control" placeholder="Enter last name">
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Address</label>
+                                    <input type="text" class="form-control" placeholder="House number, Street name">
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">City</label>
+                                        <input type="text" class="form-control" placeholder="Enter city">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">State</label>
+                                        <select class="form-select">
+                                            <option value="">Select State</option>
+                                            <option value="Rajasthan">Rajasthan</option>
+                                            <option value="Maharashtra">Maharashtra</option>
+                                            <option value="Delhi">Delhi</option>
+                                            <option value="Karnataka">Karnataka</option>
+                                            <option value="Tamil Nadu">Tamil Nadu</option>
+                                            <option value="Gujarat">Gujarat</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Country/Region</label>
+                                    <select class="form-select">
+                                        <option value="India" selected>India</option>
+                                    </select>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">PIN code</label>
+                                        <input type="text" class="form-control" placeholder="Enter PIN code"
+                                            pattern="[0-9]{6}">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Phone</label>
+                                        <input type="tel" class="form-control" placeholder="+91 XXXXX XXXXX">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100 mt-4" onclick="processPayment()">
+                                <strong>Pay Now</strong>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right Side - 50% -->
+                    <div class="col-lg-6 col-md-12">
+                        <div class="right-panel">
+                            <h4 class="section-title">Order Summary</h4>
+
+                            <!-- Products List -->
+                            <div class="products-list">
+                                <!-- Product 1 -->
+                                <div class="product-card">
+                                    <div class="d-flex align-items-center">
+                                        <img src="Assets/kitchen1.avif" class="product-image" alt="LED Ceiling Shower">
+                                        <div class="product-details">
+                                            <div class="product-name">Premium LED Ceiling Shower</div>
+                                            <div class="product-description">24x16" with RGB Lighting & Remote Control
+                                            </div>
+                                            <div class="product-quantity">Quantity: 1</div>
+                                        </div>
+                                        <div class="product-price">₹39,310</div>
+                                    </div>
+                                </div>
+
+                                <!-- Product 2 - Example additional product -->
+                                <div class="product-card">
+                                    <div class="d-flex align-items-center">
+                                        <img src="Assets/kitchen2.webp" class="product-image" alt="Bathroom Faucet">
+                                        <div class="product-details">
+                                            <div class="product-name">Modern Basin Faucet</div>
+                                            <div class="product-description">Chrome finish with ceramic disc valves
+                                            </div>
+                                            <div class="product-quantity">Quantity: 2</div>
+                                        </div>
+                                        <div class="product-price">₹5,580</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Order Summary -->
+                            <div class="mt-4">
+                                <div class="summary-item">
+                                    <span>Subtotal</span>
+                                    <span>₹44,890</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Shipping & Handling</span>
+                                    <span class="text-success fw-bold">Free</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>GST (18%)</span>
+                                    <span>₹8,080</span>
+                                </div>
+                                <div class="summary-item">
+                                    <strong>Total Amount</strong>
+                                    <strong class="text-primary">₹52,970</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <!-- RIGHT SIDE: Summary -->
-            <div class="col-lg-4">
-                <div class="summary-box Price_total">
-                    <h6 class="text-success">Congratulations! You get free shipping!</h6>
-
-                    <hr>
-                    <div class="d-flex justify-content-between">
-                        <span>Total MRP</span><span class="fw-bold">₹ 63,400</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <span>Bag Discount</span><span class="text-danger">- ₹ 24,090</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <span>Coupon Discount</span><span>- ₹ 0</span>
-                    </div>
-                    <div class="d-flex justify-content-between">
-                        <span>Shipping Charge</span><span class="text-success">Free</span>
-                    </div>
-                    <hr>
-                    <div class="d-flex justify-content-between">
-                        <span>Total Payable</span><span>₹ 39,310</span>
-                    </div>
-
-                   <a href="checkout.html"> <button class="btn btn-primary w-100 mt-3">Checkout</button></a>
-
-                    
-                </div>
-                
-                <!-- Secure Shopping Guarantee -->
-                    <div class="mt-4 text-center secure_payment">
-                        <p class="mb-2">Secure Shopping Guarantee</p>
-                        <img src="Assets/Secure_Payment.avif" alt="Secure Payments" class="img-fluid">
-                    </div>
             </div>
         </div>
     </section>
-
-
-    <!-- ====== cart page end ======  -->
-
-
-
-
-    <!-- ====== Footer section start ====== -->
-
-    <footer>
-        <div class="footer-container">
-
-            <!-- Logo + About -->
-            <div class="footer-logo">
-                <img src="Assets/logo.png" alt="Aquieen Logo">
-                <p>
-                    For over six decades aquieen the bathroom brand has been the benchmark
-                    for the organised bath industry in India. Aquieen has demonstrated
-                    the value of true quality and trusted service for generations.
-                </p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
-
-            <!-- Quick Links -->
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="#">Blogs</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </div>
-
-            <!-- Important Links -->
-            <div class="footer-links">
-                <h3>Important Links</h3>
-                <ul>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Shipping Policy</a></li>
-                    <li><a href="#">Refund And Cancellation</a></li>
-                </ul>
-            </div>
-
-            <!-- Get In Touch -->
-            <div class="footer-contact">
-                <h3>Get In Touch</h3>
-                <p>Phone: <a href="tel:+919829365779">+91-9829365779</a></p>
-                <p>Address: Metro Pillar 122, New Sanganer Road, Sodala Jaipur, Rajasthan- 302019</p>
-                <p>Email: <a href="mailto:info.aquieen@gmail.com">info.aquieen@gmail.com</a></p>
-            </div>
-
-        </div>
-
-        <!-- Bottom -->
-        <div class="footer-bottom">
-            Copyright © 2025 FLOX, All Rights Reserved
-        </div>
-    </footer>
-
-    <!-- ====== Footer section end ====== -->
-
-
-
-
-    <!-- WhatsApp Floating Button -->
-
-    <a href="https://wa.me/917734981050" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
 
 
     <!-- Bootstrap -->
