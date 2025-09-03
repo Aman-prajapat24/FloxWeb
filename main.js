@@ -318,6 +318,7 @@ function toggleSearch() {
 // Mobile bottom navigation active state handler
 document.querySelectorAll('.mobile-bottom-nav a[data-nav]').forEach(link => {
     link.addEventListener('click', function(e) {
+        // Only prevent default for links with href="#"
         if (this.getAttribute('href') === '#') {
             e.preventDefault();
         }
@@ -327,8 +328,14 @@ document.querySelectorAll('.mobile-bottom-nav a[data-nav]').forEach(link => {
         
         // Add active to clicked link
         this.classList.add('active');
+        
+        // If the link has a real URL, let it navigate after setting active state
+        // The active state will be maintained by the server-side or through page-specific JavaScript
     });
 });
+
+
+
 
 //  ====== Header section end ====== 
 
@@ -420,49 +427,88 @@ tabBtns.forEach(btn => {
 // ====== Products details section start ======
 
 function changeImage(imgElement) {
-      // Change main image
-      document.getElementById("currentImage").src = imgElement.src;
+  // Change main image
+  document.getElementById("currentImage").src = imgElement.src;
 
-      // Remove active class from all thumbnails
-      let thumbnails = document.querySelectorAll(".thumbnails img");
-      thumbnails.forEach(img => img.classList.remove("active"));
+  // Remove active class from all thumbnails
+  let thumbnails = document.querySelectorAll(".thumbnails img");
+  thumbnails.forEach(img => img.classList.remove("active"));
 
-      // Add active class to clicked thumbnail
-      imgElement.classList.add("active");
-    }
+  // Add active class to clicked thumbnail
+  imgElement.classList.add("active");
+}
 
-     function increaseQty() {
-    let qty = document.getElementById("quantityInput");
-    qty.value = parseInt(qty.value) + 1;
+function increaseQty() {
+  let qty = document.getElementById("quantityInput");
+  qty.value = parseInt(qty.value) + 1;
+}
+
+function decreaseQty() {
+  let qty = document.getElementById("quantityInput");
+  if (parseInt(qty.value) > 1) {
+    qty.value = parseInt(qty.value) - 1;
   }
+}
 
-  function decreaseQty() {
-    let qty = document.getElementById("quantityInput");
-    if (parseInt(qty.value) > 1) {
-      qty.value = parseInt(qty.value) - 1;
-    }
-  }
-
-  // ====== Products details section end ======
+// ====== Products details section end ======
 
 
 /* ====== Cart page start ====== */
 
-   // Quantity update
-    function changeQuantity(el, change) {
-      let qtyEl = el.parentElement.querySelector(".qty");
-      let qty = parseInt(qtyEl.innerText) + change;
-      if (qty < 1) qty = 1;
-      qtyEl.innerText = qty;
+// Quantity update
+function changeQuantity(el, change) {
+  let qtyEl = el.parentElement.querySelector(".qty");
+  let qty = parseInt(qtyEl.innerText) + change;
+  if (qty < 1) qty = 1;
+  qtyEl.innerText = qty;
 
-      // Update total price (sample calculation)
-      let price = 20950; // per item (dummy)
-      el.closest("tr").querySelector(".item-total").innerText = "₹ " + (price * qty).toLocaleString();
-    }
+  // Update total price (sample calculation)
+  let price = 20950; // per item (dummy)
+  el.closest("tr").querySelector(".item-total").innerText = "₹ " + (price * qty).toLocaleString();
+}
 
-    // Remove item
-    function removeItem(el) {
-      el.closest("tr").remove();
-    }
+// Remove item
+function removeItem(el) {
+  el.closest("tr").remove();
+}
 
 /* ====== Cart page end ====== */
+
+
+// ====== Login page start ======
+
+ function sendOTP() {
+    let mobile = document.getElementById("mobile").value;
+    if (mobile.length < 10) {
+      alert("Please enter valid mobile number");
+      return;
+    }
+    document.getElementById("message").style.display = "block";
+    document.getElementById("mobileForm").style.display = "none";
+    document.getElementById("otpForm").style.display = "block";
+  }
+
+  function verifyOTP() {
+    let otp = 
+      document.getElementById("otp1").value +
+      document.getElementById("otp2").value +
+      document.getElementById("otp3").value +
+      document.getElementById("otp4").value;
+
+    if (otp.length < 4) {
+      alert("Please enter complete OTP");
+      return;
+    }
+    // Hide OTP sent message when verifying
+    document.getElementById("message").style.display = "none";
+    document.getElementById("successMsg").style.display = "block";
+    document.getElementById("otpForm").style.display = "none";
+  }
+
+  function moveNext(current, nextId) {
+    if (current.value.length === 1 && nextId) {
+      document.getElementById(nextId).focus();
+    }
+  }
+
+// ====== Login page end ======

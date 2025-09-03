@@ -13,26 +13,20 @@ body {
 
 a {
     color: inherit;
-    /* parent ka color lega */
     text-decoration: none;
-    /* underline hat jayegi */
     cursor: pointer;
-    /* pointer cursor rahega */
 }
 
 a:visited {
     color: inherit;
-    /* visited par bhi same color */
 }
 
 a:hover {
     color: inherit;
-    /* hover par bhi same */
 }
 
 a:active {
     color: inherit;
-    /* click hone par bhi same */
 }
 
 
@@ -61,14 +55,12 @@ header .navbar {
 
 header .navbar-brand img {
     height: 80px;
-    /* Reduced logo height */
 }
 
 /* Nav links */
 header .nav-link {
     font-weight: 600;
     margin: 0 9px;
-    /* Reduced margin */
     position: relative;
     padding-bottom: 4px;
     font-size: 14px;
@@ -77,7 +69,6 @@ header .nav-link {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Reduced font size */
 }
 
 /* Premium underline animation */
@@ -101,63 +92,65 @@ header .nav-link:hover::after {
 /* --------- Desktop Badges (Wishlist + Cart in Header) --------- */
 .icon.cart,
 .icon.wishlist {
-  position: relative;
+    position: relative;
 }
 
 /* Badge design */
 .icon.cart .badge,
 .icon.wishlist .badge {
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  background: #000;
-  color: #fff;
-  font-size: 10px;
-  font-weight: bold;
-  border-radius: 50%;
-  padding: 4px 6px;
-  text-align: center;
-  display: inline-block;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #000;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 4px 6px;
+    text-align: center;
+    display: inline-block;
 }
 
 /* --------- Mobile Badges (Bottom Nav) --------- */
 .mobile-bottom-nav a.cart,
 .mobile-bottom-nav a.wishlist {
-  position: relative;
+    position: relative;
 }
 
 .mobile-bottom-nav a.cart .badge,
 .mobile-bottom-nav a.wishlist .badge {
-  position: absolute;
-  top: -4px;
-  right: 20px;
-  background: #000;
-  color: #fff;
-  font-size: 11px;
-  font-weight: bold;
-  border-radius: 50%;
-  padding: 3px 6px;
-  min-width: 18px;
-  text-align: center;
-  display: inline-block;
+    position: absolute;
+    top: -4px;
+    right: 20px;
+    background: #000;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 3px 6px;
+    min-width: 18px;
+    text-align: center;
+    display: inline-block;
 }
 
 /* --------- Responsive Visibility --------- */
 
 /* ✅ Hide desktop badges on mobile */
 @media (max-width: 991px) {
-  .icon.cart .badge,
-  .icon.wishlist .badge {
-    display: none !important;
-  }
+
+    .icon.cart .badge,
+    .icon.wishlist .badge {
+        display: none !important;
+    }
 }
 
 /* ✅ Hide mobile badges on desktop */
 @media (min-width: 992px) {
-  .mobile-bottom-nav a.cart .badge,
-  .mobile-bottom-nav a.wishlist .badge {
-    display: none !important;
-  }
+
+    .mobile-bottom-nav a.cart .badge,
+    .mobile-bottom-nav a.wishlist .badge {
+        display: none !important;
+    }
 }
 
 
@@ -1086,6 +1079,114 @@ header .bathroom-cards-content p {
     }
 }
 
+/* Mobile Bottom Navigation Active State Enhancement */
+.mobile-bottom-nav a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Active state line above icon */
+.mobile-bottom-nav a.active::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background: #000;
+    border-radius: 2px;
+    animation: slideIn 0.3s ease;
+}
+
+/* Slide in animation for the active line */
+@keyframes slideIn {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+
+    to {
+        width: 30px;
+        opacity: 1;
+    }
+}
+
+/* Active state styling */
+.mobile-bottom-nav a.active {
+    color: #000;
+    font-weight: 600;
+}
+
+.mobile-bottom-nav a.active i {
+    color: #000;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Enhanced hover effect for mobile nav */
+.mobile-bottom-nav a:active {
+    transform: scale(0.95);
+}
+
+/* Existing mobile bottom nav styles */
+.mobile-bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 9999;
+}
+
+.mobile-bottom-nav a {
+    flex: 1;
+    text-align: center;
+    color: #333;
+    font-size: 12px;
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+.mobile-bottom-nav a i {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* Badge styles for cart and wishlist */
+.mobile-bottom-nav a.cart,
+.mobile-bottom-nav a.wishlist {
+    position: relative;
+}
+
+.mobile-bottom-nav a.cart .badge,
+.mobile-bottom-nav a.wishlist .badge {
+    position: absolute;
+    top: -4px;
+    right: 20px;
+    background: #000;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 3px 6px;
+    min-width: 18px;
+    text-align: center;
+    display: inline-block;
+}
+
+/* Show mobile nav only on mobile screens */
+@media (max-width: 991px) {
+    .mobile-bottom-nav {
+        display: flex;
+    }
+}
 
 /* ====== Banner section end ====== */
 
@@ -1109,7 +1210,8 @@ header .bathroom-cards-content p {
 /* Cards container */
 .shop_by_section .shop-by-space {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Default desktop = 4 cards */
+    grid-template-columns: repeat(4, 1fr);
+    /* Default desktop = 4 cards */
     gap: 16px;
 }
 
@@ -1141,9 +1243,10 @@ header .bathroom-cards-content p {
 /* Overlay heading */
 .shop_by_section .card h3 {
     position: absolute;
-    top: 70%;              /* 👈 अब heading ऊपर से align होगी */
-    left: 8px;              
-    right: 8px;             
+    top: 70%;
+    /* 👈 अब heading ऊपर से align होगी */
+    left: 8px;
+    right: 8px;
     background-color: rgba(239, 239, 239, 0.85);
     color: #000;
     padding: 6px 12px;
@@ -1151,8 +1254,8 @@ header .bathroom-cards-content p {
     font-weight: 500;
     border-radius: 5px;
     text-align: center;
-    white-space: normal;    
-    word-wrap: break-word;  
+    white-space: normal;
+    word-wrap: break-word;
     line-height: 1.4;
 }
 
@@ -1160,17 +1263,20 @@ header .bathroom-cards-content p {
 /* Tablet view */
 @media (max-width: 1024px) {
     .shop_by_section .shop-by-space {
-        grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 cards per row */
     }
-    
+
     .shop_by_section .card img {
         height: 220px;
     }
-    
+
     .shop_by_section .card h3 {
         font-size: 13px;
-        left: 10px;              /* left spacing increase */
-        right: 10px;             /* right spacing increase */
+        left: 10px;
+        /* left spacing increase */
+        right: 10px;
+        /* right spacing increase */
         padding: 6px 10px;
     }
 }
@@ -1178,35 +1284,46 @@ header .bathroom-cards-content p {
 /* Mobile view */
 @media (max-width: 768px) {
     .shop_by_section .shop-by-space {
-        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cards per row */
     }
-    
+
     .shop_by_section .card img {
         height: 200px;
     }
-    
+
     .shop_by_section .card h3 {
         font-size: 12px;
-        left: 12px;              /* left spacing increase */
-        right: 12px;             /* right spacing increase */
+        left: 12px;
+        /* left spacing increase */
+        right: 12px;
+        /* right spacing increase */
         padding: 5px 9px;
     }
 }
 
 /* Small mobile view */
 @media (max-width: 425px) {
-    .shop_by_section .shop-by-space {
-        grid-template-columns: repeat(2, 1fr); /* force 2 cards */
+    .shop_by_section {
+        margin-top: 30px;
+        padding: 0 20px;
     }
-    
+
+    .shop_by_section .shop-by-space {
+        grid-template-columns: repeat(2, 1fr);
+        /* force 2 cards */
+    }
+
     .shop_by_section .card img {
         height: 160px;
     }
-    
+
     .shop_by_section .card h3 {
         font-size: 11px;
-        left: 15px;              /* maximum left spacing for small screens */
-        right: 15px;             /* maximum right spacing for small screens */
+        left: 15px;
+        /* maximum left spacing for small screens */
+        right: 15px;
+        /* maximum right spacing for small screens */
         padding: 4px 8px;
         top: 60%;
     }
@@ -1998,9 +2115,10 @@ header .bathroom-cards-content p {
     /* Remove button - Sized to button content */
     .cart_section .cart-table td:nth-child(4) {
         position: absolute;
-        top: 10px;
+        bottom: 5px;
         right: 10px;
-        width: auto !important; /* Only as wide as the button */
+        width: auto !important;
+        /* Only as wide as the button */
         min-width: unset !important;
         text-align: right !important;
         padding: 0 !important;
@@ -2475,6 +2593,173 @@ header .bathroom-cards-content p {
 
 
 
+/* ====== Login Page start ====== */
+
+.login_page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Full screen height */
+    background: #f5f7fa;
+    /* हल्का बैकग्राउंड */
+    padding: 0 20px;
+    /* Left-right padding */
+    box-sizing: border-box;
+}
+
+/* Login Card */
+.login_page .login-card {
+    max-width: 400px;
+    width: 100%;
+    background: #fff;
+    padding: 35px 25px;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    margin: 20px auto;
+}
+
+/* Logo */
+.login_page .logo {
+    width: 90px;
+    margin-bottom: 15px;
+}
+
+/* Headings */
+.login_page h4 {
+    font-weight: 500;
+    color: #222;
+    text-align: left;
+}
+
+.login_page .text-muted {
+    font-size: 14px;
+    color: #666;
+    text-align: left;
+}
+
+/* Input Fields */
+.login_page .input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.login_page .form-control {
+    border-radius: 12px;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 100%;
+    transition: border 0.3s, box-shadow 0.3s;
+    font-size: 15px;
+}
+
+.login_page .form-control:focus {
+    border-color: #5b8ef1;
+    box-shadow: 0 0 8px rgba(91, 142, 241, 0.3);
+}
+
+/* OTP Inputs */
+.login_page .otp-input {
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+    text-align: center;
+    margin: 0 6px;
+    border-radius: 12px;
+    border: 1px solid #000;
+    outline: none;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.login_page .otp-input:focus {
+    border-color: #5b8ef1;
+    box-shadow: 0 0 8px rgba(91, 142, 241, 0.3);
+}
+
+/* Buttons */
+.login_page .btn-custom {
+    border-radius: 12px;
+    font-weight: 600;
+    padding: 12px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.login_page .btn-gradient {
+    background: linear-gradient(135deg, #4f8dfd, #2575fc);
+    border: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.login_page .btn-gradient:hover {
+    background: linear-gradient(135deg, #2575fc, #4f8dfd);
+}
+
+.login_page .btn-success {
+    background: #28a745;
+    border: none;
+    color: #fff;
+}
+
+/* Alerts */
+.login_page .alert {
+    border-radius: 12px;
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Footer Links */
+.login_page .footer-link {
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.login_page .footer-link a {
+    text-decoration: none;
+    color: #000;
+}
+
+.login_page .footer-link a:hover {
+    text-decoration: underline;
+}
+
+/* ✅ Responsive (Mobile Only) */
+@media (max-width: 576px) {
+    .login_page {
+        padding: 0 12px;
+        /* Mobile पर extra padding */
+    }
+
+    .login_page .otp-input {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+        margin: 0 4px;
+    }
+}
+
+/* ====== Login Page end ====== */
+
+
+/* Container jo saare cards hold karega */
+.products-container {
+    padding: 20px 20px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Desktop pe 4 cards ek line me */
+  gap: 20px; /* Cards ke beech ka gap */
+}
+
+/* Mobile ke liye (max-width: 768px tak) */
+@media (max-width: 768px) {
+  .products-container {
+    grid-template-columns: repeat(2, 1fr); /* Mobile pe 2 cards ek line me */
+  }
+}
+
 
 
 
@@ -2482,9 +2767,9 @@ header .bathroom-cards-content p {
 
 footer {
     background: var(--primary-color);
-    color: #000;
+    color: var(--secondary-color);
     padding: 50px 20px 20px;
-    font-family: Arial, sans-serif;
+    font-family: 'Lora', serif;
     margin-top: 50px;
 }
 
@@ -2504,13 +2789,13 @@ footer {
 }
 
 .footer-logo p {
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 500;
     line-height: 1.6;
     color: #000;
 }
 
 /* Social Icons */
-
 .social-icons {
     margin-top: 15px;
     display: flex;
@@ -2521,34 +2806,31 @@ footer {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #111;
-    /* black circle */
+    background: var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
-    color: #fff;
-    /* white logo */
+    color: #000;
     text-decoration: none;
-    /* underline hatane ke liye */
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform-origin: center;
 }
 
 /* Hover Effect */
 .social-icons a:hover {
-    background: #fff;
-    color: #000;
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    transform: scale(1.15);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
 }
-
 
 
 /* Links Section */
 .footer-links,
 .footer-contact {
     min-height: 220px;
-    /* sab same height */
 }
 
 .footer-links h3,
@@ -2570,18 +2852,20 @@ footer {
 
 .footer-links ul li a {
     color: #000;
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 500;
     text-decoration: none;
     transition: 0.3s;
 }
 
 .footer-links ul li a:hover {
-    color: #594e4e;
+    color: var(--secondary-color);
 }
 
 /* Contact */
 .footer-contact p {
-    font-size: 14px;
+    font-size: 15px;
+    font-weight: 500;
     margin: 8px 0;
     color: #000;
 }
@@ -2589,19 +2873,22 @@ footer {
 .footer-contact a {
     color: #000;
     text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
 }
 
 .footer-contact a:hover {
-    color: #0b0b0b;
+    color: var(--secondary-color);
 }
 
 /* Bottom */
 .footer-bottom {
-    border-top: 1px solid #333;
+    border-top: 1px solid var(--accent-color);
     margin-top: 30px;
-    padding-top: 15px;
+    padding-top: 20px;
     text-align: center;
-    font-size: 13px;
+    font-size: 15px;
+    font-weight: 500;
     color: #000;
 }
 
@@ -2624,7 +2911,6 @@ footer {
     .footer-links,
     .footer-contact {
         min-height: auto;
-        /* mobile pe height fix na ho */
     }
 
     .footer-bottom {

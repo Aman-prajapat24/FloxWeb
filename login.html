@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flox-Login</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom css link  -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+
+<section class="login_page">
+  <!-- Login Card -->
+  <div class="login-card">
+    <!-- Logo -->
+   <a href="index.html"> <img src="Assets/logo.png" alt="Logo" class="logo"></a>
+
+    <!-- Mobile Form -->
+    <div id="mobileForm">
+      <h4 class="mb-2">Sign in</h4>
+      <p class="text-muted mb-4">Enter your mobile number and we'll send you a verification code</p>
+      
+      <div class="input-group">
+        <input type="tel" id="mobile" class="form-control" placeholder="Enter Mobile Number">
+      </div>
+
+      <button class="btn btn-gradient w-100 btn-custom" onclick="sendOTP()">Continue</button>
+    </div>
+
+    <!-- OTP Form -->
+    <div id="otpForm" style="display:none;">
+      <h4 class="mb-3">Enter OTP</h4>
+      <div class="d-flex justify-content-center mb-3">
+        <input type="text" maxlength="1" class="otp-input" id="otp1" oninput="moveNext(this, 'otp2')">
+        <input type="text" maxlength="1" class="otp-input" id="otp2" oninput="moveNext(this, 'otp3')">
+        <input type="text" maxlength="1" class="otp-input" id="otp3" oninput="moveNext(this, 'otp4')">
+        <input type="text" maxlength="1" class="otp-input" id="otp4">
+      </div>
+      <button class="btn btn-success w-100 btn-custom" onclick="verifyOTP()">Verify OTP</button>
+    </div>
+
+    <!-- Message -->
+    <div id="message" class="alert alert-success" style="display:none;">
+      OTP Sent Successfully!
+    </div>
+
+    <!-- Success -->
+    <div id="successMsg" class="alert alert-info" style="display:none;">
+      ✅ Login Successful!
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-link mt-3">
+      <a href="#">Privacy policy</a> · 
+      <a href="#">Terms of service</a>
+    </div>
+  </div>
+</section>
+  
+
+    <!-- Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
