@@ -1,14 +1,15 @@
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
 }
 
 :root {
     --primary-color: #7aa0ba;
     --secondary-color: #253036;
     --accent-color: #49687c;
-    --white-color: #333;
-    --black-color: 13px;
+    --white-color: #fff;
+    --black-color: #000;
+    --primary-font: 'Poppins', sans-serif;
+    --secondary-font: 'Lora', serif;
 }
 
 a {
@@ -39,16 +40,12 @@ header {
     width: 100%;
     z-index: 3000;
     background: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 header .navbar {
-    background: #fff;
     padding: 0 8px;
-    /* Reduced padding */
     border-bottom: 1px solid #e5e5e5;
     height: 80px;
-    /* Reduced height from 80px */
     display: flex;
     align-items: center;
 }
@@ -69,9 +66,11 @@ header .nav-link {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: var(--primary-font);
+    color: var(--secondary-color);
 }
 
-/* Premium underline animation */
+/* underline animation */
 header .nav-link::after {
     content: "";
     position: absolute;
@@ -79,7 +78,7 @@ header .nav-link::after {
     left: 50%;
     width: 0;
     height: 2px;
-    background: #000;
+    background: var(--secondary-color);
     transition: all 0.35s ease;
     transform: translateX(-50%);
     border-radius: 3px;
@@ -101,8 +100,8 @@ header .nav-link:hover::after {
     position: absolute;
     top: -8px;
     right: -8px;
-    background: #000;
-    color: #fff;
+    background: var(--secondary-color);
+    color: var(--white-color);
     font-size: 10px;
     font-weight: bold;
     border-radius: 50%;
@@ -111,10 +110,10 @@ header .nav-link:hover::after {
     display: inline-block;
 }
 
-
-
-
 /* Right Icons */
+.icons {
+    gap: 20px;
+}
 .icon {
     position: relative;
     display: inline-block;
@@ -123,20 +122,19 @@ header .nav-link:hover::after {
 /* Right Icons */
 header .icons .icon i {
     font-size: 22px;
-    margin-left: 20px;
     cursor: pointer;
-    color: #000;
+    color: var(--secondary-color);
 }
 
 /* Tooltip */
 .icon::after {
     content: attr(data-tooltip);
     position: absolute;
-    top: 40px;
-    /* icon ke niche tooltip */
+    top: 30px;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
-    background: #000;
+    background: var(--secondary-color);
+    letter-spacing: 1px;
     color: #fff;
     font-size: 10px;
     padding: 5px 12px;
@@ -152,8 +150,7 @@ header .icons .icon i {
 .icon::before {
     content: "";
     position: absolute;
-    top: 34px;
-    /* tooltip ke just upar */
+    top: 25px;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     width: 0;
@@ -161,7 +158,6 @@ header .icons .icon i {
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
     border-bottom: 6px solid #000;
-    /* Ulta arrow */
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -177,9 +173,6 @@ header .icons .icon i {
     transform: translateX(-50%) translateY(0);
 }
 
-
-
-
 /* ------------------- Dropdown Mega Menu (Desktop) ------------------- */
 header .dropdown-menu {
     width: 100%;
@@ -189,10 +182,8 @@ header .dropdown-menu {
     border-radius: 0 !important;
     padding: 0;
     display: none;
-    /* Reduced margin */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
-    background: #fff;
-    /* Dropdown scroll fix */
+    background: var(--white-color);
     max-height: 100vh;
     overflow-y: auto;
 }
@@ -205,7 +196,6 @@ header .dropdown-arrow {
     margin-left: 4px;
     transition: transform 0.3s ease;
     font-size: 11px;
-    /* Reduced arrow size */
 }
 
 header .nav-item.dropdown:hover>.nav-link .dropdown-arrow {
@@ -216,16 +206,13 @@ header .nav-item.dropdown:hover>.nav-link .dropdown-arrow {
 header .bathroom-mega {
     display: flex;
     min-height: 350px;
-    /* Reduced height */
 }
 
 header .bathroom-categories {
     width: 25%;
     border-right: 1px solid #eee;
-    background: #fff;
+    background: var(--white-color);
     padding: 12px;
-    /* Reduced padding */
-    /* Categories scroll fix */
     max-height: 100vh;
     overflow-y: auto;
 }
@@ -235,15 +222,14 @@ header .bathroom-categories a {
     justify-content: space-between;
     align-items: center;
     padding: 12px;
-    /* Reduced padding */
-    color: #000;
+    color: var(--secondary-color) !important;
+    font-family: var(--secondary-font);
     font-weight: 500;
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
     font-size: 14px;
-    /* Reduced font size */
 }
 
 header .bathroom-categories a .dropdown-arrow {
@@ -253,7 +239,6 @@ header .bathroom-categories a .dropdown-arrow {
 /* Desktop bathroom categories hover functionality */
 @media (min-width: 1024px) {
 
-    /* Adjusted to 1024px */
     header .bathroom-categories a:hover {
         background: #f5f5f5;
     }
@@ -300,8 +285,6 @@ header .bathroom-categories a.active {
 header .bathroom-content {
     width: 75%;
     padding: 12px;
-    /* Reduced padding */
-    /* Content scroll fix */
     max-height: 87vh;
     overflow-y: auto;
 }
@@ -317,7 +300,6 @@ header .bathroom-content .card {
 
 header .bathroom-content img {
     height: 250px;
-    /* Reduced image height */
     transition: transform 0.3s;
     width: 100%;
     object-fit: cover;
@@ -330,22 +312,20 @@ header .bathroom-content img:hover {
 
 header .bathroom-content p {
     margin-top: 8px;
-    /* Reduced margin */
     font-weight: 600;
     font-size: 18px;
-    /* Reduced font size */
-    color: #111;
+    color: var(--secondary-color) !important;
+    font-family: var(--secondary-font);
     transition: color 0.3s ease;
 }
 
 header .bathroom-content p:hover {
-    color: #000;
+    color: var(--accent-color) !important;
+    cursor: pointer;
 }
 
 header .custom_dropdown {
     padding: 12px;
-    /* Reduced padding */
-    /* Custom dropdown scroll fix */
     max-height: 87vh;
     overflow-y: auto;
 }
@@ -365,14 +345,12 @@ header .custom_dropdown img:hover {
     transform: scale(1.03);
 }
 
-
 header .dropdown-menu p {
     margin-top: 8px;
-    /* Reduced margin */
     font-weight: 600;
     font-size: 18px;
-    /* Reduced font size */
-    color: #111;
+    color: var(--secondary-color) !important;
+    font-family: var(--secondary-font);
     transition: color 0.3s ease;
 }
 
@@ -414,15 +392,13 @@ header #searchBar {
     left: 0;
     width: 100%;
     height: 35vh;
-    /* 🔥 default height */
-    background: #fff;
+    background: var(--white-color);
     padding: 30px 20px;
     text-align: center;
     transition: all 0.4s ease;
     z-index: 4000;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     overflow-y: hidden;
-    /* default hidden */
 }
 
 header #searchBar.active {
@@ -445,7 +421,7 @@ header #searchBar input {
     width: 80%;
     max-width: 500px;
     padding: 10px 14px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--secondary-color);
     border-radius: 8px;
     font-size: 14px;
 }
@@ -468,7 +444,6 @@ header #searchBar .quick-search span {
 
 header #searchBar .recent-item {
     background: transparent;
-
     border-radius: 6px;
     display: flex;
     align-items: center;
@@ -502,8 +477,6 @@ header #searchBar .close-btn {
     padding: 0 10px;
 }
 
-
-
 /* Mobile view */
 @media (max-width: 768px) {
     #searchBar .suggestion-results {
@@ -521,7 +494,7 @@ header #bathroomSidebar {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: #fff;
+    background: var(--white-color);
     z-index: 3200;
     transition: left 0.3s ease;
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
@@ -538,9 +511,8 @@ header #bathroomSidebar.active {
 header #sidebar .sidebar-header,
 header #kitchenSidebar .sidebar-header,
 header #bathroomSidebar .sidebar-header {
-    background: #fff;
+    background: var(--white-color);
     padding: 12px;
-    /* Reduced padding */
     border-bottom: 1px solid #e5e5e5;
 }
 
@@ -840,10 +812,7 @@ header .bathroom-cards-content p {
 
     header .icons i {
         font-size: 20px;
-        /* Reduced icon size */
-        margin-left: 15px;
     }
-
     /* Sidebar remains full-width */
     header #sidebar,
     header #kitchenSidebar,
@@ -1025,7 +994,7 @@ header .bathroom-cards-content p {
     .icon .badge {
         display: none !important;
     }
-
+    
 }
 
 @media (max-width: 480px) {
@@ -1080,8 +1049,8 @@ header .bathroom-cards-content p {
 @media (max-width: 480px) {
     .image-swiper {
         height: auto;
-        /* Chhote mobile screens par aur kam height */
     }
+
 }
 
 /* ====== Banner section end ====== */
@@ -2710,12 +2679,10 @@ header .bathroom-cards-content p {
     margin-top: 0.2em;
 }
 
-
 .checkout_section .form-check {
     display: flex;
     align-items: center;
 }
-
 
 .checkout_section .form-check-label {
     font-size: 14px;
@@ -2724,7 +2691,6 @@ header .bathroom-cards-content p {
     margin-left: 8px;
 }
 
-/* Centered Radio Options Styling */
 .checkout_section .payment-methods,
 .checkout_section .billing-options {
     display: flex;
@@ -2760,7 +2726,8 @@ header .bathroom-cards-content p {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.checkout_section .billing-form {
+.checkout_section .billing-form,
+.checkout_section .payment-form {
     margin-top: 15px;
     padding: 15px;
     background-color: #f8f9fa;
@@ -2768,7 +2735,8 @@ header .bathroom-cards-content p {
     display: none;
 }
 
-.checkout_section .billing-form.show {
+.checkout_section .billing-form.show,
+.checkout_section .payment-form.show {
     display: block;
     animation: slideDown 0.3s ease;
 }
@@ -2778,7 +2746,6 @@ header .bathroom-cards-content p {
         opacity: 0;
         transform: translateY(-10px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -2788,16 +2755,37 @@ header .bathroom-cards-content p {
 .checkout_section .btn-primary {
     background: linear-gradient(135deg, #007bff, #0056b3);
     border: none;
-    padding: 15px 30px;
+    padding: 10px 60px; /* Button ko bada kiya */
     font-weight: 600;
-    border-radius: 8px;
+    font-size: 18px; /* Text size thoda bada */
+    border-radius: 10px;
     transition: all 0.3s ease;
+    display: block;         /* Center ke liye */
+    margin: 20px auto 0;    /* Center align */
+    text-align: center;
 }
 
 .checkout_section .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
 }
+@media (max-width: 768px) {
+  .checkout_section .place_order_btn {
+    float: none !important;       /* Bootstrap ke float ko force remove */
+    display: block !important;    /* block bana diya */
+    margin: 20px auto 0 !important; /* center align */
+    text-align: center !important;
+    width: 100%;  /* full width button (mobile me better UX ke liye) */
+    max-width: 280px; /* thoda control me rakha width */
+  }
+}
+
+
+/* Place Order button ka float hata do */
+.checkout_section .place_order_btn {
+    float: none;
+}
+
 
 .checkout_section .section-title {
     color: #2c3e50;
@@ -2809,7 +2797,6 @@ header .bathroom-cards-content p {
     text-align: left;
 }
 
-/* Product Card Styling */
 .checkout_section .product-card {
     background: #f8f9fa;
     border-radius: 12px;
@@ -2873,20 +2860,33 @@ header .bathroom-cards-content p {
     font-size: 18px;
     font-weight: 700;
     color: #2c3e50;
-
 }
 
 @media (max-width: 768px) {
     .checkout_section .checkout-container {
         margin: 70px 10px;
     }
-
-
     .checkout_section .payment-methods,
     .checkout_section .billing-options {
         max-width: 100%;
     }
 }
+
+.checkout_section .place_order_btn {
+    float: right; /* Right-align Place Order button */
+}
+
+.checkout_section .upi-image {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.checkout_section .upi-image:hover {
+    transform: scale(1.1);
+}
+
 
 /* ====== Checkout page end ====== */
 

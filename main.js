@@ -505,67 +505,102 @@ function moveNext(current, nextId) {
 // ====== Checkout page start ======
 
 function selectPayment(element, method) {
-  // Remove active class from all payment options
-  document.querySelectorAll('.payment-option').forEach(option => {
-    option.classList.remove('active');
-  });
+    // Remove active class from all payment options
+    document.querySelectorAll('.payment-option').forEach(option => {
+        option.classList.remove('active');
+    });
 
-  // Add active class to selected option
-  element.classList.add('active');
+    // Add active class to selected option
+    element.classList.add('active');
 
-  // Check the radio button
-  const radio = element.querySelector('input[type="radio"]');
-  radio.checked = true;
+    // Check the radio button
+    const radio = element.querySelector('input[type="radio"]');
+    radio.checked = true;
+
+    // Show/hide payment forms
+    const cardForm = document.getElementById('cardForm');
+    const upiForm = document.getElementById('upiForm');
+    cardForm.classList.remove('show');
+    upiForm.classList.remove('show');
+
+    if (method === 'card') {
+        cardForm.classList.add('show');
+    } else if (method === 'upi') {
+        upiForm.classList.add('show');
+    }
 }
 
 function selectBilling(element, option) {
-  // Remove active class from all billing options
-  document.querySelectorAll('.billing-option').forEach(opt => {
-    opt.classList.remove('active');
-  });
+    // Remove active class from all billing options
+    document.querySelectorAll('.billing-option').forEach(opt => {
+        opt.classList.remove('active');
+    });
 
-  // Add active class to selected option
-  element.classList.add('active');
+    // Add active class to selected option
+    element.classList.add('active');
 
-  // Check the radio button
-  const radio = element.querySelector('input[type="radio"]');
-  radio.checked = true;
+    // Check the radio button
+    const radio = element.querySelector('input[type="radio"]');
+    radio.checked = true;
 
-  // Show/hide billing form
-  const billingForm = document.getElementById('differentBillingForm');
-  if (option === 'different') {
-    billingForm.classList.add('show');
-  } else {
-    billingForm.classList.remove('show');
-  }
+    // Show/hide billing form
+    const billingForm = document.getElementById('differentBillingForm');
+    if (option === 'different') {
+        billingForm.classList.add('show');
+    } else {
+        billingForm.classList.remove('show');
+    }
 }
 
 function processPayment() {
-  const form = document.getElementById('checkoutForm');
+    const form = document.getElementById('checkoutForm');
+    const selectedPayment = document.querySelector('input[name="paymentMethod"]:checked').value;
+    const cardForm = document.getElementById('cardForm');
 
-  if (form.checkValidity()) {
-    alert('Order placed successfully! 🎉\n\nThank you for your purchase. You will receive a confirmation email shortly.');
-  } else {
-    alert('Please fill in all required fields.');
-    form.reportValidity();
-  }
+    // Validate card form if Credit/Debit Card is selected
+    if (selectedPayment === 'card') {
+        const cardInputs = cardForm.querySelectorAll('input[required]');
+        let valid = true;
+        cardInputs.forEach(input => {
+            if (!input.checkValidity()) {
+                valid = false;
+                input.reportValidity();
+            }
+        });
+        if (!valid) {
+            alert('Please fill in all required card details.');
+            return;
+        }
+    }
+
+    if (form.checkValidity()) {
+        alert('Order placed successfully! 🎉\n\nThank you for your purchase. You will receive a confirmation email shortly.');
+    } else {
+        alert('Please fill in all required fields.');
+        form.reportValidity();
+    }
 }
 
 // Add smooth animations on load
 window.addEventListener('load', function () {
-  const cards = document.querySelectorAll('.product-card');
-  cards.forEach((card, index) => {
-    setTimeout(() => {
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(20px)';
-      card.style.transition = 'all 0.5s ease';
+    const cards = document.querySelectorAll('.product-card');
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.5s ease';
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100);
+        }, index * 100);
+    });
 
-      setTimeout(() => {
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-      }, 100);
-    }, index * 100);
-  });
+    // Set Cash on Delivery as default active
+    const codOption = document.querySelector('.payment-option input[value="cod"]').parentElement.parentElement;
+    codOption.classList.add('active');
 });
+
+
 
 // ====== Checkout page end ======
