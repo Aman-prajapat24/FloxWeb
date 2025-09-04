@@ -111,47 +111,7 @@ header .nav-link:hover::after {
     display: inline-block;
 }
 
-/* --------- Mobile Badges (Bottom Nav) --------- */
-.mobile-bottom-nav a.cart,
-.mobile-bottom-nav a.wishlist {
-    position: relative;
-}
 
-.mobile-bottom-nav a.cart .badge,
-.mobile-bottom-nav a.wishlist .badge {
-    position: absolute;
-    top: -4px;
-    right: 20px;
-    background: #000;
-    color: #fff;
-    font-size: 11px;
-    font-weight: bold;
-    border-radius: 50%;
-    padding: 3px 6px;
-    min-width: 18px;
-    text-align: center;
-    display: inline-block;
-}
-
-/* --------- Responsive Visibility --------- */
-
-/* ✅ Hide desktop badges on mobile */
-@media (max-width: 991px) {
-
-    .icon.cart .badge,
-    .icon.wishlist .badge {
-        display: none !important;
-    }
-}
-
-/* ✅ Hide mobile badges on desktop */
-@media (min-width: 992px) {
-
-    .mobile-bottom-nav a.cart .badge,
-    .mobile-bottom-nav a.wishlist .badge {
-        display: none !important;
-    }
-}
 
 
 /* Right Icons */
@@ -711,15 +671,8 @@ header .bathroom-cards-content p {
     margin: 0;
 }
 
-/* Mobile Bottom Navigation Active States - Add this to your CSS */
-.mobile-bottom-nav a.active {
-    color: #000;
-    font-weight: 600;
-}
 
-.mobile-bottom-nav a.active i {
-    color: #000;
-}
+
 
 
 
@@ -993,45 +946,97 @@ header .bathroom-cards-content p {
     }
 }
 
-/* Mobile bottom navigation bar start  */
-
+/* mobile navbar  */
 .mobile-bottom-nav {
     display: none;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 60px;
-    background: #fff;
-    border-top: 1px solid #ddd;
+    height: 65px;
+    background-color: #fff;
+    border-top: 1px solid #eee;
     justify-content: space-around;
     align-items: center;
     z-index: 9999;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .mobile-bottom-nav a {
     flex: 1;
     text-align: center;
-    color: #333;
-    font-size: 12px;
+    color: #444;
+    font-size: 11px;
     text-decoration: none;
-    padding: 5px 0;
+    padding: 6px 0;
+    position: relative;
+    border-radius: 50%;
 }
 
 .mobile-bottom-nav a i {
-    font-size: 18px;
+    font-size: 20px;
     display: block;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
 }
 
-/* Sirf mobile view me dikhana */
+/* Active with floating circular background */
+.mobile-bottom-nav a.active {
+    color: #000;
+    font-weight: 600;
+    transform: translateY(-12px);
+    background: #fff;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    line-height: 1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Badge styles */
+.mobile-bottom-nav a.cart,
+.mobile-bottom-nav a.wishlist {
+    position: relative;
+}
+
+.mobile-bottom-nav a.cart .badge,
+.mobile-bottom-nav a.wishlist .badge {
+    position: absolute;
+    top: -2px;
+    right: 18px;
+    background: #000;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 3px 6px;
+    min-width: 18px;
+    text-align: center;
+    display: inline-block;
+}
+
+/* Show only on mobile */
 @media (max-width: 991px) {
     .mobile-bottom-nav {
         display: flex;
     }
 }
 
+@media (max-width: 768px) {
+    .icon .badge {
+        display: none !important;
+    }
 
+}
+
+@media (max-width: 480px) {
+    .mobile-bottom-nav {
+        height: 60px;
+    }
+
+    .mobile-bottom-nav a i {
+        font-size: 18px;
+    }
+}
 
 /* ====== Header section end ======  */
 
@@ -1076,115 +1081,6 @@ header .bathroom-cards-content p {
     .image-swiper {
         height: auto;
         /* Chhote mobile screens par aur kam height */
-    }
-}
-
-/* Mobile Bottom Navigation Active State Enhancement */
-.mobile-bottom-nav a {
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-/* Active state line above icon */
-.mobile-bottom-nav a.active::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 30px;
-    height: 3px;
-    background: #000;
-    border-radius: 2px;
-    animation: slideIn 0.3s ease;
-}
-
-/* Slide in animation for the active line */
-@keyframes slideIn {
-    from {
-        width: 0;
-        opacity: 0;
-    }
-
-    to {
-        width: 30px;
-        opacity: 1;
-    }
-}
-
-/* Active state styling */
-.mobile-bottom-nav a.active {
-    color: #000;
-    font-weight: 600;
-}
-
-.mobile-bottom-nav a.active i {
-    color: #000;
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
-}
-
-/* Enhanced hover effect for mobile nav */
-.mobile-bottom-nav a:active {
-    transform: scale(0.95);
-}
-
-/* Existing mobile bottom nav styles */
-.mobile-bottom-nav {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    background: #fff;
-    border-top: 1px solid #ddd;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 9999;
-}
-
-.mobile-bottom-nav a {
-    flex: 1;
-    text-align: center;
-    color: #333;
-    font-size: 12px;
-    text-decoration: none;
-    padding: 5px 0;
-}
-
-.mobile-bottom-nav a i {
-    font-size: 18px;
-    display: block;
-    margin-bottom: 4px;
-}
-
-/* Badge styles for cart and wishlist */
-.mobile-bottom-nav a.cart,
-.mobile-bottom-nav a.wishlist {
-    position: relative;
-}
-
-.mobile-bottom-nav a.cart .badge,
-.mobile-bottom-nav a.wishlist .badge {
-    position: absolute;
-    top: -4px;
-    right: 20px;
-    background: #000;
-    color: #fff;
-    font-size: 11px;
-    font-weight: bold;
-    border-radius: 50%;
-    padding: 3px 6px;
-    min-width: 18px;
-    text-align: center;
-    display: inline-block;
-}
-
-/* Show mobile nav only on mobile screens */
-@media (max-width: 991px) {
-    .mobile-bottom-nav {
-        display: flex;
     }
 }
 

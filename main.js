@@ -315,25 +315,14 @@ function toggleSearch() {
 }
 
 
-// Mobile bottom navigation active state handler
+// Active link handler
 document.querySelectorAll('.mobile-bottom-nav a[data-nav]').forEach(link => {
-  link.addEventListener('click', function (e) {
-    // Only prevent default for links with href="#"
-    if (this.getAttribute('href') === '#') {
-      e.preventDefault();
-    }
-
-    // Remove active from all mobile bottom nav links
-    document.querySelectorAll('.mobile-bottom-nav a').forEach(l => l.classList.remove('active'));
-
-    // Add active to clicked link
-    this.classList.add('active');
-
-    // If the link has a real URL, let it navigate after setting active state
-    // The active state will be maintained by the server-side or through page-specific JavaScript
-  });
+    link.addEventListener('click', function(e) {
+        if (this.getAttribute('href') === '#') e.preventDefault();
+        document.querySelectorAll('.mobile-bottom-nav a').forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+    });
 });
-
 
 
 
