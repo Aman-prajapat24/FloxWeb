@@ -1,36 +1,39 @@
-
 //  ====== Header section start ====== 
 
 function toggleSidebar() {
   const sidebar = document.getElementById("sidebar");
-  sidebar.classList.toggle("active");
+  if (sidebar) sidebar.classList.toggle("active");
   updateNavbarVisibility();
 }
 
 function openKitchenSidebar() {
-  document.getElementById("kitchenSidebar").classList.add("active");
+  const el = document.getElementById("kitchenSidebar");
+  if (el) el.classList.add("active");
   updateNavbarVisibility();
 }
 
 function closeKitchenSidebar() {
-  document.getElementById("kitchenSidebar").classList.remove("active");
+  const el = document.getElementById("kitchenSidebar");
+  if (el) el.classList.remove("active");
   updateNavbarVisibility();
 }
 
 function openBathroomSidebar() {
-  document.getElementById("bathroomSidebar").classList.add("active");
+  const el = document.getElementById("bathroomSidebar");
+  if (el) el.classList.add("active");
   updateNavbarVisibility();
 }
 
 function closeBathroomSidebar() {
-  document.getElementById("bathroomSidebar").classList.remove("active");
+  const el = document.getElementById("bathroomSidebar");
+  if (el) el.classList.remove("active");
   updateNavbarVisibility();
 }
 
 // ----------------- SEARCH TOGGLE -----------------
 function toggleSearch() {
   const searchBar = document.getElementById("searchBar");
-  searchBar.classList.toggle("active");
+  if (searchBar) searchBar.classList.toggle("active");
   updateNavbarVisibility();
 }
 
@@ -45,8 +48,8 @@ function toggleBathroomCategory(event, categoryId) {
   const category = document.getElementById(categoryId);
   const parentCategory = event.target.closest('.bathroom-sidebar-category');
 
-  parentCategory.classList.toggle('active');
-  category.classList.toggle("active");
+  if (parentCategory) parentCategory.classList.toggle('active');
+  if (category) category.classList.toggle("active");
 
   updateNavbarVisibility();
 }
@@ -174,7 +177,10 @@ document.addEventListener("click", function (event) {
       (kitchenSidebar && kitchenSidebar.contains(event.target)) ||
       (bathroomSidebar && bathroomSidebar.contains(event.target));
 
-    if (!clickedInsideSidebar && event.target !== toggleBtn && !toggleBtn.contains(event.target)) {
+    // Guard toggleBtn usage to avoid errors when toggleBtn is null
+    const clickedToggleBtn = toggleBtn && (event.target === toggleBtn || toggleBtn.contains(event.target));
+
+    if (!clickedInsideSidebar && !clickedToggleBtn) {
       if (sidebar) sidebar.classList.remove("active");
       if (kitchenSidebar) kitchenSidebar.classList.remove("active");
       if (bathroomSidebar) bathroomSidebar.classList.remove("active");
@@ -221,6 +227,7 @@ let recentSearches = [];
 
 function updateRecentSearches() {
   let container = document.getElementById("recentSearches");
+  if (!container) return;
   container.innerHTML = "";
 
   recentSearches.forEach((item, index) => {
@@ -241,6 +248,7 @@ function removeRecent(index) {
 function showSuggestions(query) {
   let bar = document.getElementById("searchBar");
   let container = document.getElementById("searchSuggestions");
+  if (!container || !bar) return;
   container.innerHTML = "";
 
   if (!query) {
@@ -300,30 +308,31 @@ function toggleSearch() {
   const input = document.getElementById("searchInput");
   const suggestions = document.getElementById("searchSuggestions");
 
+  if (!bar) return;
+
   if (bar.classList.contains("active")) {
     // Closing → clear input and suggestions + reset height
-    input.value = "";
-    suggestions.innerHTML = "";
+    if (input) input.value = "";
+    if (suggestions) suggestions.innerHTML = "";
     bar.classList.remove("active", "results-open");
   } else {
     // Opening
     bar.classList.add("active");
     bar.classList.remove("results-open");
-    input.focus();
-    suggestions.innerHTML = ""; // ✅ ensure clean start
+    if (input) input.focus();
+    if (suggestions) suggestions.innerHTML = ""; // ✅ ensure clean start
   }
 }
 
 
 // Active link handler
 document.querySelectorAll('.mobile-bottom-nav a[data-nav]').forEach(link => {
-    link.addEventListener('click', function(e) {
-        if (this.getAttribute('href') === '#') e.preventDefault();
-        document.querySelectorAll('.mobile-bottom-nav a').forEach(l => l.classList.remove('active'));
-        this.classList.add('active');
-    });
+  link.addEventListener('click', function (e) {
+    if (this.getAttribute('href') === '#') e.preventDefault();
+    document.querySelectorAll('.mobile-bottom-nav a').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
 });
-
 
 
 //  ====== Header section end ====== 
@@ -353,6 +362,7 @@ var imageSwiper = new Swiper(".image-swiper", {
 
 window.addEventListener("scroll", () => {
   const bg = document.querySelector(".parallax-bg");
+  if (!bg) return;
   let scrollY = window.scrollY;
   bg.style.transform = `translateY(${scrollY * 0.4}px)`; // speed adjust kar
 });
@@ -362,35 +372,40 @@ window.addEventListener("scroll", () => {
 
 // ======= products Section start ======
 
-function initFeaturedSwiper() {
-  if (window.innerWidth > 576) {
-    if (!document.querySelector(".featured-products .mySwiper").swiper) {
-      new Swiper(".featured-products .mySwiper", {
-        slidesPerView: 4,
-        spaceBetween: 20,
-        loop: true,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
-        breakpoints: {
-          576: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
-          1200: { slidesPerView: 4 },
-        },
-      });
+function initFeaturedSwipers() {
+  const swiperContainers = document.querySelectorAll(".featured-products .mySwiper");
+
+  swiperContainers.forEach((swiperContainer) => {
+    if (window.innerWidth > 576) {
+      // Agar already init nahi hua to init karo
+      if (!swiperContainer.swiper) {
+        new Swiper(swiperContainer, {
+          slidesPerView: 4,
+          spaceBetween: 20,
+          loop: true,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          breakpoints: {
+            576: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1200: { slidesPerView: 4 },
+          },
+        });
+      }
+    } else {
+      // Agar chhota screen hai to destroy kar do
+      if (swiperContainer.swiper) {
+        swiperContainer.swiper.destroy(true, true);
+      }
     }
-  } else {
-    let swiperInstance = document.querySelector(".featured-products .mySwiper").swiper;
-    if (swiperInstance) {
-      swiperInstance.destroy(true, true);
-    }
-  }
+  });
 }
 
-// Page load + resize pr run karo
-initFeaturedSwiper();
-window.addEventListener("resize", initFeaturedSwiper);
+// Page load + resize par run karo
+initFeaturedSwipers();
+window.addEventListener("resize", initFeaturedSwipers);
 
 
 // ======= products Section end ======
@@ -406,7 +421,9 @@ tabBtns.forEach(btn => {
     tabBtns.forEach(b => b.classList.remove("active"));
     tabContents.forEach(c => c.classList.remove("active"));
     btn.classList.add("active");
-    document.getElementById(btn.dataset.tab).classList.add("active");
+    const targetId = btn.dataset.tab;
+    const targetEl = document.getElementById(targetId);
+    if (targetEl) targetEl.classList.add('active');
   });
 });
 
@@ -417,23 +434,26 @@ tabBtns.forEach(btn => {
 
 function changeImage(imgElement) {
   // Change main image
-  document.getElementById("currentImage").src = imgElement.src;
+  const current = document.getElementById("currentImage");
+  if (current && imgElement) current.src = imgElement.src;
 
   // Remove active class from all thumbnails
   let thumbnails = document.querySelectorAll(".thumbnails img");
   thumbnails.forEach(img => img.classList.remove("active"));
 
   // Add active class to clicked thumbnail
-  imgElement.classList.add("active");
+  if (imgElement) imgElement.classList.add("active");
 }
 
 function increaseQty() {
   let qty = document.getElementById("quantityInput");
+  if (!qty) return;
   qty.value = parseInt(qty.value) + 1;
 }
 
 function decreaseQty() {
   let qty = document.getElementById("quantityInput");
+  if (!qty) return;
   if (parseInt(qty.value) > 1) {
     qty.value = parseInt(qty.value) - 1;
   }
@@ -446,19 +466,23 @@ function decreaseQty() {
 
 // Quantity update
 function changeQuantity(el, change) {
-  let qtyEl = el.parentElement.querySelector(".qty");
+  if (!el) return;
+  let qtyEl = el.parentElement ? el.parentElement.querySelector(".qty") : null;
+  if (!qtyEl) return;
   let qty = parseInt(qtyEl.innerText) + change;
   if (qty < 1) qty = 1;
   qtyEl.innerText = qty;
 
   // Update total price (sample calculation)
   let price = 20950; // per item (dummy)
-  el.closest("tr").querySelector(".item-total").innerText = "₹ " + (price * qty).toLocaleString();
+  const itemTotalEl = el.closest("tr") ? el.closest("tr").querySelector(".item-total") : null;
+  if (itemTotalEl) itemTotalEl.innerText = "₹ " + (price * qty).toLocaleString();
 }
 
 // Remove item
 function removeItem(el) {
-  el.closest("tr").remove();
+  const tr = el ? el.closest("tr") : null;
+  if (tr) tr.remove();
 }
 
 /* ====== Cart page end ====== */
@@ -467,36 +491,46 @@ function removeItem(el) {
 // ====== Login page start ======
 
 function sendOTP() {
-  let mobile = document.getElementById("mobile").value;
+  let mobileEl = document.getElementById("mobile");
+  let mobile = mobileEl ? mobileEl.value : "";
   if (mobile.length < 10) {
     alert("Please enter valid mobile number");
     return;
   }
-  document.getElementById("message").style.display = "block";
-  document.getElementById("mobileForm").style.display = "none";
-  document.getElementById("otpForm").style.display = "block";
+  const message = document.getElementById("message");
+  const mobileForm = document.getElementById("mobileForm");
+  const otpForm = document.getElementById("otpForm");
+  if (message) message.style.display = "block";
+  if (mobileForm) mobileForm.style.display = "none";
+  if (otpForm) otpForm.style.display = "block";
 }
 
 function verifyOTP() {
+  const getVal = id => (document.getElementById(id) ? document.getElementById(id).value : "");
   let otp =
-    document.getElementById("otp1").value +
-    document.getElementById("otp2").value +
-    document.getElementById("otp3").value +
-    document.getElementById("otp4").value;
+    getVal("otp1") +
+    getVal("otp2") +
+    getVal("otp3") +
+    getVal("otp4");
 
   if (otp.length < 4) {
     alert("Please enter complete OTP");
     return;
   }
   // Hide OTP sent message when verifying
-  document.getElementById("message").style.display = "none";
-  document.getElementById("successMsg").style.display = "block";
-  document.getElementById("otpForm").style.display = "none";
+  const message = document.getElementById("message");
+  const successMsg = document.getElementById("successMsg");
+  const otpForm = document.getElementById("otpForm");
+  if (message) message.style.display = "none";
+  if (successMsg) successMsg.style.display = "block";
+  if (otpForm) otpForm.style.display = "none";
 }
 
 function moveNext(current, nextId) {
+  if (!current) return;
   if (current.value.length === 1 && nextId) {
-    document.getElementById(nextId).focus();
+    const nextEl = document.getElementById(nextId);
+    if (nextEl) nextEl.focus();
   }
 }
 
@@ -505,102 +539,358 @@ function moveNext(current, nextId) {
 // ====== Checkout page start ======
 
 function selectPayment(element, method) {
-    // Remove active class from all payment options
-    document.querySelectorAll('.payment-option').forEach(option => {
-        option.classList.remove('active');
-    });
+  if (!element) return;
+  // Remove active class from all payment options
+  document.querySelectorAll('.payment-option').forEach(option => {
+    option.classList.remove('active');
+  });
 
-    // Add active class to selected option
-    element.classList.add('active');
+  // Add active class to selected option
+  element.classList.add('active');
 
-    // Check the radio button
-    const radio = element.querySelector('input[type="radio"]');
-    radio.checked = true;
+  // Check the radio button
+  const radio = element.querySelector('input[type="radio"]');
+  if (radio) radio.checked = true;
 
-    // Show/hide payment forms
-    const cardForm = document.getElementById('cardForm');
-    const upiForm = document.getElementById('upiForm');
-    cardForm.classList.remove('show');
-    upiForm.classList.remove('show');
+  // Show/hide payment forms
+  const cardForm = document.getElementById('cardForm');
+  const upiForm = document.getElementById('upiForm');
+  if (cardForm) cardForm.classList.remove('show');
+  if (upiForm) upiForm.classList.remove('show');
 
-    if (method === 'card') {
-        cardForm.classList.add('show');
-    } else if (method === 'upi') {
-        upiForm.classList.add('show');
-    }
+  if (method === 'card') {
+    if (cardForm) cardForm.classList.add('show');
+  } else if (method === 'upi') {
+    if (upiForm) upiForm.classList.add('show');
+  }
 }
 
 function selectBilling(element, option) {
-    // Remove active class from all billing options
-    document.querySelectorAll('.billing-option').forEach(opt => {
-        opt.classList.remove('active');
-    });
+  if (!element) return;
+  // Remove active class from all billing options
+  document.querySelectorAll('.billing-option').forEach(opt => {
+    opt.classList.remove('active');
+  });
 
-    // Add active class to selected option
-    element.classList.add('active');
+  // Add active class to selected option
+  element.classList.add('active');
 
-    // Check the radio button
-    const radio = element.querySelector('input[type="radio"]');
-    radio.checked = true;
+  // Check the radio button
+  const radio = element.querySelector('input[type="radio"]');
+  if (radio) radio.checked = true;
 
-    // Show/hide billing form
-    const billingForm = document.getElementById('differentBillingForm');
-    if (option === 'different') {
-        billingForm.classList.add('show');
-    } else {
-        billingForm.classList.remove('show');
-    }
+  // Show/hide billing form
+  const billingForm = document.getElementById('differentBillingForm');
+  if (option === 'different') {
+    if (billingForm) billingForm.classList.add('show');
+  } else {
+    if (billingForm) billingForm.classList.remove('show');
+  }
 }
 
 function processPayment() {
-    const form = document.getElementById('checkoutForm');
-    const selectedPayment = document.querySelector('input[name="paymentMethod"]:checked').value;
-    const cardForm = document.getElementById('cardForm');
+  const form = document.getElementById('checkoutForm');
+  const selectedPaymentEl = document.querySelector('input[name="paymentMethod"]:checked');
+  const selectedPayment = selectedPaymentEl ? selectedPaymentEl.value : null;
+  const cardForm = document.getElementById('cardForm');
 
-    // Validate card form if Credit/Debit Card is selected
-    if (selectedPayment === 'card') {
-        const cardInputs = cardForm.querySelectorAll('input[required]');
-        let valid = true;
-        cardInputs.forEach(input => {
-            if (!input.checkValidity()) {
-                valid = false;
-                input.reportValidity();
-            }
-        });
-        if (!valid) {
-            alert('Please fill in all required card details.');
-            return;
+  if (!selectedPayment) {
+    alert('Please select a payment method.');
+    return;
+  }
+
+  // Validate card form if Credit/Debit Card is selected
+  if (selectedPayment === 'card') {
+    if (cardForm) {
+      const cardInputs = cardForm.querySelectorAll('input[required]');
+      let valid = true;
+      cardInputs.forEach(input => {
+        if (!input.checkValidity()) {
+          valid = false;
+          input.reportValidity();
         }
+      });
+      if (!valid) {
+        alert('Please fill in all required card details.');
+        return;
+      }
     }
+  }
 
-    if (form.checkValidity()) {
-        alert('Order placed successfully! 🎉\n\nThank you for your purchase. You will receive a confirmation email shortly.');
-    } else {
-        alert('Please fill in all required fields.');
-        form.reportValidity();
-    }
+  if (form && form.checkValidity()) {
+    alert('Order placed successfully! 🎉\n\nThank you for your purchase. You will receive a confirmation email shortly.');
+  } else {
+    alert('Please fill in all required fields.');
+    if (form) form.reportValidity();
+  }
 }
 
 // Add smooth animations on load
 window.addEventListener('load', function () {
-    const cards = document.querySelectorAll('.product-card');
-    cards.forEach((card, index) => {
-        setTimeout(() => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'all 0.5s ease';
-            setTimeout(() => {
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, 100);
-        }, index * 100);
-    });
+  const cards = document.querySelectorAll('.product-card');
+  cards.forEach((card, index) => {
+    setTimeout(() => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'all 0.5s ease';
+      setTimeout(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, 100);
+    }, index * 100);
+  });
 
-    // Set Cash on Delivery as default active
-    const codOption = document.querySelector('.payment-option input[value="cod"]').parentElement.parentElement;
-    codOption.classList.add('active');
+  // Set Cash on Delivery as default active (guarded)
+  const codInput = document.querySelector('.payment-option input[value="cod"]');
+  if (codInput) {
+    const codOption = codInput.closest('.payment-option');
+    if (codOption) codOption.classList.add('active');
+  }
 });
 
-
-
 // ====== Checkout page end ======
+
+
+
+// ====== Profile page start ======    
+
+// ====== DATA ======
+let countdownTimer = null;
+const ordersData = [
+  { orderNo: '#ORD001', date: '15/01/2024', total: '₹1,250', status: 'completed' },
+  { orderNo: '#ORD002', date: '18/01/2024', total: '₹890', status: 'pending' },
+  { orderNo: '#ORD003', date: '20/01/2024', total: '₹2,100', status: 'completed' },
+  { orderNo: '#ORD004', date: '22/01/2024', total: '₹1,550', status: 'processing' }
+];
+
+// ====== UTIL ======
+function parseDDMMYYYY(str) {
+  // 'dd/mm/yyyy' -> Date
+  const [d, m, y] = str.split('/').map(Number);
+  return new Date(y, m - 1, d);
+}
+
+// ====== SIDEBAR ======
+function dashToggleSidebar() {
+  const sidebar = document.getElementById('dashSidebar');
+  const backdrop = document.getElementById('dashBackdrop');
+  const toggleBtn = document.getElementById('dashToggleBtn');
+
+  if (sidebar) sidebar.classList.toggle('dash-active');
+  if (backdrop) backdrop.classList.toggle('dash-show');
+
+  const isActive = sidebar && sidebar.classList.contains('dash-active');
+  if (window.innerWidth <= 768) {
+    if (toggleBtn) toggleBtn.style.display = isActive ? 'none' : 'block';
+  }
+}
+
+function dashCloseSidebar() {
+  const sidebar = document.getElementById('dashSidebar');
+  const backdrop = document.getElementById('dashBackdrop');
+  const toggleBtn = document.getElementById('dashToggleBtn');
+
+  if (sidebar) sidebar.classList.remove('dash-active');
+  if (backdrop) backdrop.classList.remove('dash-show');
+
+  if (window.innerWidth <= 768) {
+    if (toggleBtn) toggleBtn.style.display = 'block';
+  }
+}
+
+// ====== SECTIONS ======
+function showSection(sectionId) {
+  document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+
+  const targetSection = document.getElementById(sectionId);
+  if (targetSection) targetSection.classList.add('active');
+
+  const targetLink = document.querySelector(`.nav-link[data-section="${sectionId}"]`);
+  if (targetLink) targetLink.classList.add('active');
+
+  if (sectionId === 'logout') startLogoutCountdown();
+  else stopLogoutCountdown();
+}
+
+// ====== LOGOUT TIMER ======
+function startLogoutCountdown() {
+  stopLogoutCountdown(); // ensure clean start
+  let seconds = 5;
+  const countdownElement = document.getElementById('countdown');
+  if (!countdownElement) return;
+
+  countdownElement.textContent = seconds;
+  countdownTimer = setInterval(() => {
+    seconds--;
+    countdownElement.textContent = seconds;
+    if (seconds <= 0) {
+      clearInterval(countdownTimer);
+      countdownTimer = null;
+      console.log('Redirecting to login page...');
+      // window.location.href = '/login';
+    }
+  }, 1000);
+}
+
+function stopLogoutCountdown() {
+  if (countdownTimer) {
+    clearInterval(countdownTimer);
+    countdownTimer = null;
+  }
+  const countdownElement = document.getElementById('countdown');
+  if (countdownElement) countdownElement.textContent = '5';
+}
+
+// ====== SUMMARY ======
+function updateSummaryCards() {
+  const pendingCount = ordersData.filter(o => o.status === 'pending').length;
+  const completedCount = ordersData.filter(o => o.status === 'completed').length;
+  const pendingEl = document.getElementById('pendingOrdersCount');
+  const completedEl = document.getElementById('completedOrdersCount');
+  if (pendingEl) pendingEl.textContent = pendingCount;
+  if (completedEl) completedEl.textContent = completedCount;
+}
+
+// ====== TABLES ======
+function rowHTML(order) {
+  return `
+        <td><strong>${order.orderNo}</strong></td>
+        <td>${order.date}</td>
+        <td><strong>${order.total}</strong></td>
+        <td><span class="status-badge status-${order.status}">${order.status}</span></td>
+        <td>
+          <button class="action-btn btn-view" data-order="${order.orderNo}" aria-label="View order ${order.orderNo}">
+            <i class="fas fa-eye"></i> View
+          </button>
+        </td>
+      `;
+}
+
+function populateOrdersTable() {
+  const tbody = document.getElementById('ordersTableBody');
+  if (!tbody) return;
+  tbody.innerHTML = '';
+  ordersData.forEach(order => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = rowHTML(order);
+    tbody.appendChild(tr);
+  });
+  filterOrders(); // apply current filters
+}
+
+function populateRecentOrders() {
+  const tbody = document.getElementById('recentOrdersTableBody');
+  if (!tbody) return;
+  tbody.innerHTML = '';
+
+  const recent = [...ordersData]
+    .sort((a, b) => parseDDMMYYYY(b.date) - parseDDMMYYYY(a.date))
+    .slice(0, 3);
+
+  recent.forEach(order => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = rowHTML(order);
+    tbody.appendChild(tr);
+  });
+}
+
+function filterOrders() {
+  const searchTerm = (document.getElementById('orderSearch')?.value || '').toLowerCase();
+  const filterStatus = document.getElementById('orderFilter')?.value || 'all';
+  const rows = document.querySelectorAll('#ordersTableBody tr');
+
+  rows.forEach(row => {
+    const orderNo = row.querySelector('td:first-child')?.textContent.toLowerCase() || '';
+    const status = row.querySelector('.status-badge')?.textContent.toLowerCase() || '';
+    const matchesSearch = orderNo.includes(searchTerm);
+    const matchesFilter = filterStatus === 'all' || status === filterStatus;
+    row.style.display = (matchesSearch && matchesFilter) ? '' : 'none';
+  });
+}
+
+// ====== EVENTS ======
+document.addEventListener('DOMContentLoaded', () => {
+  // Init sections and data
+  showSection('dashboard');
+  updateSummaryCards();
+  populateOrdersTable();
+  populateRecentOrders();
+
+  // Sidebar toggles
+  document.getElementById('dashToggleBtn')?.addEventListener('click', dashToggleSidebar);
+  document.getElementById('dashBackdrop')?.addEventListener('click', dashCloseSidebar);
+  document.querySelector('.dash-close-btn')?.addEventListener('click', dashCloseSidebar);
+
+  // Sidebar nav
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function () {
+      const sectionId = this.getAttribute('data-section');
+      showSection(sectionId);
+      if (window.innerWidth <= 768) dashCloseSidebar();
+    });
+  });
+
+  // Filters
+  document.getElementById('orderSearch')?.addEventListener('input', filterOrders);
+  document.getElementById('orderFilter')?.addEventListener('change', filterOrders);
+
+  // Logout cancel
+  document.getElementById('cancelLogout')?.addEventListener('click', () => {
+    stopLogoutCountdown();
+    showSection('dashboard');
+  });
+
+  // Scoped event delegation to ORDERS TABLE ONLY (prevents crashes from address buttons)
+  const ordersTbody = document.getElementById('ordersTableBody');
+  ordersTbody?.addEventListener('click', function (e) {
+    const btn = e.target.closest('.action-btn');
+    if (!btn) return;
+
+    const orderNo = btn.getAttribute('data-order');
+    if (!orderNo) return;
+
+    if (btn.classList.contains('btn-view')) {
+      console.log(`Viewing details for ${orderNo}`);
+    }
+    if (btn.classList.contains('btn-edit')) {
+      console.log(`Editing ${orderNo}`);
+    }
+    if (btn.classList.contains('btn-delete')) {
+      if (confirm(`Are you sure you want to delete ${orderNo}?`)) {
+        const idx = ordersData.findIndex(o => o.orderNo === orderNo);
+        if (idx !== -1) {
+          ordersData.splice(idx, 1);
+          populateOrdersTable();
+          populateRecentOrders();
+          updateSummaryCards();
+          console.log(`${orderNo} deleted successfully`);
+        }
+      }
+    }
+  });
+
+  // Responsive: keep toggle button state correct
+  const toggleBtn = document.getElementById('dashToggleBtn');
+  const sidebar = document.getElementById('dashSidebar');
+  const backdrop = document.getElementById('dashBackdrop');
+
+  function handleResize() {
+    if (window.innerWidth > 768) {
+      if (backdrop) backdrop.classList.remove('dash-show');
+      if (sidebar) sidebar.classList.remove('dash-active');
+      if (toggleBtn) toggleBtn.style.display = 'none';
+    } else {
+      if (!sidebar || !sidebar.classList.contains('dash-active')) {
+        if (toggleBtn) toggleBtn.style.display = 'block';
+      }
+    }
+  }
+  window.addEventListener('resize', handleResize);
+  handleResize(); // set initial state
+});
+
+// ====== Profile page end ====== 
+
+
+

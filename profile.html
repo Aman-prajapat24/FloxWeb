@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flox-Profile</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom css link  -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <section class="dashboard-container">
+        <!-- Toggle Button -->
+
+
+        <!-- Backdrop -->
+        <div class="dash-backdrop" id="dashBackdrop"></div>
+
+        <!-- Sidebar -->
+        <aside class="dash-sidebar" id="dashSidebar" aria-label="Sidebar">
+            <div class="dash-sidebar-header">
+                <div class="profile-info">
+                    <img src="Assets/testi_profile.png" alt="Profile Image" class="profile-img">
+                    <div class="profile-text">
+                        <h4>Aman Prajapat</h4>
+                        <p>coding7773@gmail.com</p>
+                    </div>
+                </div>
+                <button class="dash-close-btn" aria-label="Close sidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <div class="nav-link active" data-section="dashboard" aria-current="page">
+                        <i class="fas fa-tachometer-alt"></i> Dashboard
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link" data-section="orders">
+                        <i class="fas fa-shopping-cart"></i> All Orders
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link" data-section="address">
+                        <i class="fas fa-address-book"></i> Address List
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link" data-section="logout">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </div>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dash-main-content">
+            <div class="container-fluid">
+                <!-- Dashboard Section -->
+
+                <!-- Mobile Header (only for small screens) -->
+                <div class="dash-mobile-header">
+                    <button class="dash-toggle-btn" id="dashToggleBtn" aria-label="Toggle sidebar">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="mobile-section-heading"><a href="index.html">Summary</a></h1>
+                </div>
+
+                <div class="content-section active" id="dashboard">
+                    <h1 class="section-heading"><a href="index.html">Summary</a></h1>
+                    <div class="summary-cards">
+                        <div class="summary-card pending-card">
+                            <h2 id="pendingOrdersCount">0</h2>
+                            <p>Pending Orders</p>
+                            <i class="fas fa-clock card-icon"></i>
+                        </div>
+                        <div class="summary-card completed-card">
+                            <h2 id="completedOrdersCount">0</h2>
+                            <p>Completed Orders</p>
+                            <i class="fas fa-check-circle card-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="section-container">
+                        <h3 class="section-title">Recent Orders</h3>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#Order No</th>
+                                        <th scope="col">Purchased Date</th>
+                                        <th scope="col">Total</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentOrdersTableBody">
+                                    <!-- Filled by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- All Orders Section -->
+                <div class="content-section" id="orders">
+                    <h1 class="section-heading">My Orders List</h1>
+                    <div class="section-container">
+                        <div class="search-filter-bar">
+                            <input type="text" class="search-input" placeholder="Search Order No" id="orderSearch"
+                                aria-label="Search orders by order number">
+                            <select class="filter-select" id="orderFilter" aria-label="Filter orders by status">
+                                <option value="all">All</option>
+                                <option value="pending">Pending</option>
+                                <option value="completed">Completed</option>
+                                <option value="processing">Processing</option>
+                            </select>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#Order No</th>
+                                        <th scope="col">Purchased Date</th>
+                                        <th scope="col">Total</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ordersTableBody">
+                                    <!-- Filled by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Address List Section -->
+                <div class="content-section" id="address">
+                    <h1 class="section-heading">Address List</h1>
+                    <div class="section-container">
+                        <div class="address-card primary">
+                            <div class="address-type primary">Primary</div>
+                            <div class="address-name">Home</div>
+                            <div class="address-details">
+                                Aman Prajapat<br>
+                                123, Gandhi Nagar, Sector 4<br>
+                                Jaipur, Rajasthan - 302015<br>
+                                Phone: +91 9876543210
+                            </div>
+                            <div class="address-actions">
+                                <button class="action-btn btn-view" aria-label="View home address"><i
+                                        class="fas fa-eye"></i> View</button>
+                            </div>
+                        </div>
+
+                        <div class="address-card">
+                            <div class="address-type">Secondary</div>
+                            <div class="address-name">Office</div>
+                            <div class="address-details">
+                                Aman Prajapat<br>
+                                456, Tech Park, C-Scheme<br>
+                                Jaipur, Rajasthan - 302001<br>
+                                Phone: +91 9876543210
+                            </div>
+                            <div class="address-actions">
+                                <button class="action-btn btn-view" aria-label="View office address"><i
+                                        class="fas fa-eye"></i> View</button>
+                            </div>
+                        </div>
+
+                        <div class="address-card">
+                            <div class="address-type">Other</div>
+                            <div class="address-name">Parents House</div>
+                            <div class="address-details">
+                                Rajesh Prajapat<br>
+                                789, Old City, Chaura Rasta<br>
+                                Jaipur, Rajasthan - 302003<br>
+                                Phone: +91 9123456780
+                            </div>
+                            <div class="address-actions">
+                                <button class="action-btn btn-view" aria-label="View parents house address"><i
+                                        class="fas fa-eye"></i> View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logout Section -->
+                <div class="content-section" id="logout">
+                    <h1 class="section-heading">Logout</h1>
+                    <div class="section-container">
+                        <div class="logout-container">
+                            <i class="fas fa-sign-out-alt logout-icon"></i>
+                            <div class="logout-message">You have been logged out successfully.</div>
+                            <div class="logout-submessage">
+                                Redirecting to login page in <span class="redirect-timer" id="countdown">5</span>
+                                seconds...
+                            </div>
+                            <button class="cancel-logout-btn" id="cancelLogout"
+                                aria-label="Cancel logout">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </section>
+
+
+
+
+    <!-- WhatsApp Floating Button -->
+
+    <a href="https://wa.me/917734981050" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
