@@ -1291,13 +1291,24 @@ header .bathroom-cards-content p {
     left: 50%;
     transform: translateX(-50%) translateY(30px);
     display: flex;
-    gap: 15px;
-    padding: 8px 15px;
+    gap: 10px;
+    padding: 8px 10px;
     transition: all 0.4s ease;
     opacity: 0;
     z-index: 11;
     background-color: rgba(239, 239, 239, 0.8);
     border-radius: 5px;
+}
+/* Center divider line */
+.hover-icons::after {
+    content: "";
+    position: absolute;
+    top: 5px;           /* thoda upar se start */
+    bottom: 5px;        /* thoda niche pe end */
+    left: 50%;          /* bilkul center */
+    width: 1px;
+    background-color: #aaa; /* divider ka color */
+    transform: translateX(-50%);
 }
 
 .product-card:hover .hover-icons {
@@ -1316,14 +1327,15 @@ header .bathroom-cards-content p {
 }
 
 .hover-icons button:hover {
-    color: #d9534f;
+    color: red;
 }
 
 /* Tooltip */
 .hover-icons button::after {
     content: attr(data-tooltip);
     position: absolute;
-    bottom: 130%;
+    bottom: 150%;
+    /* thoda upar taki arrow ke liye jagah ho */
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     background: #000;
@@ -1336,13 +1348,34 @@ header .bathroom-cards-content p {
     visibility: hidden;
     transition: all 0.3s ease;
     pointer-events: none;
+    z-index: 99;
 }
 
-.hover-icons button:hover::after {
+/* Tooltip Arrow */
+.hover-icons button::before {
+    content: "";
+    position: absolute;
+    bottom: 110%;
+    /* tooltip ke thoda niche */
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #000 transparent transparent transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 98;
+}
+
+/* Show tooltip + arrow on hover */
+.hover-icons button:hover::after,
+.hover-icons button:hover::before {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);
 }
+
 
 /* Product Info */
 .product-info {
@@ -1414,9 +1447,9 @@ header .bathroom-cards-content p {
         transform: translateX(-50%) translateY(0) !important;
         bottom: 5px;
         /* thoda upar niche adjust kar sakte ho */
-        gap: 8px;
+        gap: 6px;
         /* icons ke beech ka gap chhota */
-        padding: 4px 8px;
+        padding: 4px 6px;
         /* background chhota */
 
     }
@@ -1438,6 +1471,8 @@ header .bathroom-cards-content p {
         padding: 2px 5px;
     }
 }
+
+
 
 
 /* ======= products Section end ====== */
@@ -1480,7 +1515,7 @@ header .bathroom-cards-content p {
 .tab-buttons .tab-btn {
     padding: 8px 20px;
     border: 1px solid var(--accent-color);
-    background: var(--primary-color);
+    background: var(--white-color);
     color: var(--secondary-color);
     cursor: pointer;
     font-weight: 600;
@@ -1490,8 +1525,8 @@ header .bathroom-cards-content p {
 }
 
 .tab-buttons .tab-btn.active {
-    background: #000;
-    color: #fff;
+    background: var(--secondary-color);
+    color: var(--white-color);
 }
 
 .tab-content {

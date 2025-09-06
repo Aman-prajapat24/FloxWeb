@@ -288,9 +288,9 @@ function showSuggestions(query) {
                 <img src="${p.img2}" alt="Product Hover" class="hover-img">
 
                 <div class="hover-icons">
-                    <button data-tooltip="Add to Cart"><i class="fa fa-shopping-bag"></i></button>
-                    <button data-tooltip="Wishlist"><i class="fa fa-heart"></i></button>
-                </div>
+                  <button data-tooltip="Add to Cart"><i class="bi bi-bag"></i></button>
+                  <button data-tooltip="Wishlist"><i class="bi bi-heart"></i></button>
+              </div>
             </div>
             <div class="product-info">
                 <h6>${p.title}</h6>
