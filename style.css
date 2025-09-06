@@ -1648,8 +1648,6 @@ header .bathroom-cards-content p {
     object-fit: cover;
 }
 
-.services-section .service-content {}
-
 .services-section .service-title {
     font-size: 28px;
     font-weight: 700;
@@ -1666,8 +1664,6 @@ header .bathroom-cards-content p {
 }
 
 
-
-
 /* ===== Tablet (≤768px) ===== */
 @media (max-width: 768px) {
     .services-section .row {
@@ -1677,11 +1673,7 @@ header .bathroom-cards-content p {
     .services-section .service-image {
         width: 250px;
         height: 250px;
-        margin: 0 auto 20px auto;
-    }
-
-    .services-section .service-content {
-        padding: 0;
+        margin: 0 auto 20px auto; /* center */
     }
 
     .services-section .service-title {
@@ -1693,21 +1685,23 @@ header .bathroom-cards-content p {
     }
 }
 
+
 /* ===== Mobile (≤425px) ===== */
 @media (max-width: 425px) {
     .services-section {
-        padding: 0 12px; /* थोड़ा compact */
+        padding: 0 12px;
     }
 
     .services-section .row {
-        margin-bottom: 35px !important; /* row gap थोड़ा कम */
+        margin-bottom: 35px !important;
+        text-align: center; /* text भी center */
     }
 
     .services-section .service-image {
-        width: 100%; /* auto fit */
+        width: 100%;
         max-width: 320px;
         height: 220px;
-        margin: 0 auto 15px auto;
+        margin: 0 auto 15px auto; /* center */
     }
 
     .services-section .service-title {
@@ -1721,19 +1715,22 @@ header .bathroom-cards-content p {
     }
 }
 
+
 /* ===== Small Mobile (≤375px) ===== */
 @media (max-width: 375px) {
     .services-section {
-        padding: 0 10px; /* और compact */
+        padding: 0 10px;
     }
 
     .services-section .row {
         margin-bottom: 30px !important;
+        text-align: center;
     }
 
     .services-section .service-image {
         max-width: 280px;
         height: 200px;
+        margin: 0 auto 12px auto; /* center */
     }
 
     .services-section .service-title {
@@ -1745,6 +1742,7 @@ header .bathroom-cards-content p {
         line-height: 1.5;
     }
 }
+
 
 
 
