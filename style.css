@@ -1696,24 +1696,53 @@ header .bathroom-cards-content p {
 /* ===== Mobile (≤425px) ===== */
 @media (max-width: 425px) {
     .services-section {
-        padding: 0 15px;
+        padding: 0 12px; /* थोड़ा compact */
     }
 
     .services-section .row {
-        margin-bottom: 40px !important;
+        margin-bottom: 35px !important; /* row gap थोड़ा कम */
     }
 
     .services-section .service-image {
-        width: 350px;
-        height: 280px;
+        width: 100%; /* auto fit */
+        max-width: 320px;
+        height: 220px;
+        margin: 0 auto 15px auto;
     }
 
     .services-section .service-title {
         font-size: 20px;
+        margin-bottom: 12px;
     }
 
     .services-section .service-description {
         font-size: 14px;
+        line-height: 1.6;
+    }
+}
+
+/* ===== Small Mobile (≤375px) ===== */
+@media (max-width: 375px) {
+    .services-section {
+        padding: 0 10px; /* और compact */
+    }
+
+    .services-section .row {
+        margin-bottom: 30px !important;
+    }
+
+    .services-section .service-image {
+        max-width: 280px;
+        height: 200px;
+    }
+
+    .services-section .service-title {
+        font-size: 18px;
+    }
+
+    .services-section .service-description {
+        font-size: 13px;
+        line-height: 1.5;
     }
 }
 
