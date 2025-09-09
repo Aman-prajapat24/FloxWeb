@@ -433,31 +433,72 @@ tabBtns.forEach(btn => {
 // ====== Products details section start ======
 
 function changeImage(imgElement) {
-  // Change main image
   const current = document.getElementById("currentImage");
   if (current && imgElement) current.src = imgElement.src;
 
-  // Remove active class from all thumbnails
   let thumbnails = document.querySelectorAll(".thumbnails img");
   thumbnails.forEach(img => img.classList.remove("active"));
-
-  // Add active class to clicked thumbnail
   if (imgElement) imgElement.classList.add("active");
 }
 
 function increaseQty() {
   let qty = document.getElementById("quantityInput");
-  if (!qty) return;
   qty.value = parseInt(qty.value) + 1;
 }
 
 function decreaseQty() {
   let qty = document.getElementById("quantityInput");
-  if (!qty) return;
-  if (parseInt(qty.value) > 1) {
-    qty.value = parseInt(qty.value) - 1;
-  }
+  if (parseInt(qty.value) > 1) qty.value = parseInt(qty.value) - 1;
 }
+
+// CART FUNCTIONS
+function openCart() {
+  document.getElementById("cartModal").classList.add("active");
+  document.getElementById("cartOverlay").classList.add("active");
+  updateSubtotal();
+}
+
+function closeCart() {
+  document.getElementById("cartModal").classList.remove("active");
+  document.getElementById("cartOverlay").classList.remove("active");
+}
+
+function changeCartQty(btn, change) {
+  const qtyInput = btn.parentNode.querySelector("input");
+  let qty = parseInt(qtyInput.value) + change;
+  if (qty < 1) qty = 1;
+  qtyInput.value = qty;
+  updateSubtotal();
+}
+
+function deleteCartItem(el) {
+  el.parentNode.remove();
+  document.getElementById("cartCount").textContent =
+    document.querySelectorAll(".cart-item").length;
+  updateSubtotal();
+}
+
+function updateSubtotal() {
+  let subtotal = 0;
+  document.querySelectorAll(".cart-item").forEach(item => {
+    const priceText = item.querySelector(".item-price").textContent.replace("Rs.", "").replace(",", "").trim();
+    const price = parseInt(priceText);
+    const qty = parseInt(item.querySelector("input").value);
+    subtotal += price * qty;
+  });
+  document.getElementById("cartSubtotal").textContent = "Rs. " + subtotal.toLocaleString();
+}
+
+function addToCart() {
+  let btn = document.getElementById("addToCartBtn");
+  btn.textContent = "Loading...";   // button text change
+
+  setTimeout(() => {
+    btn.textContent = "ADD TO CART";  // reset text
+    openCart(); // modal open
+  }, 1000);
+}
+
 
 // ====== Products details section end ======
 

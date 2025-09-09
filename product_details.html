@@ -455,13 +455,11 @@
 
             <!-- Right Product Details -->
             <div class="product-details">
-
                 <h2>24x16" LED Ceiling Shower in Gold Finish - SS304 Concealed Showerhead with Remote & 3 Spray Modes
                     (Rain, Mist, Waterfall)</h2>
                 <p>Item code: <strong>CS-3010-G</strong></p>
 
                 <p class="price">Rs. 39,310.00 <span class="old-price">Rs. 63,400.00</span></p>
-
 
                 <p class="stock">Hurry Up! <span>Only 5 left in stock!</span></p>
 
@@ -472,9 +470,10 @@
                 </div>
 
                 <div class="buttons">
-                    <button class="btn btn-cart">ADD TO CART</button>
+                    <button class="btn btn-cart" id="addToCartBtn" onclick="addToCart()">ADD TO CART</button>
                     <button class="btn btn-buy">BUY IT NOW</button>
                 </div>
+
 
                 <div class="extra-info">
                     <p><strong>Available:</strong> Instock</p>
@@ -484,6 +483,61 @@
             </div>
 
         </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <section class="cart_modal_section">
+        <div class="cart-modal" id="cartModal">
+            <div class="cart-header">
+                <h3>Your Cart (<span id="cartCount">1</span>)</h3>
+                <span class="close-cart" onclick="closeCart()">&times;</span>
+            </div>
+
+            <div class="cart-body" id="cartBody">
+
+                <!-- Product Card directly in HTML -->
+                <div class="cart-item">
+                    <img src="Assets/kitchen2.webp" alt="Product">
+                    <div class="item-info">
+                        <p class="item-name">24x16" LED Ceiling Shower 24x16" LED Ceiling Shower</p>
+                        <p class="item-price">Rs. 39,310</p>
+                        <div class="quantity">
+                            <button onclick="changeCartQty(this, -1)">-</button>
+                            <input type="text" value="1" readonly>
+                            <button onclick="changeCartQty(this, 1)">+</button>
+                        </div>
+                    </div>
+                    <span class="delete-item" onclick="deleteCartItem(this)">&times;</span>
+                </div>
+                <div class="cart-item">
+                    <img src="Assets/kitchen2.webp" alt="Product">
+                    <div class="item-info">
+                        <p class="item-name">24x16" LED Ceiling Shower</p>
+                        <p class="item-price">Rs. 39,310</p>
+                        <div class="quantity">
+                            <button onclick="changeCartQty(this, -1)">-</button>
+                            <input type="text" value="1" readonly>
+                            <button onclick="changeCartQty(this, 1)">+</button>
+                        </div>
+                    </div>
+                    <span class="delete-item" onclick="deleteCartItem(this)">&times;</span>
+                </div>
+
+
+            </div>
+
+            <div class="cart-footer">
+                <p class="subtotal">
+                    Subtotal: <strong id="cartSubtotal">Rs. 39,310</strong>
+                </p>
+                <div class="cart-actions">
+                    <a href="cart.html" class="view-cart">View Cart</a>
+                    <a href="checkout.html" class="checkout">Checkout</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
     </section>
 
     <!-- Description section  -->

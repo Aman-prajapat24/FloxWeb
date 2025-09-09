@@ -2278,6 +2278,7 @@ header .bathroom-cards-content p {
 
 /* ====== Products details page start ====== */
 
+/* ================= PRODUCT SECTION ================= */
 .product-section {
     padding: 50px 20px;
     background: #fff;
@@ -2286,7 +2287,6 @@ header .bathroom-cards-content p {
 .product-section .product-container {
     display: flex;
     gap: 20px;
-    /* left & right ke bich ka gap kam kiya */
     flex-wrap: wrap;
     margin-top: 50px;
     align-items: flex-start;
@@ -2296,19 +2296,16 @@ header .bathroom-cards-content p {
 .product-section .product-gallery {
     display: flex;
     gap: 12px;
-    /* thumbnails & main image ka gap */
     flex: 1;
     min-width: 300px;
     position: sticky;
     top: 100px;
-    /* sticky offset (navbar height ke hisab se adjust karna) */
     align-self: flex-start;
 }
 
 .product-section .main-image {
     flex: 1;
     max-width: 550px;
-    /* chhota kiya */
 }
 
 .product-section .main-image img {
@@ -2344,7 +2341,6 @@ header .bathroom-cards-content p {
 }
 
 /* Right Details */
-
 .product-section .product-details {
     flex: 1;
     min-width: 320px;
@@ -2367,7 +2363,6 @@ header .bathroom-cards-content p {
     font-size: 15px;
     color: #777;
 }
-
 
 .product-section .stock {
     color: red;
@@ -2442,19 +2437,18 @@ header .bathroom-cards-content p {
     color: #000;
 }
 
+/* ================= RESPONSIVE ================= */
 @media (max-width: 425px) {
     .product-section .product-gallery {
         display: flex;
         flex-direction: column;
         align-items: center;
         position: static;
-        /* mobile me sticky hata diya */
         top: auto;
     }
 
     .product-section .main-image {
         order: 1;
-        /* pehle main image */
         width: 100%;
         max-width: 400px;
         margin-bottom: 15px;
@@ -2469,7 +2463,6 @@ header .bathroom-cards-content p {
 
     .product-section .thumbnails {
         order: 2;
-        /* fir thumbnails niche */
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
@@ -2483,6 +2476,195 @@ header .bathroom-cards-content p {
 
     .product-section .product-details h2 {
         font-size: 20px;
+    }
+}
+
+/* ================= CART MODAL ================= */
+.cart_modal_section .cart-modal {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 350px;
+    max-width: 90%;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+    transition: right 0.4s ease;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart_modal_section .cart-modal.active {
+    right: 0;
+}
+
+.cart_modal_section .cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+
+.cart_modal_section .cart-header .close-cart {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.cart_modal_section .cart-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.cart_modal_section .cart-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.cart_modal_section .cart-item img {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    object-fit: cover;
+}
+
+.cart_modal_section .cart-item .item-info {
+    flex: 1;
+}
+
+.cart_modal_section .item-name {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.cart_modal_section .item-price {
+    font-size: 13px;
+    color: #d32f2f;
+}
+
+.cart_modal_section .cart-item .quantity {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.cart_modal_section .cart-item .quantity button {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cart_modal_section .cart-item .quantity input {
+    width: 35px;
+    text-align: center;
+    border: 1px solid #ddd;
+    height: 25px;
+}
+
+.cart_modal_section .delete-item {
+    font-size: 20px;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s;
+}
+
+.cart_modal_section .delete-item:hover {
+    color: red;
+}
+
+/* ================= CART FOOTER ================= */
+.cart_modal_section .cart-footer {
+    border-top: 1px solid #eee;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cart_modal_section .cart-footer .subtotal {
+    font-size: 16px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between; /* left: text, right: price */
+    align-items: center;
+}
+
+.cart_modal_section .cart-footer .cart-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.cart_modal_section .cart-footer .cart-actions a {
+    flex: 1;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cart_modal_section .cart-footer .cart-actions .view-cart {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    color: #000;
+}
+
+.cart_modal_section .cart-footer .cart-actions .checkout {
+    background: #000;
+    color: #fff;
+}
+
+/* ================= OVERLAY ================= */
+.cart_modal_section .cart-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 9998;
+    display: none;
+}
+
+.cart_modal_section .cart-overlay.active {
+    display: block;
+}
+
+/* ================= ADD TO CART LOADING ================= */
+.cart_modal_section .btn-cart.loading {
+    position: relative;
+    pointer-events: none;
+    color: transparent !important; /* text hide ho jaye */
+}
+
+.cart_modal_section .btn-cart.loading::after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    border: 2px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 
@@ -3614,7 +3796,7 @@ footer {
     padding: 50px 20px 20px;
     font-family: 'Lora', serif;
     margin-top: 50px;
-     box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .footer-container {
